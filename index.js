@@ -1,12 +1,14 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "",
-  authDomain: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+  apiKey: "AIzaSyCEpi7Q3uckW145i7ZxT1kNiMsUDA98Fck",
+  authDomain: "ecological-experiment-data.firebaseapp.com",
+  projectId: "ecological-experiment-data",
+  storageBucket: "ecological-experiment-data.appspot.com",
+  messagingSenderId: "358274115850",
+  appId: "1:358274115850:web:0bf4baf6c0d3ee092432f3",
+  measurementId: "G-8VT60NQFWP"
 };
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // Initialize variables
