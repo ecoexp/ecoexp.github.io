@@ -7,11 +7,12 @@
     <meta http-equive="X-UA-Compatible" content="IE-adge">
     <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>Research Experiment</title>
+    <script async src="https://api.countapi.xyz/hit/ecoexp.github.io/864c535b-9360-494b-b4fa-dedeb69f96bf?callback=websiteVisits"></script>
     <style>label{display: inline-block; width:80px}</style> 
   </head>
 
   <body>
-
+    <h1>This site has been visited <span id="visits"></span> times.</h1>
     <label>Home</label> <input id="Namebox" type="text">
     <label>Rollo</label> <input id="Rollbox" type="text">
     <label>Section</label> <input id="Secbox" type="text">
@@ -62,6 +63,10 @@
         var selBtn = document .getElementById("Selbtn");
         var updBtn = document.getElementById("Updbtn");
         var delBtn = document.getElementById("Delbtn");
+        
+        function websiteVisits(response) {
+             document.querySelector("#visits").textContent = response.value;
+        }
 
         function InsertData(){
 
@@ -116,5 +121,5 @@
       </script>
 
   </body>
-  
+
 </html>
