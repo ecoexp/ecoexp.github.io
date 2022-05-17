@@ -6,14 +6,14 @@ let questions = [
     //answer: "Hyper Text Markup Language",
     options: [
       "apple_1.jpg",
-      "Hyper Text Markup Language",
-      "Hyper Text Multiple Language",
-      "Hyper Tool Multi Language"
+      "apple_2.jpg",
+      "apple_3.jpg",
+      "apple_4.jpg"
     ]
   },
     {
     numb: 2,
-    question: "What does CSS stand for?",
+    question: "Select your choice for Banana",
     //answer: "Cascading Style Sheet",
     options: [
       "Common Style Sheet",
@@ -24,8 +24,8 @@ let questions = [
   },
     {
     numb: 3,
-    //question: "What does PHP stand for?",
-    answer: "Hypertext Preprocessor",
+    question: "Select your choice for Orange",
+    //answer: "",
     options: [
       "Hypertext Preprocessor",
       "Hypertext Programming",
@@ -35,8 +35,8 @@ let questions = [
   },
     {
     numb: 4,
-    //question: "What does SQL stand for?",
-    answer: "Structured Query Language",
+    question: "Select your choice for Tomato",
+    //answer: "Structured Query Language",
     options: [
       "Stylish Question Language",
       "Stylesheet Query Language",
@@ -46,8 +46,8 @@ let questions = [
   },
     {
     numb: 5,
-    //question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
+    question: "Select your choice for Carrot",
+    //answer: "eXtensible Markup Language",
     options: [
       "eXtensible Markup Language",
       "eXecutable Multiple Language",
