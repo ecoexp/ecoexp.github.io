@@ -16,10 +16,10 @@ let questions = [
     question: "Select your choice for Banana",
     //answer: "Cascading Style Sheet",
     options: [
-      "Common Style Sheet",
-      "Colorful Style Sheet",
-      "Computer Style Sheet",
-      "Cascading Style Sheet"
+      "b_1.jpg",
+      "b_2.jpg",
+      "b_3.jpg",
+      "b_4.jpg"
     ]
   },
     {
@@ -27,10 +27,10 @@ let questions = [
     question: "Select your choice for Orange",
     //answer: "",
     options: [
-      "Hypertext Preprocessor",
-      "Hypertext Programming",
-      "Hypertext Preprogramming",
-      "Hometext Preprocessor"
+      "o1.jpg",
+      "o2.jpg",
+      "o3.jpg",
+      "o4.jpg"
     ]
   },
     {
