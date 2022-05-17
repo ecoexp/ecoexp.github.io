@@ -1,125 +1,82 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-
+<head>
     <meta charset="UTF-8">
-    <meta http-equive="X-UA-Compatible" content="IE-adge">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Experiment</title>
-    <script async src="https://api.countapi.xyz/hit/ecoexp.github.io/864c535b-9360-494b-b4fa-dedeb69f96bf?callback=websiteVisits"></script>
-    <style>label{display: inline-block; width:80px}</style> 
-  </head>
+    <link rel="stylesheet" href="style.css">
 
-  <body>
-    <h1>This site has been visited <span id="visits"></span> times.</h1>
-    <label>Home</label> <input id="Namebox" type="text">
-    <label>Rollo</label> <input id="Rollbox" type="text">
-    <label>Section</label> <input id="Secbox" type="text">
-    <label>Mame</label> 
-    <select id="Genbox">
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <!-- start Quiz button -->
+    <div class="start_btn"><button>Start Experiment</button></div>
 
-    <hr>
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Task</span></div>
+        <div class="info-list">
+            <div class="info">1. You will have only <span>15 seconds</span> per each task.</div>
+            <div class="info">2. Once you select your option, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the experiment while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your choices.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
 
-      <button id="Insbtn">INSERT</button> 
-      <button id="Selbtn">SELECT</button>
-      <button id="Updbtn">UPDATE</button> 
-      <button id="Delbtn">DELETE</button>
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Make your Salad</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- Here I've inserted question from JavaScript -->
+            </div>
+            <div class="option_list">
+                <!-- Here I've inserted options from JavaScript -->
+            </div>
+        </section>
 
-      <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyAjxcNAb1pZI4usSK1jzxhHx0x1KNn6rO8",
-          authDomain: "ecological-experiment-da-a196d.firebaseapp.com",
-          databaseURL: "https://ecological-experiment-da-a196d-default-rtdb.firebaseio.com",
-          projectId: "ecological-experiment-da-a196d",
-          storageBucket: "ecological-experiment-da-a196d.appspot.com",
-          messagingSenderId: "48549347586",
-          appId: "1:48549347586:web:0caac946b0b64bb0f6821b"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
+        <!-- footer of Quiz Box -->
+        <footer>
+            <div class="total_que">
+                <!-- Here I've inserted Question Count Number from JavaScript -->
+            </div>
+            <button class="next_btn">Next</button>
+        </footer>
+    </div>
 
-        import{getDatabase, ref, get, set, child, update, remove}
-        from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js";
-        
-        const db= getDatabase();
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the task!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay task</button>
+            <button class="quit">Quit task</button>
+        </div>
+    </div>
 
-        var namebox = document.getElementById("Namebox"); 
-        var rollbox = document.getElementById("Rollbox");
-        var secbox = document.getElementById("Secbox");
-        var genbox = document.getElementById ("Genbox");
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+    <script src="js/questions.js"></script>
 
-        var insBtn = document.getElementById("Insbtn"); 
-        var selBtn = document .getElementById("Selbtn");
-        var updBtn = document.getElementById("Updbtn");
-        var delBtn = document.getElementById("Delbtn");
-        
-        function websiteVisits(response) {
-             document.querySelector("#visits").textContent = response.value;
-        }
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+    <script src="js/script.js"></script>
 
-        function InsertData(){
-
-          set (ref(db, "TheStudents/"+ rollbox.value),{ 
-              NameOfStd: namebox.value,
-              RollNo: rollbox.value, 
-              Section: secbox.value,  
-              Gender: genbox.value
-          }) 
-          .then(()=>{
-              alert("data stored successfully");
-          }) 
-          .catch((error)=>{
-              alert("unsuccessful, error"+error);
-          });
-
-        }
-
-
-        function SelectData(){
-
-          const dbref = ref(db);
-
-          get(child(dbref, "TheStudents/"+ rollbox.value)).then((snapshot)=>{ 
-            if (snapshot.exists()){
-              namebox.value= snapshot.val().NameOfStd;    
-              secbox.value= snapshot.val().Section;
-              genbox.value= snapshot.val().Gender;
-          }
-
-          else{
-
-            alert("No data found");
-
-          }
-
-          })
-
-          .catch((error)=>{ 
-            
-            alert("unsuccessful, error"+error);
-
-          });
-
-        }
-
-        insBtn.addEventListener('click',InsertData);
-        selBtn.addEventListener('click',SelectData);
-
-        
-
-      </script>
-
-  </body>
-
+</body>
 </html>
