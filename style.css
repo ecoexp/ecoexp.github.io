@@ -8,12 +8,12 @@
 }
 
 body{
-    background: #007bff;
+    background: #59ed94;
 }
 
 ::selection{
     color: #fff;
-    background: #007bff;
+    background: #3aee8e;
 }
 
 .start_btn,
@@ -109,6 +109,7 @@ body{
 
 .quiz_box{
     width: 550px;
+    height: 100%;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
