@@ -170,6 +170,7 @@ body{
 }
 
 .quiz_box header .time_line{
+    width: 100%;
     position: absolute;
     bottom: 0px;
     left: 0px;

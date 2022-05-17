@@ -94,10 +94,10 @@ function showQuetions(index){
 
     //creating a new span and div tag for question and option and passing the value using array index
     let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span><img src="'+ questions[index].options[0] +'" width="100%" alt="Choice 2"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span></div>'
+    let option_tag = '<div class="option"><span><img src="'+ questions[index].options[0] +'" width="100%" alt="Choice 1"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span></div>'
     + '<div class="option"><span><img src="'+ questions[index].options[1] +'" width="100%" alt="Choice 2"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[2] +'" width="100%" alt="Choice 2"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[3] +'" width="100%" alt="Choice 2"><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>';
+    + '<div class="option"><span><img src="'+ questions[index].options[2] +'" width="100%" alt="Choice 3"><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
+    + '<div class="option"><span><img src="'+ questions[index].options[3] +'" width="100%" alt="Choice 4"><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>';
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
@@ -176,7 +176,7 @@ function startTimer(time){
         }
         if(time < 0){ //if timer is less than 0
             clearInterval(counter); //clear counter
-            timeText.textContent = "Time Off"; //change the time text to time off
+            timeText.textContent = "Time Out"; //change the time text to time off
             const allOptions = option_list.children.length; //getting all option items
             let correcAns = questions[que_count].answer; //getting correct answer from array
             for(i=0; i < allOptions; i++){
@@ -195,11 +195,11 @@ function startTimer(time){
 }
 
 function startTimerLine(time){
-    counterLine = setInterval(timer, 29);
+    counterLine = setInterval(timer, 160);
     function timer(){
         time += 1; //upgrading time value with 1
-        time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-        if(time > 549){ //if time value is greater than 549
+        time_line.style.width = time + "%"; //increasing width of time_line with px by time value
+        if(time > 100){ //if time value is greater than 549
             clearInterval(counterLine); //clear counterLine
         }
     }
