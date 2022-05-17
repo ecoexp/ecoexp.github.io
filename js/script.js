@@ -94,10 +94,10 @@ function showQuetions(index){
 
     //creating a new span and div tag for question and option and passing the value using array index
     let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span><img src="'+ questions[index].options[0] +'" width="100%" alt="Choice 1">$ 50<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[1] +'" width="100%" alt="Choice 2">$ 45<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[2] +'" width="100%" alt="Choice 3">$ 52 <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[3] +'" width="100%" alt="Choice 4">$ 51<span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>';
+    let option_tag = '<div class="option"><span><img src="'+ questions[index].options[0] +'" width="50px" alt="Choice 1">$50<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span></div>'
+    + '<div class="option"><span><img src="'+ questions[index].options[1] +'" width="50px" alt="Choice 2">$49<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
+    + '<div class="option"><span><img src="'+ questions[index].options[2] +'" width="50px" alt="Choice 3">$52 <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
+    + '<div class="option"><span><img src="'+ questions[index].options[3] +'" width="50px" alt="Choice 4">$51<span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>';
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
