@@ -1,4 +1,24 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyAjxcNAb1pZI4usSK1jzxhHx0x1KNn6rO8",
+    authDomain: "ecological-experiment-da-a196d.firebaseapp.com",
+    databaseURL: "https://ecological-experiment-da-a196d-default-rtdb.firebaseio.com",
+    projectId: "ecological-experiment-da-a196d",
+    storageBucket: "ecological-experiment-da-a196d.appspot.com",
+    messagingSenderId: "48549347586",
+    appId: "1:48549347586:web:0caac946b0b64bb0f6821b"
+    };
+    
+    // initialize firebase
+firebase.initializeApp(firebaseConfig);
+    
+    // reference your database
+var userdata = firebase.database().ref("UserData");
+
+
+
 //selecting all required elements
+
+
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
@@ -9,10 +29,15 @@ const option_list = document.querySelector(".option_list");
 const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
+const response = [];
+const response_time = [];
 
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
+    for(let i = 0; i < 5; i++){ 
+        response[i]=-1;
+        }
 }
 
 // if exitQuiz button clicked
@@ -37,7 +62,7 @@ let userScore = 0;
 let counter;
 let counterLine;
 let widthValue = 0;
-
+var t_temp=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
@@ -47,6 +72,9 @@ restart_quiz.onclick = ()=>{
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 15; 
     que_count = 0;
+    for(let i = 0; i < 5; i++){ 
+        response[i]=-1;
+        }
     que_numb = 1;
     userScore = 0;
     widthValue = 0;
@@ -71,6 +99,13 @@ const bottom_ques_counter = document.querySelector("footer .total_que");
 // if Next Que button clicked
 next_btn.onclick = ()=>{
     if(que_count < questions.length - 1){ //if question count is less than total question length
+        if (t_temp==-1) {
+            response_time[que_count] = -1;
+          }
+          else {
+            response_time[que_count] = 15 - t_temp;
+          }
+        console.log(response_time[que_count]);
         que_count++; //increment the que_count value
         que_numb++; //increment the que_numb value
         showQuetions(que_count); //calling showQestions function
@@ -82,6 +117,12 @@ next_btn.onclick = ()=>{
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
     }else{
+        if (t_temp==-1) {
+            response_time[que_count] = -1;
+          }
+          else {
+            response_time[que_count] = 15 - t_temp;
+          }
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         showResult(); //calling showResult function
@@ -107,6 +148,7 @@ function showQuetions(index){
     for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
+    
 }
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
@@ -114,9 +156,14 @@ let crossIconTag = '<div class="icon tick"><i class="fas fa-times"></i></div>';
 
 //if user clicked on option
 function optionSelected(answer){
+   
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     let userAns = answer.textContent; //getting user selected option
+    response[que_count]=userAns;
+    console.log(response[que_count]);
+    
+    //console.log(response_time[que_count]);
     let correcAns = questions[que_count].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
     
@@ -150,6 +197,22 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
+
+
+    var newuserdata = userdata.push();
+  
+    newuserdata.set({
+      Response_1: response[0],
+      Time_1: response_time[0],
+      Response_2: response[1],
+      Time_2: response_time[1],
+      Response_3: response[2],
+      Time_3: response_time[2],
+      Response_4: response[3],
+      Time_4: response_time[3],
+      Response_5: response[4],
+      Time_5: response_time[4],
+    });
     if (userScore > 3){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
@@ -189,9 +252,15 @@ function startTimer(time){
             for(i=0; i < allOptions; i++){
                 option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
             }
+            
             next_btn.classList.add("show"); //show the next button if user selected any option
         }
+        t_temp = time;
+        
     }
+    
+    //console.log(response_time[que_count]);
+    
 }
 
 function startTimerLine(time){

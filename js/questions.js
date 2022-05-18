@@ -38,10 +38,10 @@ let questions = [
     question: "Select your choice for Tomato",
     //answer: "Structured Query Language",
     options: [
-      "Stylish Question Language",
-      "Stylesheet Query Language",
-      "Statement Question Language",
-      "Structured Query Language"
+      "t1.jpg",
+      "t2.jpg",
+      "t3.jpg",
+      "t4.jpg"
     ]
   },
     {
@@ -49,10 +49,10 @@ let questions = [
     question: "Select your choice for Carrot",
     //answer: "eXtensible Markup Language",
     options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
+      "c1.jpg",
+      "c2.jpg",
+      "c3.jpg",
+      "c4.jpg"
     ]
   },
   // you can uncomment the below codes and make duplicate as more as you want to add question
