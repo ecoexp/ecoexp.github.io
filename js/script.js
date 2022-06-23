@@ -32,7 +32,7 @@ const timeCount = document.querySelector(".timer .timer_sec");
 const response = [];
 const response_time = [];
 
-// if startQuiz button clicked
+// if startbutton clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
     for(let i = 0; i < 5; i++){ 
@@ -40,12 +40,12 @@ start_btn.onclick = ()=>{
         }
 }
 
-// if exitQuiz button clicked
+// if exit button clicked
 exit_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
 }
 
-// if continueQuiz button clicked
+// if continue button clicked
 continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
@@ -68,7 +68,7 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 
 // if restartQuiz button clicked
 restart_quiz.onclick = ()=>{
-    quiz_box.classList.add("activeQuiz"); //show quiz box
+    quiz_box.classList.add("activeQuiz"); //show  box
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 15; 
     que_count = 0;
@@ -88,7 +88,7 @@ restart_quiz.onclick = ()=>{
     next_btn.classList.remove("show"); //hide the next button
 }
 
-// if quitQuiz button clicked
+// if quit button clicked
 quit_quiz.onclick = ()=>{
     window.location.reload(); //reload the current window
 }
@@ -96,7 +96,7 @@ quit_quiz.onclick = ()=>{
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
-// if Next Que button clicked
+// if Next  button clicked
 next_btn.onclick = ()=>{
     if(que_count < questions.length - 1){ //if question count is less than total question length
         if (t_temp==-1) {
