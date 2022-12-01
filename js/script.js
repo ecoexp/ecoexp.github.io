@@ -17,6 +17,12 @@ var userdata = firebase.database().ref("UserData");
 
 
 //selecting all required elements
+const progressBar = document.getElementById("progress-bar");
+const progressNext = document.getElementById("footer .next_btn");
+const progressPrev = document.getElementById("progress-prev");
+const steps = document.querySelectorAll(".step");
+let active = 1;
+
 
 
 const start_btn = document.querySelector(".start_btn button");
@@ -66,6 +72,14 @@ var t_temp=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
+function myFunction() {
+
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(0); //calling showQestions function
+   
+}
+
 // if restartQuiz button clicked
 restart_quiz.onclick = ()=>{
     quiz_box.classList.add("activeQuiz"); //show  box
@@ -93,11 +107,14 @@ quit_quiz.onclick = ()=>{
     window.location.reload(); //reload the current window
 }
 
+
+
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next  button clicked
 next_btn.onclick = ()=>{
+    quiz_box.classList.remove("activeQuiz"); 
     if(que_count < questions.length - 1){ //if question count is less than total question length
         if (t_temp==-1) {
             response_time[que_count] = -1;
@@ -135,10 +152,9 @@ function showQuetions(index){
 
     //creating a new span and div tag for question and option and passing the value using array index
     let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span><img src="'+ questions[index].options[0] +'" width="50px" alt="Choice 1">$50<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[1] +'" width="50px" alt="Choice 2">$49<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[2] +'" width="50px" alt="Choice 3">$52 <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[3] +'" width="50px" alt="Choice 4">$51<span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>';
+    let option_tag = '<div class="option"><span><img src="'+ questions[index].options[0] +'" width="350px" alt="Choice 1"></div>'
+    + '<div class="option"><span><img src="'+ questions[index].options[1] +'" width="350px" alt="Choice 2"></div>'
+    + '<div class="option"><span><img src="'+ questions[index].options[2] +'" width="350px" alt="Choice 3"></div>';
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
@@ -279,3 +295,38 @@ function queCounter(index){
     let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
+
+progressNext.addEventListener("click", () => {
+    active++;
+    if (active > steps.length) {
+      active = steps.length;
+    }
+    updateProgress();
+  });
+  
+  progressPrev.addEventListener("click", () => {
+    active--;
+    if (active < 1) {
+      active = 1;
+    }
+    updateProgress();
+  });
+  
+  const updateProgress = () => {
+    steps.forEach((step, i) => {
+      if (i < active) {
+        step.classList.add("active");
+      } else {
+        step.classList.remove("active");
+      }
+    });
+    progressBar.style.width = ((active - 1) / (steps.length - 1)) * 100 + "%";
+    if (active === 1) {
+      progressPrev.disabled = true;
+    } else if (active === steps.length) {
+      progressNext.disabled = true;
+    } else {
+      progressPrev.disabled = false;
+      progressNext.disabled = false;
+    }
+  };

@@ -8,8 +8,62 @@
 }
 
 body{
-    background: #3c885b;
+    background: #3c7788;
 }
+#progress {
+    position: relative;
+    margin-bottom: 30px;
+    margin: 10px;
+  }
+  #progress-bar {
+    position: absolute;
+    background: lightseagreen;
+    height: 5px;
+    width: 0%;
+    top: 50%;
+    left: 0;
+  }
+  #progress-num {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  #progress-num::before {
+    content: "";
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    z-index: -1;
+  }
+  #progress-num .step {
+    border: 3px solid lightgray;
+    border-radius: 100%;
+    width:30px;
+    height: 30px;
+    line-height: 25px;
+    text-align: center;
+    background-color: #fff;
+    font-family: sans-serif;
+    font-size: 14px;  
+    position: relative;
+    z-index: 1;
+  }
+  #progress-num .step.active {
+    border-color: lightseagreen;
+    background-color: lightseagreen;
+    color: #fff;
+  }
+  .btn {
+      background: lightgray;    
+      border: none;
+      border-radius: 3px;
+      padding: 6px 12px;   
+  }
 
 ::selection{
     color: #fff;
@@ -26,6 +80,100 @@ body{
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.apple{
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+               
+}
+.fruit{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);             
+}
+.orange{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+               
+}
+
+.grapes{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+               
+}
+.banana{
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+               
+}
+.apricot{
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+               
+}
+.price{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);   
+}
+.price button{
+
+
+    font-size: 17px;
+    font-weight: 600;
+    color: #000000;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: rgb(41, 214, 113);
+    cursor: pointer;
+}
+.fruit button,
+.apple button,
+.orange button,
+.grapes button,
+.banana button,
+.apricot button{
+    height: 150px;
+    width: 150px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
 }
 
 .info_box.activeInfo,
@@ -108,8 +256,11 @@ body{
 }
 
 .quiz_box{
+    
+
+    height: 650px;
     width: 550px;
-    height: 100%;
+  
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -190,7 +341,9 @@ section .que_text{
 
 section .option_list{
     padding: 20px 0px;
-    display: block;   
+    display: block;  
+    height: 420px;
+    overflow-y: scroll; 
 }
 
 section .option_list .option{

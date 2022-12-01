@@ -3,12 +3,12 @@ let questions = [
     {
     numb: 1,
     question: "Select your choice for Apple",
-    //answer: "Hyper Text Markup Language",
+    answer: "a/a/a1.jpg",
     options: [
-      "apple_1.jpg",
-      "apple_2.jpg",
-      "apple_3.jpg",
-      "apple_4.jpg"
+      "a/a/a1.jpg",
+      "a/a/a2.jpg",
+      "a/a/a3.jpg",
+      "a/a/a3.jpg"
     ]
   },
     {

@@ -14,11 +14,47 @@
     color: orange;
     }
     </style>
+    
 </head>
 <body>
     <!-- start Quiz button -->
-    <div class="start_btn"><button>Start Experiment</button></div>
-
+    <div class="start_btn"><button></button></div>
+    <div id="progress">
+        <div id="progress-bar"></div>
+        <ul id="progress-num">
+          <li class="step active">1</li>
+          <li class="step">2</li>
+          <li class="step">3</li>
+          <li class="step">4</li>
+          <li class="step">5</li>
+          <li class="step">6</li>
+          <li class="step">7</li>
+          <li class="step">8</li>
+          <li class="step">9</li>
+          <li class="step">10</li>
+        </ul>
+      </div>
+    <div class="price" style="top: 12%;left: 30%;"><button style=" height: 30px; width: 200px;" onclick="myFunction1()">Total Price: 0 </button></div>
+    <div class="price" style="top: 12%;left: 50%;"><button style=" height: 30px; width: 200px;" onclick="myFunction1()">Total Eco-Impact: 0 </button></div>
+    <div class="price" style="top: 12%;left: 70%;"><button style=" height: 30px; width: 200px;" onclick="myFunction1()">Total Exoticity: 0 </button></div>
+    <div class="apple"><button onclick="myFunction()"><img src="apple_/apple_1.jpg" alt="Apple_Image" width="60" >Apple
+    </button></div>
+    <div class="orange"><button><img src="o1.jpg" alt="Orange_Image" width="60" >Orange</button></div>
+    <div class="grapes"><button><img src="g1.jfif" alt="Grapes_Image" width="60" >Grapes</button></div>
+    <div class="banana"><button><img src="b1.jpg" alt="Apple_Image" width="60" >Banana</button></div>
+    <div class="apricot"><button><img src="ap1.jpg" alt="Apple_Image" width="60" >Apricot</button></div>
+    <div class="fruit" style="top: 55%;left: 20%;"><button onclick="myFunction1()"><img src="p1.jpg" alt="Apple_Image" width="60" >Peach</button></div>
+    <div class="fruit" style="top: 55%;left: 35%;"><button onclick="myFunction1()"><img src="n1.Jfif" alt="Apple_Image" width="60" >Nectarine</button></div>
+    <div class="fruit" style="top: 55%;left: 50%;"><button onclick="myFunction1()"><img src="k1.JPG" alt="Apple_Image" width="70" >Kiwi Fruit</button></div>
+    <div class="fruit" style="top: 55%;left: 65%;"><button onclick="myFunction1()"><img src="pl1.JPG" alt="Apple_Image" width="70" >Plum</button></div>
+    <div class="fruit" style="top: 55%;left: 80%;"><button onclick="myFunction1()"><img src="s1.JPG" alt="Apple_Image" width="70" >Strawberry</button></div>
+    <div class="fruit" style="top: 80%;left: 20%;"><button onclick="myFunction1()"><img src="bb1.JPG" alt="Apple_Image" width="70" >Blueberry</button></div>
+    <div class="fruit" style="top: 80%;left: 35%;"><button onclick="myFunction1()"><img src="m1.JPG" alt="Apple_Image" width="70" >Watermelon</button></div>
+    <div class="fruit" style="top: 80%;left: 50%;"><button onclick="myFunction1()"><img src="pa1.JPG" alt="Apple_Image" width="70" >Pineapple</button></div>
+    <div class="fruit" style="top: 80%;left: 65%;"><button onclick="myFunction1()"><img src="mg1.JPG" alt="Apple_Image" width="70" >Mango</button></div>
+    <div class="fruit" style="top: 80%;left: 80%;"><button onclick="myFunction1()"><img src="av1.JPG" alt="Apple_Image" width="70" >Avocado</button></div>
+    
+    
     <!-- Info Box -->
     <div class="info_box">
         <div class="info-title"><span>Some Rules of this Task</span></div>
@@ -40,11 +76,7 @@
     <div class="quiz_box">
         <header>
             <div class="title">Make your Salad</div>
-            <div class="timer">
-                <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec">15</div>
-            </div>
-            <div class="time_line"></div>
+    
         </header>
         <section>
             <div class="que_text">
@@ -60,7 +92,7 @@
             <div class="total_que">
                 <!-- Here I've inserted Question Count Number from JavaScript -->
             </div>
-            <button class="next_btn">Next</button>
+            <button class="next_btn">Submit</button>
         </footer>
     </div>
 
