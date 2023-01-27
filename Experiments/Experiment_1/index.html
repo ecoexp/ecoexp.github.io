@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Experiment</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .checked {
+    color: orange;
+    }
+    </style>
+    
+    
+</head>
+<body>
+
+    <div class="start_btn"style="top: 10%;left: 86%;"><button>Rules</button></div>
+    <div class="start_btn"style="top: 10%;left: 92%;" onclick="stop_exp();"><button style="background: rgb(232, 75, 36);">STOP</button></div>
+    <!--button style="position: absolute;top: 5%;left: 92%;outline: none;border: none;height: 40px;cursor: pointer;" id="close_id">
+        <img src="stop.jpg" alt="close" width="60" -->
+    </button>
+    <div id="progress">
+        <div id="progress-bar"></div>
+        <ul id="progress-num">
+          <li class="step">1</li>
+          <li class="step">2</li>
+          <li class="step">3</li>
+          <li class="step">4</li>
+          <li class="step">5</li>
+          <li class="step">6</li>
+          <li class="step">7</li>
+          <li class="step">8</li>
+          <li class="step">9</li>
+          <li class="step">10</li>
+        </ul>
+      </div>
+      <script>
+        const progressBar = document.getElementById("progress-bar");
+
+          const steps = document.querySelectorAll(".step");
+       
+          let active = 0;
+
+          function progr(u){
+            
+            if(true){
+                active++;
+            }
+
+            if (active > steps.length) {
+              active = steps.length;
+          
+            }
+
+            updateProgress(u); 
+            
+          }
+          
+          
+          
+          const updateProgress = (g) => {
+            steps.forEach((step, i) => {
+
+              if (i < active) {
+
+                    step.classList.add("active");
+                
+                
+              } else {
+                step.classList.remove("active");
+
+              }
+
+            });
+
+
+          };
+          </script>
+    <!--div class="tree" style="top: 50%;left: 40%;"><img src="bgd.png" alt="Snow" style=" height: 650px; width: 1100px;"></div-->
+
+    <!--div class="factor" style="top: 19%;left: 9.5%;">
+        <div class="factor_txt">Money Spend: </div>
+        <div class="factor_value">€ <span id="pr1">0</span> / 27</div>
+    </div-->
+    <div class="text_head" style="top: 25%; left: 76.3%;height: 450px;"> <br> <strong>Performance</strong>
+        <div class="factor" style="top: 80px;left: 10px;">
+            <div class="factor_txt">Money Spend: </div>
+            <div class="factor_value">€ <span id="pr1">0</span> / <span id="bg1">27</span></div>
+        </div>
+        <div class="factor" style="top: 140px;left: 10px;">
+            <div class="factor_txt">Fruits within budget: </div>
+            <div class="factor_value"> <span id="fb1">0</span> / 10</div>
+        </div>
+        <div class="factor" style="top: 200px;left: 10px;">
+            <div class="factor_txt">Total Eco-Impact: </div>
+            <div class="factor_value"> <span >0</span> / 100</div>
+        </div>
+
+        <div class="factor" style="top: 260px;left: 10px;height: 170px;" hidden>
+            <div class="factor_txt">Eco-Feedback: </div>
+            <div class="factor_value"style="height: 150px;width:120px;background: white; "> <div class="tree"style="top: 80px;left: 232px;"><img src="images/tree_1.gif" alt="Apple_Image" width="50" ></div></div>
+        </div>
+    </div> 
+   
+    
+    
+    <div id="japp" class="apple" style="top: 35%;left: 15%;"><button onclick="myFunction(0);">
+        <div class="img_pos"><img src="images/apple.jpg" alt="Apple_Image" width="60" ></div>
+        <div class="txt_pos">Apple<br>(1kg)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.49</strong></div> 
+        </button></div>
+    <div id="_0"class="orange" style="top: 35%;left: 32%;"><button onclick="myFunction(1);">
+        <div class="img_pos"><img src="images/orange.jpg" alt="Orange_Image" width="70" ></div>
+        <div class="txt_pos">Orange<br>(1kg)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.12</strong></div> 
+    </button></div>
+    <div class="pear" style="top: 35%;left: 49%;"><button onclick="myFunction(2);">
+        <div class="img_pos"><img src="images/pear.jpeg" alt="pear_Image" width="75" ></div>
+        <div class="txt_pos">Pear<br>(1kg)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.89</strong></div> 
+    </button></div>
+    <div class="banana" style="top: 35%;left: 66%;"><button onclick="myFunction(3);">
+        <div class="img_pos"><img src="images/banana.jpg" alt="Banana_Image" width="60" ></div>
+        <div class="txt_pos">Banana<br>(1kg)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.10</strong></div> 
+    </button></div>
+    <div class="raspberry" style="top: 58%;left: 15%;"><button onclick="myFunction(4);">
+        <div class="img_pos"><img src="images/raspberry.JPG" alt="Raspberry_Image" width="70" ></div>
+        <div class="txt_pos">Raspberry<br>(150g)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.39</strong></div> 
+    </button></div>
+    <div class="peach" style="top: 58%;left: 32%;"><button onclick="myFunction(5);">
+        <div class="img_pos"><img src="images/peach.jpg" alt="Peach_Image" width="70" ></div>
+        <div class="txt_pos">Peach<br>(1kg)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.19</strong></div> 
+    </button></div>
+    <div class="lemon" style="top: 58%;left: 49%;"><button onclick="myFunction(6);">
+        <div class="img_pos"><img src="images/lemon.png" alt="Lemon_Image" width="70" ></div>
+        <div class="txt_pos">Lemon<br>(1kg)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.10</strong></div> 
+    </button></div>
+    <div class="kiwi" style="top: 58%;left: 66%;"><button onclick="myFunction(7);">
+        <div class="img_pos"><img src="images/kiwi.JPG" alt="Kiwi_Image" width="60" ></div>
+        <div class="txt_pos">Kiwi Fruit<br>(1kg)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.78</strong></div> 
+    </button></div>
+    <div class="watermelon" style="top: 80%;left: 32%;"><button onclick="myFunction(8);">
+        <div class="img_pos"><img src="images/watermelon.JPG" alt="Watermelon_Image" width="80" ></div>
+        <div class="txt_pos">Watermelon<br>(1kg)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.19</strong></div>  
+    </button></div>
+    <div class="strawberry" style="top: 80%;left: 49%;"><button onclick="myFunction(9);">
+        <div class="img_pos"><img src="images/strawberry.JPG" alt="Strawberry_Image" width="70" ></div>
+        <div class="txt_pos">Strawberry<br>(500g)</div>
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.64</strong></div> 
+    </button></div>
+   
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Task</span></div>
+        <div class="info-list">
+            <div class="info" style="padding: 0 0 0 5px;">When picking the fruits please make sure that:</div>
+            <div class="info">&emsp;1. You will have to choose <span>10 different fruit types </span> from the given list.</div>
+            <div class="info">&emsp;2. A list of alternatives for the same fruit will be presented to you.</div>
+            <div class="info">&emsp;&emsp;You can only choose <span>one fruit per type.</span></div>
+            <div class="info">&emsp;3. Once you confirm your selection of a fruit, it can't be undone.</div>
+            <div class="info">&emsp;4. You'll have to choose the fruits within a budget of <span>27 euros</span> </div>
+            <div class="info">&emsp;5. Please make <span>eco-friendly decisions</span>, while staying within the specified budget.</div>
+            <div class="info">&emsp;6. If at any point in time, you decide that you not longer wish to participate,.</div> 
+            <div class="info">&emsp;&emsp;please press the <span>"STOP"</span> button.</div>
+        </div>
+        <div class="buttons">
+            <button class="restart" hidden></button>
+            <button class="quit">Exit</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Make your Salad</div>
+            <div class="timer" hidden>
+                <div class="time_left_txt" hidden>Time Left</div>
+                <div class="timer_sec" hidden>15</div>
+            </div>
+          
+            <div class="money">
+                <div class="money_left_txt">Money Left</div>
+                <div class="money_left">€ <span id="ml1">27</span></div>
+            </div>
+            
+            <button style="outline: none;border: none;height: 40px;cursor: pointer;" id="close_id"><img src="close.jpg" alt="close" width="60" ></button>
+            <div class="time_line" hidden></div>
+    
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- Here I've inserted question from JavaScript -->
+            </div>
+            <div class="option_list">
+                <!-- Here I've inserted options from JavaScript -->
+            </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer>
+            <div class="total_que">
+                <!-- Here I've inserted Question Count Number from JavaScript -->
+            </div>
+            
+            <div class="buttons">        
+                <button  class="next_btn" >Select</button>
+                
+            </div>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the task!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="restart" hidden>Replay task</button>
+            <button class="quit">Take the survey</button>
+        </div>
+    </div>
+
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+    <script src="js/questions.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase-database.js"></script>
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+    <script src="js/script.js"></script>
+    <script>
+           
+        function changeStyle(div_name){
+            console.log(div_name);
+            var element = document.getElementsByClassName(div_name)
+            element[0].style.visibility = 'hidden';
+            console.log(element[0]);
+        }
+        </script>
+
+</body>
+</html>

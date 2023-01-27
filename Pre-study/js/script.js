@@ -16,7 +16,8 @@ var userdata = firebase.database().ref("UserData");
 
 
 
-//selecting all required elements
+
+
 
 
 const start_btn = document.querySelector(".start_btn button");
@@ -27,18 +28,30 @@ const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
 const time_line = document.querySelector("header .time_line");
+const close_btn = document.getElementById("close_id");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
-const response = [];
+const response_fruit = [];
+const response_cost = [];
+const response_origin = [];
+const response_impact = [];
+const response_reward = [];
 const response_time = [];
+
 
 // if startbutton clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
- 
-    for(let i = 0; i < 5; i++){ 
-        response[i]=-1;
+    for(let i = 0; i < 10; i++){ 
+        response_fruit[i]=-1;
+        response_cost[i]=-1;
+        response_origin[i]=-1;
+        response_impact[i]=-1;
+        response_reward[i]=-1;
         }
+}
+close_btn.onclick = ()=>{
+    quiz_box.classList.remove("activeQuiz"); 
 }
 
 // if exit button clicked
@@ -48,43 +61,131 @@ exit_btn.onclick = ()=>{
 
 // if continue button clicked
 continue_btn.onclick = ()=>{
-    window.location.href = 'C:/Users/USait/OneDrive - Scientific Network South Tyrol/experiment_shopping task/UIS/Pre-study/index.html';
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(0); //calling showQestions function
+    queCounter(1); //passing 1 parameter to queCounter
+    startTimer(13); //calling startTimer function
+    startTimerLine(0); //calling startTimerLine function
 }
 
-let timeValue =  15;
+let timeValue =  13;
 let que_count = 0;
 let que_numb = 1;
 let userScore = 0;
 let counter;
+var money_spend =0.0;
+var budget =20.00;
+var b_fruits=0;
+var money_left =0.0;
 let counterLine;
 let widthValue = 0;
 var t_temp=0;
+var flag=0;
+var f_number="0";
+let userAns ="nill";
+var q=0;
+var o=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
+function codeAddress() {
+    document.getElementById("bg1").innerHTML = budget.toFixed(0);
+    document.getElementById("ml1").innerHTML = budget.toFixed(0);
+}
+window.onload = codeAddress;
+
+function stop_exp() {
+    if(confirm("Alert!\nDo you really want to stop this experiment? \nKindly press 'OK' to stop and 'Cancel' to continue this experiment") == true){
+        window.location.href = 'thank_you.html';
+    }
+}
+
+
+function myFunction(x) {
+    next_btn.classList.remove("show");
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(x); //calling showQestions function
+    f_number=x+1;
+   
+}
 
 // if restartQuiz button clicked
 restart_quiz.onclick = ()=>{
-    window.location.href = 'http://www.google.com';
+    quiz_box.classList.add("activeQuiz"); //show  box
+    result_box.classList.remove("activeResult"); //hide result box
+    timeValue = 13; 
+    que_count = 0;
+    for(let i = 0; i < 10; i++){ 
+        response_fruit[i]=-1;
+        response_cost[i]=-1;
+        response_origin[i]=-1;
+        response_impact[i]=-1;
+        response_reward[i]=-1;
+        }
+    que_numb = 1;
+    userScore = 0;
+    widthValue = 0;
+    showQuetions(que_count); //calling showQestions function
+    queCounter(que_numb); //passing que_numb value to queCounter
+    clearInterval(counter); //clear counter
+    clearInterval(counterLine); //clear counterLine
+    startTimer(timeValue); //calling startTimer function
+    startTimerLine(widthValue); //calling startTimerLine function
+    timeText.textContent = "Time Left"; //change the text of timeText to Time Left
+    next_btn.classList.remove("show"); //hide the next button
 }
 
 // if quit button clicked
 quit_quiz.onclick = ()=>{
-    window.location.reload(); //reload the current window
+    window.location.href = 'https://forms.office.com/e/ZKqQkN7CxF';
 }
+
+
 
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next  button clicked
 next_btn.onclick = ()=>{
+    progr(flag);
+    //next_btn.classList.remove("show");
+    changeStyle(questions[f_number-1].fruit);
+    o=userAns[0];
+    q=f_number;
+    //console.log(q);
+    //console.log(o);
+    response_fruit[que_count]=questions[f_number-1].fruit;
+    response_cost[que_count]=questions[f_number-1].price[o-1];
+    response_origin[que_count]=questions[f_number-1].origin[o-1];
+    response_impact[que_count]=questions[f_number-1].impact[o-1];
+    response_reward[que_count]=-1;
+    console.log(o);
+    console.log(questions[f_number-1].fruit);
+    money_spend += parseFloat(questions[q-1].price[o-1]);
+    money_left=budget-money_spend;
+    document.getElementById("pr1").innerHTML = money_spend.toFixed(2);
+    document.getElementById("ml1").innerHTML = money_left.toFixed(2);
+    if(money_spend<budget){
+        b_fruits=b_fruits+1;
+    
+    }
+    if(money_spend>budget && flag==0){
+        alert("You have crossed the budget. \nPlease continue by selecting your choice for the remaining fruits");
+        
+        flag=1;
+    }
+    document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
+    //console.log(money_left);
+    quiz_box.classList.remove("activeQuiz"); 
     if(que_count < questions.length - 1){ //if question count is less than total question length
         if (t_temp==-1) {
             response_time[que_count] = -1;
           }
           else {
-            response_time[que_count] = 15 - t_temp;
+            response_time[que_count] = 13 - t_temp;
           }
-        console.log(response_time[que_count]);
+       // console.log(response_time[que_count]);
         que_count++; //increment the que_count value
         que_numb++; //increment the que_numb value
         showQuetions(que_count); //calling showQestions function
@@ -100,7 +201,7 @@ next_btn.onclick = ()=>{
             response_time[que_count] = -1;
           }
           else {
-            response_time[que_count] = 15 - t_temp;
+            response_time[que_count] = 13 - t_temp;
           }
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
@@ -110,14 +211,20 @@ next_btn.onclick = ()=>{
 
 // getting questions and options from array
 function showQuetions(index){
+
     const que_text = document.querySelector(".que_text");
 
     //creating a new span and div tag for question and option and passing the value using array index
-    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span><img src="'+ questions[index].options[0] +'" width="50px" alt="Choice 1">$50<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[1] +'" width="50px" alt="Choice 2">$49<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[2] +'" width="50px" alt="Choice 3">$52 <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[3] +'" width="50px" alt="Choice 4">$51<span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>';
+    let que_tag = '<span>'+ questions[index].question +'&emsp;&emsp;&emsp;&emsp;&emsp;</span><img src="'+ questions[index].f_image[0] +'" width="50px" alt="Choice 1">';
+    let option_tag = '<div class="option"><span>1. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
+    +questions[index].price[0]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
+    +questions[index].origin[0]+'</strong></div>'
+    + '<div class="option"><span>2. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
+    +questions[index].price[1]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
+    +questions[index].origin[1]+'</strong></div>' 
+    + '<div class="option"><span>3. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
+    +questions[index].price[2]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
+    +questions[index].origin[2]+'</strong></div>' ;
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
@@ -138,30 +245,31 @@ function optionSelected(answer){
    
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
-    let userAns = answer.textContent; //getting user selected option
-    response[que_count]=userAns;
-    console.log(response[que_count]);
+    userAns = answer.textContent; //getting user selected option
+  
+    //response[que_count]=questions[f_number-1].fruit+userAns;
+    
     
     //console.log(response_time[que_count]);
     let correcAns = questions[que_count].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
-    
+
     if(userAns == correcAns){ //if user selected option is equal to array's correct answer
         userScore += 1; //upgrading score value with 1
         answer.classList.add("correct"); //adding green color to correct selected option
         answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
-        console.log("Correct Answer");
-        console.log("Your correct answers = " + userScore);
+        //console.log("Correct Answer");
+        //console.log("Your correct answers = " + userScore);
     }else{
         answer.classList.add("incorrect"); //adding red color to correct selected option
         answer.insertAdjacentHTML("beforeend", tickIconTag); //adding cross icon to correct selected option
-        console.log("Wrong Answer");
+        //console.log("Wrong Answer");
 
         for(i=0; i < allOptions; i++){
             if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer 
                 option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
                 option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                console.log("Auto selected correct answer.");
+                //console.log("Auto selected correct answer.");
             }
         }
     }
@@ -178,19 +286,20 @@ function showResult(){
     const scoreText = result_box.querySelector(".score_text");
 
 
-    var newuserdata = userdata.push();
-  
+    var newuserdata = userdata.push(); // store cloud
+
+
     newuserdata.set({
-      Response_1: response[0],
-      Time_1: response_time[0],
-      Response_2: response[1],
-      Time_2: response_time[1],
-      Response_3: response[2],
-      Time_3: response_time[2],
-      Response_4: response[3],
-      Time_4: response_time[3],
-      Response_5: response[4],
-      Time_5: response_time[4],
+      Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0],
+      Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1],
+      Fruit_2: response_fruit[2], Origin_2: response_origin[2], Price_2: response_cost[2], EcoImpact_2: response_impact[2], Reward_2: response_reward[2],
+      Fruit_3: response_fruit[3], Origin_3: response_origin[3], Price_3: response_cost[3], EcoImpact_3: response_impact[3], Reward_3: response_reward[3],
+      Fruit_4: response_fruit[4], Origin_4: response_origin[4], Price_4: response_cost[4], EcoImpact_4: response_impact[4], Reward_4: response_reward[4],
+      Fruit_5: response_fruit[5], Origin_5: response_origin[5], Price_5: response_cost[5], EcoImpact_5: response_impact[5], Reward_5: response_reward[5],
+      Fruit_6: response_fruit[6], Origin_6: response_origin[6], Price_6: response_cost[6], EcoImpact_6: response_impact[6], Reward_6: response_reward[6],
+      Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7],
+      Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8],
+      Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9],
     });
     if (userScore > 3){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
@@ -202,13 +311,13 @@ function showResult(){
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>and 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Bravo 😎, Grazie mille</span>';
         scoreText.innerHTML = scoreTag;
     }
 }
 
 function startTimer(time){
-    counter = setInterval(timer, 1000);
+    counter = setInterval(timer, 13);
     function timer(){
         timeCount.textContent = time; //changing the value of timeCount with time value
         time--; //decrement the time value
@@ -225,7 +334,7 @@ function startTimer(time){
                 if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
                     option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
                     option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                    console.log("Time Off: Auto selected correct answer.");
+                    //console.log("Time Off: Auto selected correct answer.");
                 }
             }
             for(i=0; i < allOptions; i++){
@@ -255,6 +364,6 @@ function startTimerLine(time){
 
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
-    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> fruits</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }

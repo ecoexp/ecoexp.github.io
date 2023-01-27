@@ -14,57 +14,105 @@
     color: orange;
     }
     </style>
-    
+    <script>
+        function disableSubmit() {
+         document.getElementById("submit").style.visibility = 'hidden';
+        }
+       
+         function activateButton(element) {
+       
+             if(element.checked) {
+               document.getElementById("submit").style.visibility = 'visible';
+              }
+              else  {
+               document.getElementById("submit").style.visibility= 'hide';
+             }
+       
+         }
+         function hide_terms(){
+            document.getElementsByClassName('terms').style.visibility='hidden';
+         }
+       </script>
 </head>
-<body>
+<body onload="disableSubmit()" >
     <!-- start Quiz button -->
-    <div class="start_btn"><button></button></div>
-    <div id="progress">
-        <div id="progress-bar"></div>
-        <ul id="progress-num">
-          <li class="step active">1</li>
-          <li class="step">2</li>
-          <li class="step">3</li>
-          <li class="step">4</li>
-          <li class="step">5</li>
-          <li class="step">6</li>
-          <li class="step">7</li>
-          <li class="step">8</li>
-          <li class="step">9</li>
-          <li class="step">10</li>
-        </ul>
-      </div>
-    <div class="price" style="top: 12%;left: 30%;"><button style=" height: 30px; width: 200px;" onclick="myFunction1()">Total Price: 0 </button></div>
-    <div class="price" style="top: 12%;left: 50%;"><button style=" height: 30px; width: 200px;" onclick="myFunction1()">Total Eco-Impact: 0 </button></div>
-    <div class="price" style="top: 12%;left: 70%;"><button style=" height: 30px; width: 200px;" onclick="myFunction1()">Total Exoticity: 0 </button></div>
-    <div class="apple"><button onclick="myFunction()"><img src="apple_/apple_1.jpg" alt="Apple_Image" width="60" >Apple
-    </button></div>
-    <div class="orange"><button><img src="o1.jpg" alt="Orange_Image" width="60" >Orange</button></div>
-    <div class="grapes"><button><img src="g1.jfif" alt="Grapes_Image" width="60" >Grapes</button></div>
-    <div class="banana"><button><img src="b1.jpg" alt="Apple_Image" width="60" >Banana</button></div>
-    <div class="apricot"><button><img src="ap1.jpg" alt="Apple_Image" width="60" >Apricot</button></div>
-    <div class="fruit" style="top: 55%;left: 20%;"><button onclick="myFunction1()"><img src="p1.jpg" alt="Apple_Image" width="60" >Peach</button></div>
-    <div class="fruit" style="top: 55%;left: 35%;"><button onclick="myFunction1()"><img src="n1.Jfif" alt="Apple_Image" width="60" >Nectarine</button></div>
-    <div class="fruit" style="top: 55%;left: 50%;"><button onclick="myFunction1()"><img src="k1.JPG" alt="Apple_Image" width="70" >Kiwi Fruit</button></div>
-    <div class="fruit" style="top: 55%;left: 65%;"><button onclick="myFunction1()"><img src="pl1.JPG" alt="Apple_Image" width="70" >Plum</button></div>
-    <div class="fruit" style="top: 55%;left: 80%;"><button onclick="myFunction1()"><img src="s1.JPG" alt="Apple_Image" width="70" >Strawberry</button></div>
-    <div class="fruit" style="top: 80%;left: 20%;"><button onclick="myFunction1()"><img src="bb1.JPG" alt="Apple_Image" width="70" >Blueberry</button></div>
-    <div class="fruit" style="top: 80%;left: 35%;"><button onclick="myFunction1()"><img src="m1.JPG" alt="Apple_Image" width="70" >Watermelon</button></div>
-    <div class="fruit" style="top: 80%;left: 50%;"><button onclick="myFunction1()"><img src="pa1.JPG" alt="Apple_Image" width="70" >Pineapple</button></div>
-    <div class="fruit" style="top: 80%;left: 65%;"><button onclick="myFunction1()"><img src="mg1.JPG" alt="Apple_Image" width="70" >Mango</button></div>
-    <div class="fruit" style="top: 80%;left: 80%;"><button onclick="myFunction1()"><img src="av1.JPG" alt="Apple_Image" width="70" >Avocado</button></div>
+    <div class="terms"  style="font-size: 20px;visibility: visible;" ><b>Consent Form</b> <br>
+        <textarea readonly style="width : 950px;height:480px; padding: 0px 25px;"  rows="20">
+
+1.	WHAT IS THIS DOCUMENT?
+
+            This document serves as a consent form. It will explain to you about this study so that you can make an informed decision about your participation in this research. We encourage you to take some time to read this document and ask questions relating to this study. If you decide to participate, you will be asked to sign it by acknowledging that you have read it and understood it. You will be given a copy of this document for your records.
+            
+2.	WHY ARE WE DOING THIS RESEARCH STUDY?
+
+                This study seeks to explore how game elements could affect shopping behaviour. This will be tested in form of a gamified task, which can be completed using an online web application. The results will contribute to the development of improved computational capabilities of an electronic device that could augment our ability to make optimal decisions.
+            
+3.	WHO CAN PARTICIPATE IN THIS RESEARCH STUDY?
+
+            Everybody can participate in the study, assuming they are adults and willing to do so.
+            
+4.	WHERE WILL THIS RESEARCH STUDY TAKE PLACE AND HOW MANY PEOPLE WILL PARTICIPATE?
+
+            The study will take place online
+            OR
+            The study will take place at the Human-Centered Technologies and Machine Intelligence Lab (HCT), NOI TechPark, Via Alessandro Volta, 13, 39100 Bolzano BZ. 
+                    OR
+            The study will take place at the Faculty of Computer Science, Piazza Domenicani 3, 39100 Bolzano BZ.
+            
+            We expect to have between 170 and 200 participants.
+            
+5.	WHAT WILL I BE ASKED TO DO AND HOW MUCH TIME WILL IT TAKE?
+
+            You will be asked to complete a virtual shopping task on a desktop computer or mobile device by accessing a specially designed website, which will guide you through the process. You will be also asked to wear special eye-tracking glasses designed to capture the eye movement so that also information on which items of the website attract your attention will be recorded. Once you reach the website, further instructions on the task to be completed will be provided. If after reading these instructions you have further questions, you can interrupt and ask one of the experimenters for clarification or discontinue the task. If you are ready to start the experiment, you can press the “start” button and execute the shopping task. Please note that performing this shopping task will not involve spending any real money and you will not be asked to disclose any bank or credit card information at any time. The task will take about 15 minutes, but there are no time restrictions imposed for completing the task. After completing the shopping task, you will be asked to fill in a questionnaire.
+            
+6.	WILL BEING IN THIS RESEARCH STUDY HELP ME IN ANY WAY? 
+
+                  Your participation in this study contributes to the advancements of knowledge in the field of human decision support systems.  In the future, we expect such decision support systems to help us in a variety of tasks at work, at home or in other environments to achieve improved performance in our day-to-day life activities.
+            
+7.	WHAT ARE MY RISKS OF BEING IN THIS RESEARCH STUDY? 
+
+            There is no foreseeable risk for you. The task you will be instructed to perform will not involve any mental or physical stress as there is no strict time limit for you to perform the task. You are allowed to stop the experiment at any point in time. Also, you are allowed to ask any questions or doubts relating to this study at any time. 
+            
+            Regarding your personal data, all the captured data will be anonymized, and therefore, there will be no links between your identity and the data published in the datasets.
+            
+8.	HOW WILL MY PERSONAL INFORMATION BE PROTECTED? 
+
+                    All data will be anonymized immediately after the recording session. All links between your identity and the collected data will be destroyed. This way, there will be no possibility to connect the data in the public datasets to you.
+            The signed consent documents will be stored securely following university rules.
+            
+9.	WILL I BE GIVEN ANY MONEY OR OTHER COMPENSATION FOR BEING IN THIS RESEARCH STUDY? 
+
+            You will not receive any payment. 
+            
+10.	WHO CAN I TALK TO IF I HAVE QUESTIONS?
+
+                   If you have any questions before or after the experiment, you can contact the researchers Unais Sait (e-mail: usait@unibz.it; phone number: +39 0471 017919) or Prof. Angelika Peer (e-mail: angelika.peer@unibz.it; phone number: +39 0471 017766). Before and after the experiment, you are also allowed to ask questions at any time.
+            
+11.	WHAT HAPPENS IF I SAY YES, BUT I CHANGE MY MIND LATER?
+
+            If during the experiment you decide that you no longer wish to participate in this study, you can click on the stop/abort button provided to you and the experiment will be stopped immediately, withdrawing the data collected so far. Nonetheless, your data cannot be withdrawn once the data has been anonymized and submitted. All direct identifiers from your data will be destroyed after the session. 
+            Thank you for reading this and considering taking part in this study. Do not hesitate to contact the researchers mentioned under point 10 for further information or clarification about this study.
+             
+              </textarea><br>
+        <input type="checkbox" style="width: 20px;height: 20px;" name="terms" id="terms" onchange="activateButton(this)"> I agree to take part in this study
+    </div>
     
-    
+    <div class="start_btn"><button id="submit" >Start Experiment</button></div>
+
     <!-- Info Box -->
     <div class="info_box">
-        <div class="info-title"><span>Some Rules of this Task</span></div>
+        <div class="info-title"><span>About this Experimental Study</span></div>
         <div class="info-list">
-            <div class="info">1. You will have only <span>15 seconds</span> per each task.</div>
-            <div class="info">2. Once you select your option, it can't be undone.</div>
-            <div class="info">3. You can't select any option once time goes off.</div>
-            <div class="info">4. You can't exit from the experiment while you're playing.</div>
-            <div class="info">5. You'll have to choose for minimum cost and maximum ecological rating</div>
-            <div class="info">6. You'll get points on the basis of your choices.</div>
+            <div class="info">In this experiment you will be asked to perform a fruit-picking shopping task and then to complete a questionnaire. When picking the fruits please pay attention to:</div>
+            <br>
+            <div class="info">&emsp;1. You will have to choose <span>10 different fruit types </span> from the given list.</div>
+            <div class="info">&emsp;2. A list of alternatives for the same fruit will be presented to you.</div>
+            <div class="info">&emsp;&emsp;You can only choose <span>one fruit per type.</span></div>
+            <div class="info">&emsp;3. Once you confirm your selection of a fruit, it can't be undone.</div>
+            <div class="info">&emsp;4. You'll have to choose the fruits within a budget of <span>20 euros</span> </div>
+            <div class="info">&emsp;5. Please make <span>eco-friendly decisions</span>, while staying within the specified budget.</div>
+            <div class="info">&emsp;6. If at any point in time, you decide that you not longer wish to participate,.</div> 
+            <div class="info">&emsp;&emsp;please press the <span>"STOP"</span> button.</div><br><br><br><br>
         </div>
         <div class="buttons">
             <button class="quit">Exit</button>
@@ -76,7 +124,11 @@
     <div class="quiz_box">
         <header>
             <div class="title">Make your Salad</div>
-    
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
         </header>
         <section>
             <div class="que_text">
@@ -92,7 +144,7 @@
             <div class="total_que">
                 <!-- Here I've inserted Question Count Number from JavaScript -->
             </div>
-            <button class="next_btn">Submit</button>
+            <button class="next_btn">Next</button>
         </footer>
     </div>
 

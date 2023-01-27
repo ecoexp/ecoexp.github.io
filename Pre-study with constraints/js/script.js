@@ -16,7 +16,8 @@ var userdata = firebase.database().ref("UserData");
 
 
 
-//selecting all required elements
+
+
 
 
 const start_btn = document.querySelector(".start_btn button");
@@ -35,8 +36,7 @@ const response_time = [];
 // if startbutton clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
- 
-    for(let i = 0; i < 5; i++){ 
+    for(let i = 0; i < 10; i++){ 
         response[i]=-1;
         }
 }
@@ -48,41 +48,82 @@ exit_btn.onclick = ()=>{
 
 // if continue button clicked
 continue_btn.onclick = ()=>{
-    window.location.href = 'C:/Users/USait/OneDrive - Scientific Network South Tyrol/experiment_shopping task/UIS/Pre-study/index.html';
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(0); //calling showQestions function
+    queCounter(1); //passing 1 parameter to queCounter
+    startTimer(1000); //calling startTimer function
+    startTimerLine(0); //calling startTimerLine function
 }
 
-let timeValue =  15;
+let timeValue =  1000;
 let que_count = 0;
 let que_numb = 1;
 let userScore = 0;
 let counter;
+var money_spend =0.0;
+var budget =20.00;
+var money_left =0.0;
 let counterLine;
 let widthValue = 0;
 var t_temp=0;
+var f_number="0";
+var q=0;
+var o=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
+function myFunction(x) {
+    
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(x); //calling showQestions function
+    f_number=x+1;
+   
+}
+
 // if restartQuiz button clicked
 restart_quiz.onclick = ()=>{
-    window.location.href = 'http://www.google.com';
+    quiz_box.classList.add("activeQuiz"); //show  box
+    result_box.classList.remove("activeResult"); //hide result box
+    timeValue = 1000; 
+    que_count = 0;
+    for(let i = 0; i < 10; i++){ 
+        response[i]=-1;
+        }
+    que_numb = 1;
+    userScore = 0;
+    widthValue = 0;
+    showQuetions(que_count); //calling showQestions function
+    queCounter(que_numb); //passing que_numb value to queCounter
+    clearInterval(counter); //clear counter
+    clearInterval(counterLine); //clear counterLine
+    startTimer(timeValue); //calling startTimer function
+    startTimerLine(widthValue); //calling startTimerLine function
+    timeText.textContent = "Time Left"; //change the text of timeText to Time Left
+    next_btn.classList.remove("show"); //hide the next button
 }
 
 // if quit button clicked
 quit_quiz.onclick = ()=>{
-    window.location.reload(); //reload the current window
+    window.location.href = 'https://forms.office.com/e/ZKqQkN7CxF';
 }
+
+
 
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next  button clicked
 next_btn.onclick = ()=>{
+    progr();
+    quiz_box.classList.remove("activeQuiz"); 
     if(que_count < questions.length - 1){ //if question count is less than total question length
         if (t_temp==-1) {
             response_time[que_count] = -1;
           }
           else {
-            response_time[que_count] = 15 - t_temp;
+            response_time[que_count] = 1000 - t_temp;
           }
         console.log(response_time[que_count]);
         que_count++; //increment the que_count value
@@ -100,7 +141,7 @@ next_btn.onclick = ()=>{
             response_time[que_count] = -1;
           }
           else {
-            response_time[que_count] = 15 - t_temp;
+            response_time[que_count] = 1000 - t_temp;
           }
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
@@ -113,11 +154,19 @@ function showQuetions(index){
     const que_text = document.querySelector(".que_text");
 
     //creating a new span and div tag for question and option and passing the value using array index
-    let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let option_tag = '<div class="option"><span><img src="'+ questions[index].options[0] +'" width="50px" alt="Choice 1">$50<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[1] +'" width="50px" alt="Choice 2">$49<span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[2] +'" width="50px" alt="Choice 3">$52 <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>'
-    + '<div class="option"><span><img src="'+ questions[index].options[3] +'" width="50px" alt="Choice 4">$51<span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></span></div>';
+    let que_tag = '<span>'+ questions[index].question +'&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</span><img src="'+ questions[index].f_image[0] +'" width="50px" alt="Choice 1">';
+    let option_tag = '<div class="option"><span>1. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
+    +questions[index].price[0]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
+    +questions[index].origin[0]+'</strong><br> &nbsp;  &nbsp; Eco-Impact:  &emsp; &nbsp;<strong>' 
+    +questions[index].impact[0]+'</strong></div>' 
+    + '<div class="option"><span>2. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
+    +questions[index].price[1]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
+    +questions[index].origin[1]+'</strong><br> &nbsp;  &nbsp; Eco-Impact:  &emsp; &nbsp;<strong>' 
+    +questions[index].impact[1]+'</strong></div>' 
+    + '<div class="option"><span>3. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
+    +questions[index].price[2]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
+    +questions[index].origin[2]+'</strong><br> &nbsp;  &nbsp; Eco-Impact:  &emsp; &nbsp;<strong>' 
+    +questions[index].impact[2]+'</strong></div>' ;
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
@@ -139,8 +188,17 @@ function optionSelected(answer){
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     let userAns = answer.textContent; //getting user selected option
-    response[que_count]=userAns;
-    console.log(response[que_count]);
+    o=userAns[0];
+    q=f_number;
+    response[que_count]=f_number+userAns;
+    console.log(q);
+    console.log(o);
+    money_spend += parseFloat(questions[q-1].price[o-1]);
+    money_left=budget-money_spend;
+    document.getElementById("pr1").innerHTML = money_spend.toFixed(2);
+    document.getElementById("ml1").innerHTML = money_left.toFixed(2);
+    console.log(money_left);
+    //console.log(questions[0].price[0]);
     
     //console.log(response_time[que_count]);
     let correcAns = questions[que_count].answer; //getting correct answer from array
@@ -178,7 +236,7 @@ function showResult(){
     const scoreText = result_box.querySelector(".score_text");
 
 
-    var newuserdata = userdata.push();
+    var newuserdata = userdata.push(); // store cloud
   
     newuserdata.set({
       Response_1: response[0],
@@ -191,6 +249,16 @@ function showResult(){
       Time_4: response_time[3],
       Response_5: response[4],
       Time_5: response_time[4],
+      Response_6: response[5],
+      Time_6: response_time[5],
+      Response_7: response[6],
+      Time_7: response_time[6],
+      Response_8: response[7],
+      Time_8: response_time[7],
+      Response_9: response[8],
+      Time_9: response_time[8],
+      Response_10: response[9],
+      Time_10: response_time[9],
     });
     if (userScore > 3){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
@@ -202,7 +270,7 @@ function showResult(){
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>and 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>Bravo 😎, Grazie mille</span>';
         scoreText.innerHTML = scoreTag;
     }
 }
@@ -255,6 +323,6 @@ function startTimerLine(time){
 
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
-    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
+    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> fruits</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
