@@ -48,7 +48,7 @@ exit_btn.onclick = ()=>{
 
 // if continue button clicked
 continue_btn.onclick = ()=>{
-    window.location.href = 'C:/Users/USait/OneDrive - Scientific Network South Tyrol/experiment_shopping task/UIS/Pre-study/index.html';
+    window.location.href = 'Pre-study/index.html';
 }
 
 let timeValue =  15;
