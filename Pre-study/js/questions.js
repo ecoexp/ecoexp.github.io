@@ -93,7 +93,7 @@ let questions = [
       "0.49"        
     ],
     f_image: [
-      "images/banana.jpg"
+      "images/banana.JPG"
     ]
   },
     {
@@ -140,7 +140,7 @@ let questions = [
       "0.56"          
     ],
     f_image: [
-      "images/peach.jpg"
+      "images/peach.JPG"
     ]
   },
   {
