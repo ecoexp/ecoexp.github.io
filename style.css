@@ -36,7 +36,7 @@ body{
 }
 .terms{
     position: absolute;
-    
+    width: 60%;
     top: 45%;
     left: 50%;
     text-align: center;
@@ -68,8 +68,8 @@ body{
 }
 
 .info_box{
-    width: 900px;
-    height: 600px;
+    width: 60%;
+    top: 50%;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -424,12 +424,25 @@ footer button.show{
 
     .info_box{
         width: 100%;
+        top:80%;
         background: #fff;
         border-radius: 5px;
         transform: translate(-50%, -50%) scale(0.9);
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
+    }
+    .terms{
+        position: absolute;
+        width: 100%;
+        top: 45%;
+        left: 50%;
+        text-align: center;
+        text-decoration: solid;
+        transform: translate(-50%, -50%);
+        background-color: #84fed1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .result_box{

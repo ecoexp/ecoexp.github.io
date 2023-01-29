@@ -17,6 +17,7 @@
     <script>
         function disableSubmit() {
          document.getElementById("submit").style.visibility = 'hidden';
+         document.getElementById("terms").checked = false;
         }
        
          function activateButton(element) {
@@ -37,7 +38,7 @@
 <body onload="disableSubmit()" >
     <!-- start Quiz button -->
     <div class="terms"  style="font-size: 20px;visibility: visible;" ><b>CONSENT FORM</b> <br>
-        <textarea readonly style="width : 900px;height:430px; padding: 0px 25px;"  rows="20">
+        <textarea readonly style="width : 100%;height:430px; padding: 0px 25px;"  rows="20">
 
 1.	WHAT IS THIS DOCUMENT?
 
@@ -110,9 +111,12 @@
             <div class="info">&emsp;&emsp;You can only choose <span>one fruit per type.</span></div>
             <div class="info">&emsp;3. Once you confirm your selection of a fruit, it can't be undone.</div>
             <div class="info">&emsp;4. You'll have to choose the fruits within a budget of <span>20 euros</span> </div>
-            <div class="info">&emsp;5. Please make <span>eco-friendly decisions</span>, while staying within the specified budget.</div>
-            <div class="info">&emsp;6. If at any point in time, you decide that you not longer wish to participate,.</div> 
-            <div class="info">&emsp;&emsp;please press the <span>"STOP"</span> button.</div><br><br><br><br>
+            <div class="info">&emsp;5. You have to buy <span>maximum number of fruits</span>, while staying within the specified budget.</div>
+            <div class="info">&emsp;6. Your Performance depends on the <span>number of fruits</span> you could buy within the budget</div>
+            <div class="info">&emsp;&emsp;  and the <span>the minimum money you spend</span>.</div>
+            <div class="info">&emsp;7. Please make <span>eco-friendly decisions</span>, while staying within the specified budget.</div>
+            <div class="info">&emsp;8. If at any point in time, you decide that you not longer wish to participate,.</div> 
+            <div class="info">&emsp;&emsp;please press the <span>"STOP"</span> button.</div><br> 
         </div>
         <div class="buttons">
             <button class="quit">Exit</button>
