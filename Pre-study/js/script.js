@@ -91,11 +91,12 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 function codeAddress() {
     document.getElementById("bg1").innerHTML = budget.toFixed(0);
     document.getElementById("ml1").innerHTML = budget.toFixed(0);
+    info_box.classList.add("activeInfo"); //hide info box
 }
 window.onload = codeAddress;
 
 function stop_exp() {
-    if(confirm("Alert!\nDo you really want to stop this experiment? \nKindly press 'OK' to stop and 'Cancel' to continue this experiment") == true){
+    if(confirm("\bAlert!\nDo you really want to stop this experiment? \nKindly press 'OK' to stop and 'Cancel' to continue this experiment") == true){
         window.location.href = 'thank_you.html';
     }
 }
@@ -287,7 +288,13 @@ function showResult(){
 
 
     var newuserdata = userdata.push(); // store cloud
-
+    var currentdate = new Date(); 
+    var datetime = "Captured on: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
 
     newuserdata.set({
       Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0],
@@ -300,14 +307,15 @@ function showResult(){
       Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7],
       Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8],
       Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9],
+      Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits,
     });
-    if (userScore > 3){ // if user scored more than 3
+    if (b_fruits > 7){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ b_fruits +'</p> out of <p>10</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
-    else if(userScore > 1){ // if user scored more than 1
-        let scoreTag = '<span>and  nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+    else if(b_fruits > 6){ // if user scored more than 1
+        let scoreTag = '<span>and  nice 😎, You got <p>'+ b_fruits +'</p> out of <p>10</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 1

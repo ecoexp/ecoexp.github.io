@@ -25,7 +25,7 @@
                document.getElementById("submit").style.visibility = 'visible';
               }
               else  {
-               document.getElementById("submit").style.visibility= 'hide';
+               document.getElementById("submit").style.visibility= 'hidden';
              }
        
          }
@@ -36,8 +36,8 @@
 </head>
 <body onload="disableSubmit()" >
     <!-- start Quiz button -->
-    <div class="terms"  style="font-size: 20px;visibility: visible;" ><b>Consent Form</b> <br>
-        <textarea readonly style="width : 950px;height:480px; padding: 0px 25px;"  rows="20">
+    <div class="terms"  style="font-size: 20px;visibility: visible;" ><b>CONSENT FORM</b> <br>
+        <textarea readonly style="width : 900px;height:430px; padding: 0px 25px;"  rows="20">
 
 1.	WHAT IS THIS DOCUMENT?
 
@@ -94,10 +94,10 @@
             Thank you for reading this and considering taking part in this study. Do not hesitate to contact the researchers mentioned under point 10 for further information or clarification about this study.
              
               </textarea><br>
-        <input type="checkbox" style="width: 20px;height: 20px;" name="terms" id="terms" onchange="activateButton(this)"> I agree to take part in this study
+        <input type="checkbox" style="width: 20px;height: 20px;" name="terms" id="terms" onchange="activateButton(this)"><span style="font-size: 17px;visibility: visible;font-weight: 600;"> &nbsp;I agree to take part in this study</span>
     </div>
     
-    <div class="start_btn"><button id="submit" >Start Experiment</button></div>
+    <div class="start_btn" ><button id="submit" >Start Experiment</button></div>
 
     <!-- Info Box -->
     <div class="info_box">

@@ -37,7 +37,7 @@ body{
 .terms{
     position: absolute;
     
-    top: 40%;
+    top: 45%;
     left: 50%;
     text-align: center;
     text-decoration: solid;
@@ -68,8 +68,8 @@ body{
 }
 
 .info_box{
-    width: 1000px;
-    height: 700px;
+    width: 900px;
+    height: 600px;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
