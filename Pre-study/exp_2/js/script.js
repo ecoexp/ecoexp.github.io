@@ -1,4 +1,3 @@
-import { ghj } from 'C:/Users/USait/OneDrive - Scientific Network South Tyrol/experiment_shopping task/UIS/Pre-study/js/script.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAjxcNAb1pZI4usSK1jzxhHx0x1KNn6rO8",
@@ -116,7 +115,7 @@ function myFunction(x) {
     info_box.classList.remove("activeAlert"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
     showQuetions(x); //calling showQestions function
-    console.log(ghj);
+
     f_number=x+1;
    
 }

@@ -1,8 +1,4 @@
 
-let ghj=6;
-export {ghj};
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyAjxcNAb1pZI4usSK1jzxhHx0x1KNn6rO8",
     authDomain: "ecological-experiment-da-a196d.firebaseapp.com",
