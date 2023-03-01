@@ -15,15 +15,29 @@
     }
     </style>
     <script>
+         var c=1;
         function disableSubmit() {
          document.getElementById("submit").style.visibility = 'hidden';
          document.getElementById("terms").checked = false;
+         document.getElementById("btn").style.visibility= 'visible';
         }
+
+        window.addEventListener( "pageshow", function ( event ) {
+            var historyTraversal = event.persisted || 
+                         ( typeof window.performance != "undefined" && 
+                              window.performance.navigation.type === 2 );
+            if ( historyTraversal ) {
+                // Handle page restore.
+                window.location.reload();
+            }
+        });
        
          function activateButton(element) {
        
              if(element.checked) {
                document.getElementById("submit").style.visibility = 'visible';
+               document.getElementById("btn").style.transition = '0s';
+               document.getElementById("btn").style.visibility = 'hidden';
               }
               else  {
                document.getElementById("submit").style.visibility= 'hidden';
@@ -33,12 +47,13 @@
          function hide_terms(){
             document.getElementsByClassName('terms').style.visibility='hidden';
          }
+       
        </script>
 </head>
 <body onload="disableSubmit()" >
     <!-- start Quiz button -->
     <div class="terms"  style="font-size: 20px;visibility: visible;" ><b>CONSENT FORM</b> <br>
-        <textarea readonly style="width : 100%;height:430px; padding: 0px 25px;"  rows="20">
+        <textarea readonly style="width : 100%;height:400px; padding: 0px 25px;"  rows="20">
 
 1.	WHAT IS THIS DOCUMENT?
 
@@ -99,24 +114,46 @@
     </div>
     
     <div class="start_btn" ><button id="submit" >Start Experiment</button></div>
+    <div class="play_btn" ><button id="btn" >Start Experiment</button></div>
+    <script>
+      
+    document.getElementById('btn').addEventListener('mouseover', function () {
+        
+
+        if(c==1){
+            document.getElementById('btn').style.left = `75%`;
+            //document.getElementById('btn').style.left = (Math.floor(Math.random() * 90) + 20)+`%`;
+            c=0;
+        }
+        else{
+            document.getElementById('btn').style.left = `15%`;
+            c=1;
+        }
+        
+        document.getElementById('btn').style.top = `85%`;
+    });
+    document.getElementById('btn').addEventListener('click', function () {
+        alert('Please agree to the constent form')
+    })
+   </script>
 
     <!-- Info Box -->
     <div class="info_box">
         <div class="info-title"><span>About this Experimental Study</span></div>
         <div class="info-list">
-            <div class="info">In this experiment you will be asked to perform a fruit-picking shopping task and then to complete a questionnaire. When picking the fruits please pay attention to:</div>
+            <div class="info">In this experiment you will be asked to perform a shopping task and then to complete a questionnaire. when you do the shopping task, kindly note following points:</div>
             <br>
-            <div class="info">&emsp;1. You will have to choose <span>10 different fruit types </span> from the given list.</div>
-            <div class="info">&emsp;2. A list of alternatives for the same fruit will be presented to you.</div>
-            <div class="info">&emsp;&emsp;You can only choose <span>one fruit per type.</span></div>
-            <div class="info">&emsp;3. Once you confirm your selection of a fruit, it can't be undone.</div>
-            <div class="info">&emsp;4. You'll have to choose the fruits within a budget of <span>20 euros</span> </div>
-            <div class="info">&emsp;5. You have to buy <span>maximum number of fruits</span>, while staying within the specified budget.</div>
-            <div class="info">&emsp;6. Your Performance depends on the <span>number of fruits</span> you could buy within the budget</div>
-            <div class="info">&emsp;&emsp;  and the <span>the minimum money you spend</span>.</div>
-            <div class="info">&emsp;7. Please make <span>eco-friendly decisions</span>, while staying within the specified budget.</div>
-            <div class="info">&emsp;8. If at any point in time, you decide that you not longer wish to participate,.</div> 
-            <div class="info">&emsp;&emsp;please press the <span>"STOP"</span> button.</div><br> 
+            <div class="info">&emsp;1. You need to help your friend by purchasing <span>10 ingredients</span> to prepare a recipe and you have 30 euros.</div>
+            <div class="info">&emsp;2. Buy as many ingredients as possible within a budget of <span>30 euros</span>.</div>
+            <div class="info">&emsp;3. Your friend gives very high priority to <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> products, please pay attention to this </div>
+            <div class="info">&emsp;&emsp;while doing your purchase</div>
+            <div class="info">&emsp;4. Once you buy an ingredient, it can't be undone. If you want to explore other ingredients,</div>
+            <div class="info">&emsp;&emsp;you could use the <img src="Pre-study/images/close.jpg" alt="close" width="35" ></img> button.</div>
+            <div class="info">&emsp;5. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
+            <div class="info">&emsp;6. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div>  
+            <br>
+            <br>
+            <br>
         </div>
         <div class="buttons">
             <button class="quit">Exit</button>
