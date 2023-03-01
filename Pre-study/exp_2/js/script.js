@@ -318,11 +318,20 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
-
+    fetch('https://api.ipify.org/')
+    .then(response => response.text())
+    .then(ip => {
+      // store the IP address in a variable
+    ipAddress = ip;
+      console.log(ipAddress); // or do whatever you want with the IP address
+    })
+    .catch(error => {
+      console.error('Error fetching IP address:', error);
+    });
 
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
-    var datetime = "Low Budget Captured on: " + currentdate.getDate() + "/"
+    var datetime = ipAddress+ ", Low budget Captured on: " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  

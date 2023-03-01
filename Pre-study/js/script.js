@@ -87,6 +87,7 @@ var t_temp=0;
 var flag=0;
 var f_number="0";
 let userAns ="nill";
+let ipAddress ="nill";
 var q=0;
 var o=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
@@ -116,6 +117,8 @@ function myFunction(x) {
     quiz_box.classList.add("activeQuiz"); //show quiz box
     showQuetions(x); //calling showQestions function
     f_number=x+1;
+
+    
    
 }
 
@@ -320,11 +323,20 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
-
+    fetch('https://api.ipify.org/')
+    .then(response => response.text())
+    .then(ip => {
+      // store the IP address in a variable
+    ipAddress = ip;
+      console.log(ipAddress); // or do whatever you want with the IP address
+    })
+    .catch(error => {
+      console.error('Error fetching IP address:', error);
+    });
 
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
-    var datetime = "High budget Captured on: " + currentdate.getDate() + "/"
+    var datetime = ipAddress+ ", High budget Captured on: " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  
