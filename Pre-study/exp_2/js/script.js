@@ -87,6 +87,7 @@ var t_temp=0;
 var flag=0;
 var f_number="0";
 let userAns ="nill";
+
 var q=0;
 var o=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
@@ -318,38 +319,40 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
-    fetch('https://api.ipify.org/')
-    .then(response => response.text())
-    .then(ip => {
-      // store the IP address in a variable
-    ipAddress = ip;
-      console.log(ipAddress); // or do whatever you want with the IP address
-    })
-    .catch(error => {
-      console.error('Error fetching IP address:', error);
-    });
+    var ipAddress ="nill";
+
+    
 
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
-    var datetime = ipAddress+ ", Low budget Captured on: " + currentdate.getDate() + "/"
+    var datetime = "Low budget Captured on: " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
-
+    fetch('https://api.ipify.org/')
+    .then(response => response.text())
+    .then(ip => {
+      // store the IP address in a variable
+    ipAddress = ip;
     newuserdata.set({
-      Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0],
-      Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1],
-      Fruit_2: response_fruit[2], Origin_2: response_origin[2], Price_2: response_cost[2], EcoImpact_2: response_impact[2], Reward_2: response_reward[2],
-      Fruit_3: response_fruit[3], Origin_3: response_origin[3], Price_3: response_cost[3], EcoImpact_3: response_impact[3], Reward_3: response_reward[3],
-      Fruit_4: response_fruit[4], Origin_4: response_origin[4], Price_4: response_cost[4], EcoImpact_4: response_impact[4], Reward_4: response_reward[4],
-      Fruit_5: response_fruit[5], Origin_5: response_origin[5], Price_5: response_cost[5], EcoImpact_5: response_impact[5], Reward_5: response_reward[5],
-      Fruit_6: response_fruit[6], Origin_6: response_origin[6], Price_6: response_cost[6], EcoImpact_6: response_impact[6], Reward_6: response_reward[6],
-      Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7],
-      Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8],
-      Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9],
-      Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits, Total_impact: total_impact,
+        Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0],
+        Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1],
+        Fruit_2: response_fruit[2], Origin_2: response_origin[2], Price_2: response_cost[2], EcoImpact_2: response_impact[2], Reward_2: response_reward[2],
+        Fruit_3: response_fruit[3], Origin_3: response_origin[3], Price_3: response_cost[3], EcoImpact_3: response_impact[3], Reward_3: response_reward[3],
+        Fruit_4: response_fruit[4], Origin_4: response_origin[4], Price_4: response_cost[4], EcoImpact_4: response_impact[4], Reward_4: response_reward[4],
+        Fruit_5: response_fruit[5], Origin_5: response_origin[5], Price_5: response_cost[5], EcoImpact_5: response_impact[5], Reward_5: response_reward[5],
+        Fruit_6: response_fruit[6], Origin_6: response_origin[6], Price_6: response_cost[6], EcoImpact_6: response_impact[6], Reward_6: response_reward[6],
+        Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7],
+        Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8],
+        Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9],
+        Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits, Total_impact: total_impact,ipAddress,
+      });
+      console.log(ipAddress); // or do whatever you want with the IP address
+    })
+    .catch(error => {
+      console.error('Error fetching IP address:', error);
     });
     if (b_fruits > 7){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
