@@ -1,13 +1,16 @@
-var uniqueId='0';
-
-// Generate a unique identifier for the user
-if (isReturningVisitor()) {
-    uniqueId = uniqueId;
-  } else {
-    uniqueId = Math.random().toString(36).substring(2, 10);
+function generateUniqueId() {
+  var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var id = '';
+  for (var i = 0; i < 8; i++) {
+    id += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  
-v
+  return 'pre_study_' + id;
+}
 
-// Store the unique identifier in localStorage
-localStorage.setItem('pre_study_unique_id', uniqueId);
+var uniqueId = localStorage.getItem('pre_study_unique_id');
+if (!uniqueId) {
+  uniqueId = generateUniqueId();
+  localStorage.setItem('pre_study_unique_id', uniqueId);
+}
+
+console.log(uniqueId);
