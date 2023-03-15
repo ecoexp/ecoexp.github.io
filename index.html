@@ -1,33 +1,216 @@
+
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Experiment</title>
+    <link rel="stylesheet" href="style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .checked {
+    color: orange;
+    }
+    </style>
+    <script>
+         var c=1;
+        function disableSubmit() {
+         document.getElementById("submit").style.visibility = 'hidden';
+         document.getElementById("terms").checked = false;
+         document.getElementById("btn").style.visibility= 'visible';
+        }
 
+        window.addEventListener( "pageshow", function ( event ) {
+            var historyTraversal = event.persisted || 
+                         ( typeof window.performance != "undefined" && 
+                              window.performance.navigation.type === 2 );
+            if ( historyTraversal ) {
+                // Handle page restore.
+                window.location.reload();
+            }
+        });
+       
+         function activateButton(element) {
+       
+             if(element.checked) {
+               document.getElementById("submit").style.visibility = 'visible';
+               document.getElementById("btn").style.transition = '0s';
+               document.getElementById("btn").style.visibility = 'hidden';
+              }
+              else  {
+               document.getElementById("submit").style.visibility= 'hidden';
+             }
+       
+         }
+         function hide_terms(){
+            document.getElementsByClassName('terms').style.visibility='hidden';
+         }
+       
+       </script>
+</head>
+<body onload="disableSubmit()" >
+    <!-- start Quiz button -->
+    <div class="terms"  style="font-size: 20px;visibility: visible;" ><b>CONSENT FORM</b> <br>
+        <textarea readonly style="width : 100%;height:400px; padding: 0px 25px;"  rows="20">
 
-<script>
-function generateDeviceId() {
-  const userAgent = navigator.userAgent;
-  const hashBuffer = new TextEncoder().encode(userAgent);
-  return crypto.subtle.digest("SHA-256", hashBuffer).then(hash => {
-    return btoa(String.fromCharCode(...new Uint8Array(hash)))
-      .replace(/=/g, '')
-      .replace(/\+/g, '-')
-      .replace(/\//g, '_');
-  });
-}
+1.	WHAT IS THIS DOCUMENT?
 
-// Get the device ID or generate a new one if it doesn't exist
-let deviceId = localStorage.getItem("deviceId");
-if (!deviceId) {
-  generateDeviceId().then(id => {
-    deviceId = id;
-    localStorage.setItem("deviceId", deviceId);
-    document.write("Generated new device ID:", deviceId);
-  });
-} else {
-  document.write("Existing device ID:", deviceId);
-}
-</script>
+            This document serves as a consent form. It will explain to you about this study so that you can make an informed decision about your participation in this research. We encourage you to take some time to read this document and ask questions relating to this study. If you decide to participate, you will be asked to sign it by acknowledging that you have read it and understood it. You will be given a copy of this document for your records.
+            
+2.	WHY ARE WE DOING THIS RESEARCH STUDY?
 
+                This study seeks to explore how game elements could affect shopping behaviour. This will be tested in form of a gamified task, which can be completed using an online web application. The results will contribute to the development of improved computational capabilities of an electronic device that could augment our ability to make optimal decisions.
+            
+3.	WHO CAN PARTICIPATE IN THIS RESEARCH STUDY?
+
+            Everybody can participate in the study, assuming they are adults and willing to do so.
+            
+4.	WHERE WILL THIS RESEARCH STUDY TAKE PLACE AND HOW MANY PEOPLE WILL PARTICIPATE?
+
+            The study will take place online
+            OR
+            The study will take place at the Human-Centered Technologies and Machine Intelligence Lab (HCT), NOI TechPark, Via Alessandro Volta, 13, 39100 Bolzano BZ. 
+                    OR
+            The study will take place at the Faculty of Computer Science, Piazza Domenicani 3, 39100 Bolzano BZ.
+            
+            We expect to have between 170 and 200 participants.
+            
+5.	WHAT WILL I BE ASKED TO DO AND HOW MUCH TIME WILL IT TAKE?
+
+            You will be asked to complete a virtual shopping task on a desktop computer or mobile device by accessing a specially designed website, which will guide you through the process. You will be also asked to wear special eye-tracking glasses designed to capture the eye movement so that also information on which items of the website attract your attention will be recorded. Once you reach the website, further instructions on the task to be completed will be provided. If after reading these instructions you have further questions, you can interrupt and ask one of the experimenters for clarification or discontinue the task. If you are ready to start the experiment, you can press the “start” button and execute the shopping task. Please note that performing this shopping task will not involve spending any real money and you will not be asked to disclose any bank or credit card information at any time. The task will take about 15 minutes, but there are no time restrictions imposed for completing the task. After completing the shopping task, you will be asked to fill in a questionnaire.
+            
+6.	WILL BEING IN THIS RESEARCH STUDY HELP ME IN ANY WAY? 
+
+                  Your participation in this study contributes to the advancements of knowledge in the field of human decision support systems.  In the future, we expect such decision support systems to help us in a variety of tasks at work, at home or in other environments to achieve improved performance in our day-to-day life activities.
+            
+7.	WHAT ARE MY RISKS OF BEING IN THIS RESEARCH STUDY? 
+
+            There is no foreseeable risk for you. The task you will be instructed to perform will not involve any mental or physical stress as there is no strict time limit for you to perform the task. You are allowed to stop the experiment at any point in time. Also, you are allowed to ask any questions or doubts relating to this study at any time. 
+            
+            Regarding your personal data, all the captured data will be anonymized, and therefore, there will be no links between your identity and the data published in the datasets.
+            
+8.	HOW WILL MY PERSONAL INFORMATION BE PROTECTED? 
+
+                    All data will be anonymized immediately after the recording session. All links between your identity and the collected data will be destroyed. This way, there will be no possibility to connect the data in the public datasets to you.
+            The signed consent documents will be stored securely following university rules.
+            
+9.	WILL I BE GIVEN ANY MONEY OR OTHER COMPENSATION FOR BEING IN THIS RESEARCH STUDY? 
+
+            You will not receive any payment. 
+            
+10.	WHO CAN I TALK TO IF I HAVE QUESTIONS?
+
+                   If you have any questions before or after the experiment, you can contact the researchers Unais Sait (e-mail: usait@unibz.it; phone number: +39 0471 017919) or Prof. Angelika Peer (e-mail: angelika.peer@unibz.it; phone number: +39 0471 017766). Before and after the experiment, you are also allowed to ask questions at any time.
+            
+11.	WHAT HAPPENS IF I SAY YES, BUT I CHANGE MY MIND LATER?
+
+            If during the experiment you decide that you no longer wish to participate in this study, you can click on the stop/abort button provided to you and the experiment will be stopped immediately, withdrawing the data collected so far. Nonetheless, your data cannot be withdrawn once the data has been anonymized and submitted. All direct identifiers from your data will be destroyed after the session. 
+            Thank you for reading this and considering taking part in this study. Do not hesitate to contact the researchers mentioned under point 10 for further information or clarification about this study.
+             
+              </textarea><br>
+        <input type="checkbox" style="width: 20px;height: 20px;" name="terms" id="terms" onchange="activateButton(this)"><span style="font-size: 17px;visibility: visible;font-weight: 600;"> &nbsp;I agree to take part in this study</span>
+    </div>
+    
+    <div class="start_btn" ><button id="submit" >Start Experiment</button></div>
+    <div class="play_btn" ><button id="btn" >Start Experiment</button></div>
+    <script>
+      
+    document.getElementById('btn').addEventListener('mouseover', function () {
+        
+
+        if(c==1){
+            document.getElementById('btn').style.left = `75%`;
+            //document.getElementById('btn').style.left = (Math.floor(Math.random() * 90) + 20)+`%`;
+            c=0;
+        }
+        else{
+            document.getElementById('btn').style.left = `15%`;
+            c=1;
+        }
+        
+        document.getElementById('btn').style.top = `85%`;
+    });
+    document.getElementById('btn').addEventListener('click', function () {
+        alert('Please agree to the constent form')
+    })
+   </script>
+
+    <!-- Info Box -->
+    <div class="info_box">
+        <div class="info-title"><span>About this Experimental Study</span></div>
+        <div class="info-list">
+            <div class="info">In this experiment you will be asked to complete a questionnaire and then to perform a shopping task. when you do the shopping task, kindly note following points:</div>
+            <br>
+            <div class="info">&emsp;1. You need to help your friend by purchasing <span>10 ingredients</span> to prepare a recipe and you have 30 euros.</div>
+            <div class="info">&emsp;2. Buy as many ingredients as possible within a budget of <span>30 euros</span>.</div>
+            <div class="info">&emsp;3. Your friend gives very high priority to <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> products, please pay attention to this </div>
+            <div class="info">&emsp;&emsp;while doing your purchase</div>
+            <div class="info">&emsp;4. Once you buy an ingredient, it can't be undone. If you want to explore other ingredients,</div>
+            <div class="info">&emsp;&emsp;you could use the <img src="Pre-study/images/close.jpg" alt="close" width="35" ></img> button.</div>
+            <div class="info">&emsp;5. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
+            <div class="info">&emsp;6. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div>  
+            <br>
+            <br>
+            <br>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <header>
+            <div class="title">Make your Salad</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+                <!-- Here I've inserted question from JavaScript -->
+            </div>
+            <div class="option_list">
+                <!-- Here I've inserted options from JavaScript -->
+            </div>
+        </section>
+
+        <!-- footer of Quiz Box -->
+        <footer>
+            <div class="total_que">
+                <!-- Here I've inserted Question Count Number from JavaScript -->
+            </div>
+            <button class="next_btn">Next</button>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the task!</div>
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay task</button>
+            <button class="quit">Quit task</button>
+        </div>
+    </div>
+
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
+    <script src="jss/questions.js"></script>
+    <script src="Pre-study/exp_2/js/unique_id.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase-database.js"></script>
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
+    <script src="jss/script.js"></script>
+  
 </body>
-</html> 
+</html>
