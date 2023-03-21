@@ -4,7 +4,7 @@ function generateUniqueId() {
   for (var i = 0; i < 8; i++) {
     id += chars.charAt(Math.floor(Math.random() * chars.length));
   }
-  return 'pre_study_' + id;
+  return 'ps_' + id;
 }
 
 var uniqueId = localStorage.getItem('pre_study_unique_id');

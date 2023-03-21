@@ -20,6 +20,7 @@
          document.getElementById("submit").style.visibility = 'hidden';
          document.getElementById("terms").checked = false;
          document.getElementById("btn").style.visibility= 'visible';
+         document.getElementById("participant-id").value = uniqueId;
         }
 
         window.addEventListener( "pageshow", function ( event ) {
@@ -51,6 +52,8 @@
        </script>
 </head>
 <body onload="disableSubmit()" >
+
+    
     <!-- start Quiz button -->
     <div class="terms"  style="font-size: 20px;visibility: visible;" ><b>CONSENT FORM</b> <br>
         <textarea readonly style="width : 100%;height:400px; padding: 0px 25px;"  rows="20">
@@ -141,23 +144,22 @@
     <div class="info_box">
         <div class="info-title"><span>About this Experimental Study</span></div>
         <div class="info-list">
-            <div class="info">In this experiment you will be asked to complete a questionnaire and then to perform a shopping task. when you do the shopping task, kindly note following points:</div>
+            <div class="info">In this experiment you will be asked to complete a questionnaire and then to perform a shopping task. when you do the questionnaire, kindly note following points:</div>
             <br>
-            <div class="info">&emsp;1. You need to help your friend by purchasing <span>10 ingredients</span> to prepare a recipe and you have 30 euros.</div>
-            <div class="info">&emsp;2. Buy as many ingredients as possible within a budget of <span>30 euros</span>.</div>
-            <div class="info">&emsp;3. Your friend gives very high priority to <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> products, please pay attention to this </div>
-            <div class="info">&emsp;&emsp;while doing your purchase</div>
-            <div class="info">&emsp;4. Once you buy an ingredient, it can't be undone. If you want to explore other ingredients,</div>
-            <div class="info">&emsp;&emsp;you could use the <img src="Pre-study/images/close.jpg" alt="close" width="35" ></img> button.</div>
-            <div class="info">&emsp;5. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
-            <div class="info">&emsp;6. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div>  
+            <div class="info">&emsp;1. You will be allocated with a unique ID. Kindly <span>copy</span> this ID for the questionnaire. 
+                <p>&emsp;&emsp;Participant ID:
+                    <input type="text" id="participant-id" readonly>
+                    <button id="copy-button" onclick="copyParticipantId()">Copy Participant ID</button></p></div>
+            <div class="info">&emsp;2. After completing the questionnaire, you will be provided with the link to the shopping task. </div>
+            <div class="info">&emsp;3. Kindly read the instructions of the task before you start.</div>
+            <div class="info">&emsp;4. If you have any questions during the experiment, you can contact the researcher in-charge.</div> 
             <br>
             <br>
             <br>
         </div>
         <div class="buttons">
             <button class="quit">Exit</button>
-            <button class="restart">Continue</button>
+            <button class="restart">Take Survey</button>
         </div>
     </div>
 

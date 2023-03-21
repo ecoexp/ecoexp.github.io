@@ -1,24 +1,29 @@
-// creating an array and passing the number, questions, options, and answers
+
 let questions = [
     {
     numb: 1,
     fruit: "apple",
     question: "Select the Apple",
-    //answer: "a/a/a1.jpg",
+
     origin: [
       "Italy",
       "Spain",
       "Germany"      
     ],
+    impact: [
+      "0.30",
+      0.48,
+      0.55     
+    ],
     price: [
       "3.20",
       "2.70",
-      "2.49"
+      2.49
     ],
-    impact: [
-      "1.12",
-      "1.80",
-      "1.40"     
+    reward: [
+      19.9,
+      19.2,
+      19.0  
     ],
     f_image: [
       "images/apple.jpg"
@@ -30,19 +35,24 @@ let questions = [
     question: "Select the Orange",
     //answer: "Cascading Style Sheet",
     origin: [
-      "Brazil",
+      "Iran",
       "Italy",
-      "Spain"           
-    ],
-    price: [
-      "1.12",
-      "1.80",
-      "1.40"     
+      "Spain"
     ],
     impact: [
-      "0.38",
-      "0.28",
-      "0.36"           
+      0.56,
+      0.28,
+      0.36
+    ],
+    price: [
+      1.12,
+      "1.80",
+      "1.40"
+    ],
+    reward: [
+      21.9,
+      23.2,
+      23.3
     ],
     f_image: [
       "images/orange.jpg"
@@ -52,22 +62,26 @@ let questions = [
     numb: 3,
     fruit: "broccoli",
     question: "Select the Broccoli",
-    //answer: "",
     origin: [
       "Spain",
       "United Kingdom",
-      "United States of America"            
-    ],
-    price: [
+      "United States of America"
+      ],
+      price: [
       "2.89",
       "3.59",
-      "3.29"          
-    ],
-    impact: [
+      "3.29"
+      ],
+      impact: [
       "1.45",
       "0.74",
-      "0.80"              
-    ],
+      "0.8"
+      ],
+      reward: [
+      "9.1",
+      "14.6",
+      "14.7"
+      ],
     f_image: [
       "images/brocoli.jpg"
     ]
@@ -76,21 +90,25 @@ let questions = [
     numb: 4,
     fruit: "banana",
     question: "Select the Banana",
-    //answer: "Structured Query Language",
     origin: [
       "Costa Rica",
       "India",
-      "Peru"          
-    ],
-    price: [
-      "2.89",
-      "2.10",
-      "2.47"      
+      "Peru"
     ],
     impact: [
-      "0.69",
+      0.69,
       "0.80",
-      "0.49"        
+      0.49
+    ],
+    price: [
+      2.89,
+      "2.10",
+      2.47
+    ],
+    reward: [
+      16.7,
+      17.3,
+      19.6
     ],
     f_image: [
       "images/banana.JPG"
@@ -100,21 +118,25 @@ let questions = [
     numb: 5,
     fruit: "carrot",
     question: "Select the Carrot",
-    //answer: "eXtensible Markup Language",
     origin: [
       "Denmark",
       "Sweden",
-      "Switzerland"                
+      "Switzerland"
+    ],
+    impact: [
+      0.49,
+      0.27,
+      0.31
     ],
     price: [
       "1.60",
-      "1.39",
-      "1.90"          
+      "1.20",
+      "1.90"
     ],
-    impact: [
-      "0.49",
-      "0.27",
-      "0.31"          
+    reward: [
+      21.5,
+      24.6,
+      22.7
     ],
     f_image: [
       "images/carrot.jpg"
@@ -127,17 +149,22 @@ let questions = [
     origin: [
       "Greece",
       "Italy",
-      "Spain"          
-    ],
-    price: [
-      "3.19",
-      "3.60",
-      "3.29"      
+      "Spain"
     ],
     impact: [
-      "0.57",
-      "0.70",
-      "0.56"          
+      0.72,
+      1.18,
+      0.56
+    ],
+    price: [
+      3.19,
+      "3.80",
+      "3.40"
+    ],
+    reward: [
+      15.7,
+      9.8,
+      16.8
     ],
     f_image: [
       "images/peach.JPG"
@@ -145,25 +172,30 @@ let questions = [
   },
   {
     numb: 7,
-    fruit: "cucumber",
-    question: "Select the Cucumber",
+    fruit: "potato",
+    question: "Select the Potato",
     origin: [
-      "China",
-      "Denmark",
-      "Iran" 
-    ],
-    price: [
-      "3.29",
-      "3.10",
-      "3.39"          
-    ],
-    impact: [
-      "0.40",
-      "5.61",
-      "1.55"               
-    ],
+      "Germany",
+      "Iran",
+      "Poland"
+      ],
+      price: [
+      "1.89",
+      "1.59",
+      "2.30"
+      ],
+      impact: [
+      "0.23",
+      "0.44",
+      "0.70"
+      ],
+      reward: [
+      "23.5",
+      "22.1",
+      "17.9"
+      ],
     f_image: [
-      "images/cucumber.jpg"
+      "images/potato.jpg"
     ]
   },
   {
@@ -173,17 +205,22 @@ let questions = [
     origin: [
       "Italy",
       "Morocco",
-      "Spain"      
+      "Spain"
+    ],
+    impact: [
+      "0.60",
+      0.72,
+      0.87
     ],
     price: [
       "3.00",
       "2.78",
-      "3.59"         
+      "3.59"
     ],
-    impact: [
-      "0.60",
-      "0.72",
-      "0.87"              
+    reward: [
+      17.3,
+      16.6,
+      13.3
     ],
     f_image: [
       "images/tomato.jpg"
@@ -196,18 +233,23 @@ let questions = [
     origin: [
       "Italy",
       "Spain",
-      "United Kingdom"                
-    ],
-    price: [
-      "2.29",
+      "United Kingdom"
+      ],
+      price: [
       "2.89",
-      "2.19"           
-    ],
-    impact: [
+      "2.39",
+      "2.19"
+      ],
+      impact: [
       "0.62",
       "0.73",
-      "1.1"              
-    ],
+      "1.1"
+      ],
+      reward: [
+      "17.4",
+      "17.4",
+      "14.1"
+      ],
     f_image: [
       "images/lettuce.jpg"
     ]
@@ -216,21 +258,25 @@ let questions = [
     numb: 10,
     fruit: "strawberry",
     question: "Select the Strawberry",
-    //answer: "eXtensible Markup Language",
     origin: [
       "Iran",
       "Spain",
-      "United Kingdom"           
-    ],
-    price: [
-      "3.64",
-      "4.14",
-      "3.75"           
+      "United Kingdom"
     ],
     impact: [
-      "0.80",
-      "0.52",
-      "0.61"             
+      0.8,
+      0.52,
+      0.61
+    ],
+    price: [
+      3.65,
+      4.14,
+      3.75
+    ],
+    reward: [
+      13.9,
+      15.6,
+      15.6
     ],
     f_image: [
       "images/strawberry.JPG"

@@ -15,7 +15,7 @@ firebase.initializeApp(firebaseConfig);
     // reference your database
 var userdata = firebase.database().ref("UserData");
 var uniqueId = localStorage.getItem('pre_study_unique_id');
-console.log(uniqueId); 
+//console.log(uniqueId); 
 
 
 
@@ -98,7 +98,8 @@ const quit_alert = alert_box.querySelector(".buttons .quit");
 function codeAddress() {
     document.getElementById("bg1").innerHTML = budget.toFixed(0);
     document.getElementById("ml1").innerHTML = budget.toFixed(0);
-   // info_box.classList.add("activeInfo"); //hide info box
+    document.getElementById("participant-id").value = uniqueId;
+   info_box.classList.add("activeInfo"); //hide info box
 }
 window.onload = codeAddress;
 
@@ -174,7 +175,7 @@ next_btn.onclick = ()=>{
     changeStyle(questions[f_number-1].fruit);
     o=userAns[0];
     o=arr[o-1];
-    console.log(arr);
+    //console.log(arr);
     //console.log(arr[userAns[0]]);
     q=f_number;
     //console.log(q);
@@ -330,17 +331,15 @@ function showResult(){
 
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
-    var datetime = "High budget Captured on: " + currentdate.getDate() + "/"
+    var budget_group= "High_Budget";
+    var datetime = "Pres Study Conducted on"+ currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
-    fetch('https://api.ipify.org/')
-    .then(response => response.text())
-    .then(ip => {
-      // store the IP address in a variable
-    ipAddress = ip;
+
+   
     newuserdata.set({
         Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0],
         Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1],
@@ -352,13 +351,9 @@ function showResult(){
         Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7],
         Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8],
         Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9],
-        Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits, Total_impact: total_impact,ipAddress,
+        Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits, Total_impact: total_impact,_User_ID: uniqueId, Budget_Group: budget_group,
       });
-      console.log(ipAddress); // or do whatever you want with the IP address
-    })
-    .catch(error => {
-      console.error('Error fetching IP address:', error);
-    });
+
 
     if (b_fruits > 4){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number

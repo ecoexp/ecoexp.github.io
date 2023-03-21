@@ -16,9 +16,28 @@ var userdata = firebase.database().ref("UserData");
 
 var uniqueId = localStorage.getItem('pre_study_unique_id');
 
-console.log(uniqueId); // prints the unique ID generated in the first file
 
-//selecting all required elements
+
+
+function copyParticipantId() {
+    // Create a temporary textarea to hold the participant ID
+    var temp = document.createElement("textarea");
+    temp.value = uniqueId;
+    document.body.appendChild(temp);
+    
+    // Select the text in the textarea
+    temp.select();
+    temp.setSelectionRange(0, 99999); /* For mobile devices */
+    
+    // Copy the text to the clipboard
+    document.execCommand("copy");
+    
+    // Remove the temporary textarea
+    document.body.removeChild(temp);
+    
+    // Alert the user that the participant ID has been copied
+    alert("Participant ID has been copied to clipboard.");
+}
 
 
 const start_btn = document.querySelector(".start_btn button");
@@ -50,9 +69,9 @@ exit_btn.onclick = ()=>{
 
 // if continue button clicked
 continue_btn.onclick = ()=>{
-
-    window.open('https://forms.office.com/e/AyMZ2sqQDw',"popup", "width=1500,height=700");
-    window.location.href = 'Pre-study/index.html';
+    window.location.href = 'https://forms.office.com/e/AyMZ2sqQDw';
+    //window.open('https://forms.office.com/e/AyMZ2sqQDw',"popup", "width=1500,height=700");
+    //window.location.href = 'Pre-study/index.html';
     
 
 }

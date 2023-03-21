@@ -13,6 +13,10 @@ body{
     background-size: 100% 120%;
     background-repeat: no-repeat;*/
 }
+#participant-id {
+    width: 200px;
+    background-color: rgb(127, 211, 168);
+}
 .tooltip {
     position: relative;
     display: inline-block;
@@ -211,7 +215,7 @@ body{
 .banana,
 .carrot,
 .peach,
-.cucumber,
+.potato,
 .tomato,
 .lettuce,
 .strawberry{
@@ -255,7 +259,7 @@ body{
 .banana button,
 .carrot button,
 .peach button,
-.cucumber button,
+.potato button,
 .tomato button,
 .lettuce button,
 .strawberry button{

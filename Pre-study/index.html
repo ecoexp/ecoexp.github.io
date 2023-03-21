@@ -18,7 +18,8 @@
     
 </head>
 <body>
-
+    <p>&emsp;&emsp;Participant ID:
+        <input type="text" id="participant-id" readonly></p>
     <div class="start_btn"style="top: 10%;left: 84%;"><button>Rules</button></div>
     <div class="start_btn"style="top: 10%;left: 92%;" onclick="stop_exp();"><button style="background: rgb(232, 75, 36);">STOP</button></div>
     <!--button style="position: absolute;top: 5%;left: 92%;outline: none;border: none;height: 40px;cursor: pointer;" id="close_id">
@@ -87,7 +88,7 @@
         <div class="factor_txt">Money Spend: </div>
         <div class="factor_value">€ <span id="pr1">0</span> / 27</div>
     </div-->
-    <div class="text_head" style="top: 25%; left: 76.3%;height: 220px;"> <br> <strong>Performance</strong>
+    <div class="text_head" style="top: 25%; right: 0.1%;height: 220px;"> <br> <strong>Performance</strong>
         <div class="factor" style="top: 80px;left: 10px;">
             <div class="factor_txt">Money Spend: </div>
             <div class="factor_value">€ <span id="pr1">0</span> / <span id="bg1">27</span></div>
@@ -109,12 +110,12 @@
    
     
     
-    <div id="japp" class="apple" style="top: 35%;left: 15%;"><button onclick="myFunction(0);">
+    <div class="apple" style="top: 35%;left: 15%;"><button onclick="myFunction(0);">
         <div class="img_pos"><img src="images/apple.jpg" alt="Apple_Image" width="60" ></div>
         <div class="txt_pos">Apple<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.49</strong></div> 
         </button></div>
-    <div id="_0"class="orange" style="top: 35%;left: 32%;"><button onclick="myFunction(1);">
+    <div class="orange" style="top: 35%;left: 32%;"><button onclick="myFunction(1);">
         <div class="img_pos"><img src="images/orange.jpg" alt="Orange_Image" width="70" ></div>
         <div class="txt_pos">Orange<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.12</strong></div> 
@@ -187,13 +188,14 @@
         <div class="info-title"><span>The Rules of this Task</span></div>
         <div class="info-list">
             <br>
-            <div class="info" style="padding: 0 0 0 5px;">When picking the items please make sure that:</div>
+            <div class="info" style="padding: 0 0 0 5px;">In this task, you will need to complete a shopping process. Please be aware that the prices provided in this task are based on the data during the winter season. When picking the items please make sure that:</div>
             <br>
             <div class="info">&emsp;1. You need to help your friend in purchasing <span>10 ingredients</span> to prepare a recipe and you have <span>30 euros</span></div>
             <div class="info">&emsp;2. You need to make <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> decisions while doing your purchase and </div>
             <div class="info">&emsp;&emsp;once you buy an ingredient, it can't be <span>undone</span>. </div>
             <div class="info">&emsp;3. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
-            <div class="info">&emsp;4. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div> 
+            <div class="info">&emsp;4. Please continue buying ingredients after budget limit.</div>
+            <div class="info">&emsp;5. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div> 
             <br>
             <br>
         </div>
@@ -265,7 +267,7 @@
         <div class="icon">
             <img src="images/alert.png" alt="close" width="150"  >
         </div>
-        <div class="complete_text">Your data won't be saved. Do you really want to stop?</div>
+        <div class="complete_text">&emsp;Your data won't be saved.<br>Do you really want to stop?</div>
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
