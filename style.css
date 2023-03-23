@@ -465,7 +465,24 @@ footer button.show{
     color: #fff;
     background: #007bff;
 }
-
+@media only screen and (max-width: 900px) {
+    /* Style for mobile screens */
+    #desktop-message {
+        display: block;
+    }
+    #website-content {
+        display: none;
+    }
+}
+@media only screen and (min-width: 900px) {
+    /* Style for desktop screens */
+    #desktop-message {
+        display: none;
+    }
+    #website-content {
+        display: block;
+    }
+}
 
 @media only screen and (max-width: 600px) {
     .quiz_box{

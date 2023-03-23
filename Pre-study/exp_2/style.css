@@ -13,16 +13,15 @@ body{
     background-size: 100% 120%;
     background-repeat: no-repeat;*/
 }
-#participant-id {
-    width: 200px;
-    background-color: rgb(127, 211, 168);
-}
 .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 1px dotted black;
   }
-  
+  #participant-id {
+    width: 200px;
+    background-color: rgb(127, 211, 168);
+}
   .tooltip .tooltiptext {
     visibility: hidden;
     width: 300px;
@@ -53,7 +52,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 300px;
+    width: 280px;
 }
 
 .factor .factor_txt{
@@ -90,7 +89,7 @@ body{
     font-size: 25px;
     font-weight: 500;
     height: 500px;
-    width: 320px;
+    width: 300px;
     color: #fff;
     border-radius: 5px;
     line-height: 30px;
@@ -264,7 +263,7 @@ body{
 .lettuce button,
 .strawberry button{
     height: 110px;
-    width: 230px;
+    width: 190px;
     font-size: 15px;
     font-weight: 500;
     color: #007bff;

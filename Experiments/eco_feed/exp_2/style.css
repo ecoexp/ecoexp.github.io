@@ -52,7 +52,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 300px;
+    width: 280px;
 }
 
 .factor .factor_txt{
@@ -89,7 +89,7 @@ body{
     font-size: 25px;
     font-weight: 500;
     height: 500px;
-    width: 320px;
+    width: 300px;
     color: #fff;
     border-radius: 5px;
     line-height: 30px;
@@ -263,7 +263,7 @@ body{
 .lettuce button,
 .strawberry button{
     height: 110px;
-    width: 230px;
+    width: 190px;
     font-size: 15px;
     font-weight: 500;
     color: #007bff;

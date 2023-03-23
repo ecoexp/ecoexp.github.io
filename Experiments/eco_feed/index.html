@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Experiment</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="exp_2/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,39 +42,25 @@
       </div>
       <script>
         const progressBar = document.getElementById("progress-bar");
-
           const steps = document.querySelectorAll(".step");
-       
           let active = 0;
-
           function progr(u){
-            
             if(true){
                 active++;
             }
-
             if (active > steps.length) {
               active = steps.length;
-          
             }
-
             updateProgress(u); 
-            
           }
-          
-          
-          
+        
           const updateProgress = (g) => {
             steps.forEach((step, i) => {
-
               if (i < active) {
-
-                    step.classList.add("active");
-                
+                    step.classList.add("active");              
                 
               } else {
                 step.classList.remove("active");
-
               }
 
             });
@@ -88,7 +74,7 @@
         <div class="factor_txt">Money Spend: </div>
         <div class="factor_value">€ <span id="pr1">0</span> / 27</div>
     </div-->
-    <div class="text_head" style="top: 25%; left: 76.3%;height: 220px;"> <br> <strong>Performance</strong>
+    <div class="text_head" style="top: 25%; right: 1%;height: 250px;"> <br> <strong>Performance</strong>
         <div class="factor" style="top: 80px;left: 10px;">
             <div class="factor_txt">Money Spend: </div>
             <div class="factor_value">€ <span id="pr1">0</span> / <span id="bg1">27</span></div>
@@ -97,12 +83,12 @@
             <div class="factor_txt">Fruits within budget: </div>
             <div class="factor_value"> <span id="fb1">0</span> / 10</div>
         </div>
-        <!--div class="factor" style="top: 200px;left: 10px;" >
+        <div class="factor" style="top: 200px;left: 10px;" >
             <div class="factor_txt">Total Eco-Impact: </div>
-            <div class="factor_value"> <span >0</span> / 100</div>
+            <div class="factor_value"> <span id="mb1">0</span> Kg CO2</div>
         </div>
 
-        <div class="factor" style="top: 260px;left: 10px;height: 170px;" >
+        <!--div class="factor" style="top: 260px;left: 10px;height: 170px;" >
             <div class="factor_txt">Eco-Feedback: </div>
             <div class="factor_value"style="height: 150px;width:120px;background: white; "> <div class="tree"style="top: 80px;left: 232px;"><img src="images/tree_1.gif" alt="Apple_Image" width="50" ></div></div>
         </div-->
@@ -160,20 +146,43 @@
         <div class="txt_pos">Strawberry<br>(500g)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.64</strong></div> 
     </button></div>
-   
+    <!--script>
+
+        const topleft =[[35,15],[35,32],[35,49],[35,66],[58,15],[58,32],[58,49],[58,66],[80,32],[80,49]]
+        const indices = [...Array(topleft.length).keys()];
+        // Shuffle the indices using a random number generator
+        for (let i = indices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [indices[i], indices[j]] = [indices[j], indices[i]];
+        }
+  
+        // Reorder the outer array based on the shuffled indices
+        const shuffledArray = indices.map(i => topleft[i]);
+
+        const divs = document.querySelectorAll('.apple, .orange, .broccoli, .banana, .carrot, .peach, .potato, .tomato, .lettuce, .strawberry');
+        var i=0;
+        divs.forEach(div => {
+          const left = shuffledArray[i][1];
+          const top = shuffledArray[i][0];
+          div.style.left = left + '%';
+          div.style.top = top + '%';
+          i++;
+        });
+        </script-->
     <!-- Info Box -->
     <div class="info_box">
         <div class="info-title"><span>The Rules of this Task</span></div>
         <div class="info-list">
-            <div class="info" style="padding: 0 0 0 5px;">For this task, you have a change in budget. Kindly read the instructions below:</div>
             <br>
-            <div class="info">&emsp;1. You need to help your friend in purchasing <span>10 ingredients</span> that is needed to prepare a recipe.</div>
-            <div class="info">&emsp;2. When you arrived at the billing section, you realised that you had just <span>20 euros left over</span> for the purchase.</div>
-            <div class="info">&emsp;3. You need to make <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> decisions while doing your purchase and </div>
+            <div class="info" style="padding: 0 0 0 5px;">In this task, you will need to complete a shopping process. Please be aware that the prices provided in this task are based on the data during the winter season. When picking the items please make sure that:</div>
+            <br>
+            <div class="info">&emsp;1. You need to help your friend in purchasing <span>10 ingredients</span> to prepare a recipe and you have <span>30 euros</span></div>
+            <div class="info">&emsp;2. You need to make <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> decisions while doing your purchase and </div>
             <div class="info">&emsp;&emsp;once you buy an ingredient, it can't be <span>undone</span>. </div>
-            <div class="info">&emsp;4. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
-            <div class="info">&emsp;5. Please continue buying ingredients after budget limit.</div>
-            <div class="info">&emsp;6. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div> 
+            <div class="info">&emsp;3. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
+            <div class="info">&emsp;4. Please continue buying ingredients after budget limit.</div>
+            <div class="info">&emsp;5. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div> 
+            <br>
             <br>
         </div>
         <div class="buttons">
@@ -212,10 +221,12 @@
         <!-- footer of Quiz Box -->
         <footer>
             <div class="total_que">
-                <!-- Here I've inserted Question Count Number from JavaScript -->
+                <!-- Here I've inserted fruit Number from JavaScript -->
+                <button >Cancel</button>  
             </div>
             
-            <div class="buttons">        
+            <div class="buttons"> 
+                <button  class="cancel_btn" >Cancel</button>       
                 <button  class="next_btn" >Buy Now</button>
                 
             </div>
@@ -227,13 +238,13 @@
         <div class="icon">
             <i class="fas fa-crown"></i>
         </div>
-        <div class="complete_text">You've completed the task!</div>
+        <div class="complete_text">You have completed the task!</div>
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
         <div class="buttons">
             <button class="restart" hidden>Replay task</button>
-            <button class="quit" >Finish</button>
+            <button class="quit">Continue</button>
         </div>
     </div>
     <div  style="background-color: rgba(0,0,0,.5);width: 600px; "></div>
@@ -242,7 +253,7 @@
         <div class="icon">
             <img src="images/alert.png" alt="close" width="150"  >
         </div>
-        <div class="complete_text">Your data won't be saved.<br>Do you really want to stop?</div>
+        <div class="complete_text">&emsp;Your data won't be saved.<br>Do you really want to stop?</div>
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
@@ -254,8 +265,8 @@
     </div>
 
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
-    <script src="js/questions.js"></script>
-    <script src="js/unique_id.js"></script>
+    <script src="exp_2/js/questions.js"></script>
+    <script src="exp_2/js/unique_id.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase-database.js"></script>
     <!-- Inside this JavaScript file I've coded all Quiz Codes -->
