@@ -116,6 +116,7 @@ function codeAddress() {
     for(let i = 0; i < 10; i++){ 
         response_fruit[i]=-1;
         response_cost[i]=-1;
+        response_time[i]=-1;
         response_origin[i]=-1;
         response_impact[i]=-1;
         response_reward[i]=-1;
@@ -335,6 +336,14 @@ function showResult(){
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
+
+                
+    for(let i = 0; i < 10; i++){ 
+
+        if(response_cost[i]==-1)
+            window.location.href = 'error.html';
+
+    }
 
     newuserdata.set({
         Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0], Time_0: response_time[0],
