@@ -34,9 +34,6 @@ const time_line = document.querySelector("header .time_line");
 const close_btn = document.getElementById("close_id");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
-const next_btn = document.querySelector("footer .next_btn");
-const cancel_btn = document.querySelector("footer .cancel_btn");
-const bottom_ques_counter = document.querySelector("footer .total_que");
 const response_fruit = [];
 const response_cost = [];
 const response_origin = [];
@@ -57,9 +54,6 @@ start_btn.onclick = ()=>{
         }
 }
 close_btn.onclick = ()=>{
-    quiz_box.classList.remove("activeQuiz"); 
-}
-cancel_btn.onclick = ()=>{
     quiz_box.classList.remove("activeQuiz"); 
 }
 
@@ -105,7 +99,7 @@ function codeAddress() {
     document.getElementById("bg1").innerHTML = budget.toFixed(0);
     document.getElementById("ml1").innerHTML = budget.toFixed(0);
     info_box.classList.add("activeInfo"); //hide info box
-    document.getElementById("id1").innerHTML = uniqueId;
+    document.getElementById("participant-id").value = uniqueId;
 }
 window.onload = codeAddress;
 
@@ -120,7 +114,6 @@ function stop_exp() {
 
 function myFunction(x) {
     next_btn.classList.remove("show");
-    cancel_btn.classList.remove("show");
     info_box.classList.remove("activeInfo"); //hide info box
     info_box.classList.remove("activeAlert"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
@@ -154,7 +147,6 @@ restart_quiz.onclick = ()=>{
     startTimerLine(widthValue); //calling startTimerLine function
     timeText.textContent = "Time Left"; //change the text of timeText to Time Left
     next_btn.classList.remove("show"); //hide the next button
-    cancel_btn.classList.remove("show");
 }
 
 // if quit button clicked
@@ -172,7 +164,8 @@ restart_alert.onclick = ()=>{
 
 
 
-
+const next_btn = document.querySelector("footer .next_btn");
+const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next  button clicked
 next_btn.onclick = ()=>{
@@ -228,7 +221,6 @@ next_btn.onclick = ()=>{
         startTimerLine(widthValue); //calling startTimerLine function
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
-        cancel_btn.classList.remove("show");
     }else{
         if (t_temp==-1) {
             response_time[que_count] = -1;
@@ -322,7 +314,6 @@ function optionSelected(answer){
         option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
     }
     next_btn.classList.add("show"); //show the next button if user selected any option
-    cancel_btn.classList.add("show");
 }
 
 function showResult(){
