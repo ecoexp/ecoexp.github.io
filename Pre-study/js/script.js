@@ -94,49 +94,25 @@ var t_temp=0;
 var flag=0;
 var f_number="0";
 let userAns ="nill";
-
+const myTimer = timer();
 var q=0;
 var o=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 const restart_alert = alert_box.querySelector(".buttons .restart");
 const quit_alert = alert_box.querySelector(".buttons .quit");
+
+window.onload = codeAddress();
+
 function codeAddress() {
     document.getElementById("bg1").innerHTML = budget.toFixed(0);
     document.getElementById("ml1").innerHTML = budget.toFixed(0);
     document.getElementById("id1").innerHTML = uniqueId;
    info_box.classList.add("activeInfo"); //hide info box
-}
-window.onload = codeAddress;
-
-function stop_exp() {
-   /* if(confirm("\bAlert!\nDo you really want to stop this experiment? \nKindly press 'OK' to stop and 'Cancel' to continue this experiment") == true){
-        window.location.href = 'thank_you.html';
-    }*/
-    alert_box.classList.add("activeAlert"); //show result box
-
-}
-
-
-function myFunction(x) {
-    next_btn.classList.remove("show");
-    cancel_btn.classList.remove("show");
-    info_box.classList.remove("activeInfo"); //hide info box
-    info_box.classList.remove("activeAlert"); //hide info box
-    quiz_box.classList.add("activeQuiz"); //show quiz box
-    showQuetions(x); //calling showQestions function
-    f_number=x+1;
-
-    
-   
-}
-
-// if restartQuiz button clicked
-restart_quiz.onclick = ()=>{
-    quiz_box.classList.add("activeQuiz"); //show  box
+    quiz_box.classList.remove("activeQuiz"); //show  box
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 13; 
-    que_count = 0;
+    //que_count = 0;
     for(let i = 0; i < 10; i++){ 
         response_fruit[i]=-1;
         response_cost[i]=-1;
@@ -157,6 +133,34 @@ restart_quiz.onclick = ()=>{
     next_btn.classList.remove("show"); //hide the next button
     cancel_btn.classList.remove("show");
 }
+
+
+
+function stop_exp() {
+   /* if(confirm("\bAlert!\nDo you really want to stop this experiment? \nKindly press 'OK' to stop and 'Cancel' to continue this experiment") == true){
+        window.location.href = 'thank_you.html';
+    }*/
+    alert_box.classList.add("activeAlert"); //show result box
+
+}
+
+
+function myFunction(x) {
+    next_btn.classList.remove("show");
+    cancel_btn.classList.remove("show");
+    info_box.classList.remove("activeInfo"); //hide info box
+    info_box.classList.remove("activeAlert"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(x); //calling showQestions function
+    f_number=x+1;
+
+    myTimer.start();
+
+    
+   
+}
+
+
 
 // if quit button clicked
 quit_quiz.onclick = ()=>{
@@ -213,13 +217,7 @@ next_btn.onclick = ()=>{
     //console.log(money_left);
     quiz_box.classList.remove("activeQuiz"); 
     if(que_count < questions.length - 1){ //if question count is less than total question length
-        if (t_temp==-1) {
-            response_time[que_count] = -1;
-          }
-          else {
-            response_time[que_count] = 13 - t_temp;
-          }
-       // console.log(response_time[que_count]);
+
         que_count++; //increment the que_count value
         que_numb++; //increment the que_numb value
         showQuetions(que_count); //calling showQestions function
@@ -232,12 +230,7 @@ next_btn.onclick = ()=>{
         next_btn.classList.remove("show"); //hide the next button
         cancel_btn.classList.remove("show"); //hide the next button
     }else{
-        if (t_temp==-1) {
-            response_time[que_count] = -1;
-          }
-          else {
-            response_time[que_count] = 13 - t_temp;
-          }
+  
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         showResult(); //calling showResult function
@@ -295,11 +288,11 @@ function optionSelected(answer){
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     userAns = answer.textContent; //getting user selected option
-  
+    response_time[que_count]=myTimer.stop();
     //response[que_count]=questions[f_number-1].fruit+userAns;
     
     
-    //console.log(response_time[que_count]);
+    console.log(response_time[que_count]);
     let correcAns = questions[que_count].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
 
@@ -350,16 +343,16 @@ function showResult(){
 
    
     newuserdata.set({
-        Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0],
-        Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1],
-        Fruit_2: response_fruit[2], Origin_2: response_origin[2], Price_2: response_cost[2], EcoImpact_2: response_impact[2], Reward_2: response_reward[2],
-        Fruit_3: response_fruit[3], Origin_3: response_origin[3], Price_3: response_cost[3], EcoImpact_3: response_impact[3], Reward_3: response_reward[3],
-        Fruit_4: response_fruit[4], Origin_4: response_origin[4], Price_4: response_cost[4], EcoImpact_4: response_impact[4], Reward_4: response_reward[4],
-        Fruit_5: response_fruit[5], Origin_5: response_origin[5], Price_5: response_cost[5], EcoImpact_5: response_impact[5], Reward_5: response_reward[5],
-        Fruit_6: response_fruit[6], Origin_6: response_origin[6], Price_6: response_cost[6], EcoImpact_6: response_impact[6], Reward_6: response_reward[6],
-        Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7],
-        Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8],
-        Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9],
+        Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0], Time_0: response_time[0],
+        Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1], Time_1: response_time[1],
+        Fruit_2: response_fruit[2], Origin_2: response_origin[2], Price_2: response_cost[2], EcoImpact_2: response_impact[2], Reward_2: response_reward[2], Time_2: response_time[2],
+        Fruit_3: response_fruit[3], Origin_3: response_origin[3], Price_3: response_cost[3], EcoImpact_3: response_impact[3], Reward_3: response_reward[3], Time_3: response_time[3],
+        Fruit_4: response_fruit[4], Origin_4: response_origin[4], Price_4: response_cost[4], EcoImpact_4: response_impact[4], Reward_4: response_reward[4], Time_4: response_time[4],
+        Fruit_5: response_fruit[5], Origin_5: response_origin[5], Price_5: response_cost[5], EcoImpact_5: response_impact[5], Reward_5: response_reward[5], Time_5: response_time[5],
+        Fruit_6: response_fruit[6], Origin_6: response_origin[6], Price_6: response_cost[6], EcoImpact_6: response_impact[6], Reward_6: response_reward[6], Time_6: response_time[6],
+        Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7], Time_7: response_time[7],
+        Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8], Time_8: response_time[8],
+        Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9], Time_9: response_time[9],
         Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits, Total_impact: total_impact,_User_ID: uniqueId, Budget_Group: budget_group,
       });
 
@@ -435,7 +428,36 @@ function startTimerLine(time){
 
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
-    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> fruits</span>';
+    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> items</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
 
+function timer() {
+    let startTime, endTime, running = false;
+    
+    function start() {
+      if (running) {
+ 
+        return;
+      }
+      running = true;
+      startTime = new Date();
+
+    }
+    
+    function stop() {
+      if (!running) {
+
+        return;
+      }
+      running = false;
+      endTime = new Date();
+      const elapsedTime = (endTime.getTime() - startTime.getTime()) / 1000;
+      return elapsedTime;
+    }
+    
+    return {
+      start,
+      stop
+    };
+  }
