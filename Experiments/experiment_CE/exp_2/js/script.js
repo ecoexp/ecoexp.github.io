@@ -34,9 +34,6 @@ const time_line = document.querySelector("header .time_line");
 const close_btn = document.getElementById("close_id");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
-const next_btn = document.querySelector("footer .next_btn");
-const cancel_btn = document.querySelector("footer .cancel_btn");
-const bottom_ques_counter = document.querySelector("footer .total_que");
 const response_fruit = [];
 const response_cost = [];
 const response_origin = [];
@@ -57,9 +54,6 @@ start_btn.onclick = ()=>{
         }
 }
 close_btn.onclick = ()=>{
-    quiz_box.classList.remove("activeQuiz"); 
-}
-cancel_btn.onclick = ()=>{
     quiz_box.classList.remove("activeQuiz"); 
 }
 
@@ -85,7 +79,6 @@ let userScore = 0;
 let counter;
 var money_spend =0.0;
 var total_impact =0.0;
-var total_reward =0.0;
 var budget =20.00;
 var b_fruits=0;
 var money_left =0.0;
@@ -95,7 +88,7 @@ var t_temp=0;
 var flag=0;
 var f_number="0";
 let userAns ="nill";
-const myTimer = timer();
+
 var q=0;
 var o=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
@@ -105,16 +98,40 @@ const quit_alert = alert_box.querySelector(".buttons .quit");
 function codeAddress() {
     document.getElementById("bg1").innerHTML = budget.toFixed(0);
     document.getElementById("ml1").innerHTML = budget.toFixed(0);
-    document.getElementById("id1").innerHTML = uniqueId;
-   info_box.classList.add("activeInfo"); //hide info box
-    quiz_box.classList.remove("activeQuiz"); //show  box
+    info_box.classList.add("activeInfo"); //hide info box
+    document.getElementById("participant-id").value = uniqueId;
+}
+window.onload = codeAddress;
+
+function stop_exp() {
+   /* if(confirm("\bAlert!\nDo you really want to stop this experiment? \nKindly press 'OK' to stop and 'Cancel' to continue this experiment") == true){
+        window.location.href = 'thank_you.html';
+    }*/
+    alert_box.classList.add("activeAlert"); //show result box
+
+}
+
+
+function myFunction(x) {
+    next_btn.classList.remove("show");
+    info_box.classList.remove("activeInfo"); //hide info box
+    info_box.classList.remove("activeAlert"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //show quiz box
+    showQuetions(x); //calling showQestions function
+
+    f_number=x+1;
+   
+}
+
+// if restartQuiz button clicked
+restart_quiz.onclick = ()=>{
+    quiz_box.classList.add("activeQuiz"); //show  box
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 13; 
-    //que_count = 0;
+    que_count = 0;
     for(let i = 0; i < 10; i++){ 
         response_fruit[i]=-1;
         response_cost[i]=-1;
-        response_time[i]=-1;
         response_origin[i]=-1;
         response_impact[i]=-1;
         response_reward[i]=-1;
@@ -130,38 +147,11 @@ function codeAddress() {
     startTimerLine(widthValue); //calling startTimerLine function
     timeText.textContent = "Time Left"; //change the text of timeText to Time Left
     next_btn.classList.remove("show"); //hide the next button
-    cancel_btn.classList.remove("show");
 }
-window.onload = codeAddress;
-
-function stop_exp() {
-   /* if(confirm("\bAlert!\nDo you really want to stop this experiment? \nKindly press 'OK' to stop and 'Cancel' to continue this experiment") == true){
-        window.location.href = 'thank_you.html';
-    }*/
-    alert_box.classList.add("activeAlert"); //show result box
-
-}
-
-
-function myFunction(x) {
-    next_btn.classList.remove("show");
-    cancel_btn.classList.remove("show");
-    info_box.classList.remove("activeInfo"); //hide info box
-    info_box.classList.remove("activeAlert"); //hide info box
-    quiz_box.classList.add("activeQuiz"); //show quiz box
-    showQuetions(x); //calling showQestions function
-    f_number=x+1;
-    myTimer.start();
-
-    
-   
-}
-
-// if restartQuiz button clicked
 
 // if quit button clicked
 quit_quiz.onclick = ()=>{
-    window.location.href = 'exp_2/index.html';
+    window.location.href = 'thank_you.html';
 }
 quit_alert.onclick = ()=>{
     alert_box.classList.remove("activeAlert"); //hide info box
@@ -174,12 +164,12 @@ restart_alert.onclick = ()=>{
 
 
 
-
+const next_btn = document.querySelector("footer .next_btn");
+const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next  button clicked
 next_btn.onclick = ()=>{
     progr(flag);
-    //next_btn.classList.remove("show");
     changeStyle(questions[f_number-1].fruit);
     o=userAns[0];
     o=arr[o-1];
@@ -192,18 +182,15 @@ next_btn.onclick = ()=>{
     response_cost[que_count]=questions[f_number-1].price[o];
     response_origin[que_count]=questions[f_number-1].origin[o];
     response_impact[que_count]=questions[f_number-1].impact[o];
-    response_reward[que_count]=questions[f_number-1].reward[o];
+    response_reward[que_count]=-1;
     console.log(response_origin[que_count]);
     console.log(o);
     console.log(questions[f_number-1].fruit);
     money_spend += parseFloat(questions[q-1].price[o]);
     total_impact += parseFloat(questions[q-1].impact[o]);
-    total_reward += parseFloat(questions[q-1].reward[o]);
     money_left=budget-money_spend;
-    document.getElementById("mb1").innerHTML = total_impact.toFixed(2);
     document.getElementById("pr1").innerHTML = money_spend.toFixed(2);
     document.getElementById("ml1").innerHTML = money_left.toFixed(2);
-    document.getElementById("rp1").innerHTML = total_reward.toFixed(0);
     if(money_spend<budget){
         b_fruits=b_fruits+1;
     
@@ -217,7 +204,12 @@ next_btn.onclick = ()=>{
     //console.log(money_left);
     quiz_box.classList.remove("activeQuiz"); 
     if(que_count < questions.length - 1){ //if question count is less than total question length
-
+        if (t_temp==-1) {
+            response_time[que_count] = -1;
+          }
+          else {
+            response_time[que_count] = 13 - t_temp;
+          }
        // console.log(response_time[que_count]);
         que_count++; //increment the que_count value
         que_numb++; //increment the que_numb value
@@ -230,7 +222,12 @@ next_btn.onclick = ()=>{
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
     }else{
-
+        if (t_temp==-1) {
+            response_time[que_count] = -1;
+          }
+          else {
+            response_time[que_count] = 13 - t_temp;
+          }
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         showResult(); //calling showResult function
@@ -239,37 +236,32 @@ next_btn.onclick = ()=>{
 
 // getting questions and options from array
 function showQuetions(index){
-    
-
     // Fill array with numbers from 123 to 999
     for (let i = 0; i < 3; i++) {
-    arr[i]=i;
-    }
-
-    // Shuffle the array using Fisher-Yates algorithm
-    for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    console.log(arr);
-
-
+        arr[i]=i;
+        }
+    
+        // Shuffle the array using Fisher-Yates algorithm
+        for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        //console.log(arr);
+    
+    
     const que_text = document.querySelector(".que_text");
 
     //creating a new span and div tag for question and option and passing the value using array index
     let que_tag = '<span>'+ questions[index].question +'&emsp;&emsp;&emsp;&emsp;&emsp;</span><img src="'+ questions[index].f_image[0] +'" width="50px" alt="Choice 1">';
     let option_tag = '<div class="option"><span>1. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
     +questions[index].price[arr[0]]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
-    +questions[index].origin[arr[0]]+'</strong><br> &nbsp;  &nbsp; Impact: &nbsp;&emsp; &emsp; &emsp;<strong>'
-    +questions[index].impact[arr[0]]+' </strong>Kg CO<sub>2</sub></span><div>Coins: <h1>'+questions[index].reward[arr[0]]+' <img src=' + 'images/coins.png' +' width="20px" alt="Choice 1"></h1></div></div>'
+    +questions[index].origin[arr[0]]+'</strong></div>'
     + '<div class="option"><span>2. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
     +questions[index].price[arr[1]]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
-    +questions[index].origin[arr[1]]+'</strong><br> &nbsp;  &nbsp; Impact: &nbsp;&emsp; &emsp; &emsp;<strong>'
-    +questions[index].impact[arr[1]]+' </strong>Kg CO<sub>2</sub></span><div>Coins: <h1>'+questions[index].reward[arr[1]]+' <img src=' + 'images/coins.png' +' width="20px" alt="Choice 1"></h1></div></div>' 
+    +questions[index].origin[arr[1]]+'</strong></div>' 
     + '<div class="option"><span>3. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
     +questions[index].price[arr[2]]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
-    +questions[index].origin[arr[2]]+'</strong><br> &nbsp;  &nbsp; Impact: &nbsp;&emsp; &emsp; &emsp;<strong>'
-    +questions[index].impact[arr[2]]+' </strong>Kg CO<sub>2</sub></span><div>Coins: <h1>'+questions[index].reward[arr[2]]+' <img src=' + 'images/coins.png' +' width="20px" alt="Choice 1"></h1></div></div>' ;
+    +questions[index].origin[arr[2]]+'</strong></div>' ;
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
@@ -291,7 +283,7 @@ function optionSelected(answer){
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     userAns = answer.textContent; //getting user selected option
-    response_time[que_count]=myTimer.stop();
+  
     //response[que_count]=questions[f_number-1].fruit+userAns;
     
     
@@ -322,7 +314,6 @@ function optionSelected(answer){
         option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
     }
     next_btn.classList.add("show"); //show the next button if user selected any option
-    cancel_btn.classList.add("show");
 }
 
 function showResult(){
@@ -336,43 +327,29 @@ function showResult(){
 
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
-    var budget_group= "High_Budget";
-    var datetime = "Pres Study Conducted on"+ currentdate.getDate() + "/"
+    var budget_group= "Low_Budget";
+    var datetime = "Pres Study Conducted on" + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
 
-    for(let i = 0; i < 10; i++){ 
-
-        if(response_cost[i]==-1)
-            window.location.href = 'error.html';
-
-    }
+   
     newuserdata.set({
-        Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0], Time_0: response_time[0],
-        Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1], Time_1: response_time[1],
-        Fruit_2: response_fruit[2], Origin_2: response_origin[2], Price_2: response_cost[2], EcoImpact_2: response_impact[2], Reward_2: response_reward[2], Time_2: response_time[2],
-        Fruit_3: response_fruit[3], Origin_3: response_origin[3], Price_3: response_cost[3], EcoImpact_3: response_impact[3], Reward_3: response_reward[3], Time_3: response_time[3],
-        Fruit_4: response_fruit[4], Origin_4: response_origin[4], Price_4: response_cost[4], EcoImpact_4: response_impact[4], Reward_4: response_reward[4], Time_4: response_time[4],
-        Fruit_5: response_fruit[5], Origin_5: response_origin[5], Price_5: response_cost[5], EcoImpact_5: response_impact[5], Reward_5: response_reward[5], Time_5: response_time[5],
-        Fruit_6: response_fruit[6], Origin_6: response_origin[6], Price_6: response_cost[6], EcoImpact_6: response_impact[6], Reward_6: response_reward[6], Time_6: response_time[6],
-        Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7], Time_7: response_time[7],
-        Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8], Time_8: response_time[8],
-        Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9], Time_9: response_time[9],
+        Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0],
+        Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1],
+        Fruit_2: response_fruit[2], Origin_2: response_origin[2], Price_2: response_cost[2], EcoImpact_2: response_impact[2], Reward_2: response_reward[2],
+        Fruit_3: response_fruit[3], Origin_3: response_origin[3], Price_3: response_cost[3], EcoImpact_3: response_impact[3], Reward_3: response_reward[3],
+        Fruit_4: response_fruit[4], Origin_4: response_origin[4], Price_4: response_cost[4], EcoImpact_4: response_impact[4], Reward_4: response_reward[4],
+        Fruit_5: response_fruit[5], Origin_5: response_origin[5], Price_5: response_cost[5], EcoImpact_5: response_impact[5], Reward_5: response_reward[5],
+        Fruit_6: response_fruit[6], Origin_6: response_origin[6], Price_6: response_cost[6], EcoImpact_6: response_impact[6], Reward_6: response_reward[6],
+        Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7],
+        Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8],
+        Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9],
         Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits, Total_impact: total_impact,_User_ID: uniqueId, Budget_Group: budget_group,
       });
-
-
-    if (b_fruits > 4){ // if user scored more than 3
-        //creating a new span tag and passing the user score number and total question number
-        
-        let scoreTag = 'When you arrived at the billing counter, you realised that you had just <b>20 euros</b> left over for the purchase. Now you have to do the shopping task again with <b>20 euros budget</b>';
-        scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
-    }
-
-   /* if (b_fruits > 7){ // if user scored more than 3
+    if (b_fruits > 7){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ b_fruits +'</p> out of <p>10</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
@@ -384,7 +361,7 @@ function showResult(){
     else{ // if user scored less than 1
         let scoreTag = '<span>Bravo 😎, Grazie mille</span>';
         scoreText.innerHTML = scoreTag;
-    }*/
+    }
 }
 
 function startTimer(time){
@@ -413,7 +390,6 @@ function startTimer(time){
             }
             
             next_btn.classList.add("show"); //show the next button if user selected any option
-            cancel_btn.classList.add("show");
         }
         t_temp = time;
         
@@ -439,32 +415,3 @@ function queCounter(index){
     let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> fruits</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
-function timer() {
-    let startTime, endTime, running = false;
-    
-    function start() {
-      if (running) {
- 
-        return;
-      }
-      running = true;
-      startTime = new Date();
-
-    }
-    
-    function stop() {
-      if (!running) {
-
-        return;
-      }
-      running = false;
-      endTime = new Date();
-      const elapsedTime = (endTime.getTime() - startTime.getTime()) / 1000;
-      return elapsedTime;
-    }
-    
-    return {
-      start,
-      stop
-    };
-  }

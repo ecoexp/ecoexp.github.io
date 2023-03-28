@@ -261,15 +261,15 @@ function showQuetions(index){
     let option_tag = '<div class="option"><span>1. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
     +questions[index].price[arr[0]]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
     +questions[index].origin[arr[0]]+'</strong><br> &nbsp;  &nbsp; Impact: &nbsp;&emsp; &emsp; &emsp;<strong>'
-    +questions[index].impact[arr[0]]+' </strong>Kg CO<sub>2</sub></span><div>Coins: <h1>'+questions[index].reward[arr[0]]+' <img src=' + 'images/coins.png' +' width="20px" alt="Choice 1"></h1></div></div>'
+    +questions[index].impact[arr[0]]+'</strong> Kg CO<sub>2</sub></div>'
     + '<div class="option"><span>2. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
     +questions[index].price[arr[1]]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
     +questions[index].origin[arr[1]]+'</strong><br> &nbsp;  &nbsp; Impact: &nbsp;&emsp; &emsp; &emsp;<strong>'
-    +questions[index].impact[arr[1]]+' </strong>Kg CO<sub>2</sub></span><div>Coins: <h1>'+questions[index].reward[arr[1]]+' <img src=' + 'images/coins.png' +' width="20px" alt="Choice 1"></h1></div></div>' 
+    +questions[index].impact[arr[1]]+'</strong> Kg CO<sub>2</sub></div>' 
     + '<div class="option"><span>3. Price: &emsp; &emsp; &emsp; &emsp;&nbsp;€ <strong>'
     +questions[index].price[arr[2]]+'</strong><br> &nbsp;  &nbsp; Origin: &emsp; &emsp; &emsp;&emsp;<strong>' 
     +questions[index].origin[arr[2]]+'</strong><br> &nbsp;  &nbsp; Impact: &nbsp;&emsp; &emsp; &emsp;<strong>'
-    +questions[index].impact[arr[2]]+' </strong>Kg CO<sub>2</sub></span><div>Coins: <h1>'+questions[index].reward[arr[2]]+' <img src=' + 'images/coins.png' +' width="20px" alt="Choice 1"></h1></div></div>' ;
+    +questions[index].impact[arr[2]]+'</strong> Kg CO<sub>2</sub></div>' ;
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
