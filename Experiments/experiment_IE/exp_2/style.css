@@ -358,7 +358,7 @@ body{
 
 .quiz_box{
     
-    height: 650px;
+    height: 580px;
     width: 550px;
   
     background: #fff;
@@ -475,7 +475,7 @@ section .que_text{
 section .option_list{
     padding: 20px 0px;
     display: block;  
-    height: 420px;
+    height: 350px;
     overflow-y: scroll; 
 }
 

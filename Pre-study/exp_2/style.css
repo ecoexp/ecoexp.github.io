@@ -117,8 +117,8 @@ body{
 #progress {
     position: relative;
     margin-left: 130px;
-    margin-right: 420px;
-    margin-top: 8% ;
+    margin-right: 440px;
+    margin-top: 120px ;
   }
   #progress-bar {
     position: absolute;
@@ -358,7 +358,7 @@ body{
 
 .quiz_box{
     
-    height: 650px;
+    height: 580px;
     width: 550px;
   
     background: #fff;
@@ -475,7 +475,7 @@ section .que_text{
 section .option_list{
     padding: 20px 0px;
     display: block;  
-    height: 420px;
+    height: 350px;
     overflow-y: scroll; 
 }
 
