@@ -148,35 +148,58 @@
         <div class="txt_pos">Strawberry<br>(500g)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.64</strong></div> 
     </button></div>
-    <!--script>
+    <script>
 
-        const topleft =[[35,15],[35,32],[35,49],[35,66],[58,15],[58,32],[58,49],[58,66],[80,32],[80,49]]
+        const topleft =[[35,15],[35,32],[35,49],[35,66],[58,15],[58,32],[58,49],[58,66],[80,32],[80,49]];
+        const fruits = ['apple', 'orange', 'broccoli', 'banana', 'carrot', 'peach', 'potato', 'tomato', 'lettuce', 'strawberry'];
         const indices = [...Array(topleft.length).keys()];
+
         // Shuffle the indices using a random number generator
         for (let i = indices.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [indices[i], indices[j]] = [indices[j], indices[i]];
         }
-  
+
+        // Store the shuffled order in a variable
+        const shuffledOrder = indices;
+
+        // Sort the original array
+        const sortedArray = shuffledOrder.slice().sort();
+
+        // Map the indices of the sorted values in the original array to a new array
+        const indexArray = sortedArray.map((value) => shuffledOrder.indexOf(value));
+
+        console.log(indexArray); // Output: [1, 3, 0, 8, 2, 4, 6, 7, 9, 5]
+        const orderedFruits = [];
+
+        for (let i = 0; i < indexArray.length; i++) {
+        orderedFruits.push(fruits[indexArray[i]]);
+        }
+
+        console.log(orderedFruits);
         // Reorder the outer array based on the shuffled indices
         const shuffledArray = indices.map(i => topleft[i]);
 
         const divs = document.querySelectorAll('.apple, .orange, .broccoli, .banana, .carrot, .peach, .potato, .tomato, .lettuce, .strawberry');
-        var i=0;
+
+        // Display the shuffled order
+ 
+        var i = 0;
         divs.forEach(div => {
-          const left = shuffledArray[i][1];
-          const top = shuffledArray[i][0];
-          div.style.left = left + '%';
-          div.style.top = top + '%';
-          i++;
+            const left = shuffledArray[i][1];
+            const top = shuffledArray[i][0];
+            div.style.left = left + '%';
+            div.style.top = top + '%';
+            i++;
         });
-        </script-->
+
+        </script>
     <!-- Info Box -->
     <div class="info_box">
         <div class="info-title"><span>The Rules of this Task</span></div>
         <div class="info-list">
             <br>
-            <div class="info" style="padding: 0 0 0 5px;">In this task, you will need to complete a shopping process. Please be aware that the prices provided in this task are based on the data during the winter season. When picking the items please make sure that:</div>
+            <div class="info" style="padding: 0 0 0 5px;">In this task, you will need to complete a shopping process. Please consider that it is <span>winter</span> and you are doing the shopping from Italy. When picking the items please make sure that:</div>
             <br>
             <div class="info">&emsp;1. You need to help your friend in purchasing <span>10 ingredients</span> to prepare a recipe and you have <span>30 euros</span></div>
             <div class="info">&emsp;2. You need to make <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> decisions while doing your purchase and </div>
