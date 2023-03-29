@@ -187,7 +187,7 @@ next_btn.onclick = ()=>{
     changeStyle(questions[f_number-1].fruit);
     o=userAns[0];
     o=arr[o-1];
-    //console.log(arr);
+    console.log("submit clicked");
     //console.log(arr[userAns[0]]);
     q=f_number;
     //console.log(q);
@@ -220,7 +220,7 @@ next_btn.onclick = ()=>{
     if(response_cost[que_count]==-1) {
             alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
             window.location.reload();
-        }
+    }
     
     if(que_count < questions.length - 1){ //if question count is less than total question length
 
@@ -241,7 +241,7 @@ next_btn.onclick = ()=>{
         clearInterval(counterLine); //clear counterLine
         showResult(); //calling showResult function
     }
-    
+
     if(response_cost[0]==-1) {
         alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
         window.location.reload();
