@@ -217,6 +217,11 @@ next_btn.onclick = ()=>{
     document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
     //console.log(money_left);
     quiz_box.classList.remove("activeQuiz"); 
+    if(response_cost[que_count]==-1) {
+            alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
+            window.location.reload();
+        }
+    
     if(que_count < questions.length - 1){ //if question count is less than total question length
 
         que_count++; //increment the que_count value
@@ -235,6 +240,11 @@ next_btn.onclick = ()=>{
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         showResult(); //calling showResult function
+    }
+    
+    if(response_cost[0]==-1) {
+        alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
+        window.location.reload();
     }
 }
 
