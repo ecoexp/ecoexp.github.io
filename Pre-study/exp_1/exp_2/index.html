@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research Experiment</title>
-    <link rel="stylesheet" href="exp_2/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,25 +44,39 @@
       </div>
       <script>
         const progressBar = document.getElementById("progress-bar");
+
           const steps = document.querySelectorAll(".step");
+       
           let active = 0;
+
           function progr(u){
+            
             if(true){
                 active++;
             }
+
             if (active > steps.length) {
               active = steps.length;
+          
             }
+
             updateProgress(u); 
+            
           }
-        
+          
+          
+          
           const updateProgress = (g) => {
             steps.forEach((step, i) => {
+
               if (i < active) {
-                    step.classList.add("active");              
+
+                    step.classList.add("active");
+                
                 
               } else {
                 step.classList.remove("active");
+
               }
 
             });
@@ -76,7 +90,7 @@
         <div class="factor_txt">Money Spend: </div>
         <div class="factor_value">€ <span id="pr1">0</span> / 27</div>
     </div-->
-    <div class="text_head" style="top: 25%; right: 1%;height: 220px;"> <br> <strong>Performance</strong>
+    <div class="text_head" style="top: 25%; left: 76.3%;height: 220px;"> <br> <strong>Performance</strong>
         <div class="factor" style="top: 80px;left: 10px;">
             <div class="factor_txt">Money Spend: </div>
             <div class="factor_value">€ <span id="pr1">0</span> / <span id="bg1">27</span></div>
@@ -148,6 +162,7 @@
         <div class="txt_pos">Strawberry<br>(500g)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.64</strong></div> 
     </button></div>
+
     <script>
 
         const topleft =[[35,15],[35,32],[35,49],[35,66],[58,15],[58,32],[58,49],[58,66],[80,32],[80,49]];
@@ -194,20 +209,20 @@
         });
 
         </script>
+   
     <!-- Info Box -->
     <div class="info_box">
         <div class="info-title"><span>The Rules of this Task</span></div>
         <div class="info-list">
+            <div class="info" style="padding: 0 0 0 5px;">For this task, you have a change in budget. Kindly read the instructions below:</div>
             <br>
-            <div class="info" style="padding: 0 0 0 5px;">In this task, you will need to complete a shopping process. Please consider that it is <span>winter</span> and you are doing the shopping from Italy. When picking the items please make sure that:</div>
-            <br>
-            <div class="info">&emsp;1. You need to help your friend in purchasing <span>10 ingredients</span> to prepare a recipe and you have <span>30 euros</span></div>
-            <div class="info">&emsp;2. You need to make <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> decisions while doing your purchase and </div>
+            <div class="info">&emsp;1. You need to help your friend in purchasing <span>10 ingredients</span> that is needed to prepare a recipe.</div>
+            <div class="info">&emsp;2. We are providing assistance by increasing the budget for the purchase to <span>30 euros.</span></div>
+            <div class="info">&emsp;3. You need to make <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> decisions while doing your purchase and </div>
             <div class="info">&emsp;&emsp;once you buy an ingredient, it can't be <span>undone</span>. </div>
-            <div class="info">&emsp;3. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
-            <div class="info">&emsp;4. Please continue buying ingredients after having reached the budget limit till you have selected all 10 of them.</div>
-            <div class="info">&emsp;5. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div> 
-            <br>
+            <div class="info">&emsp;4. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
+            <div class="info">&emsp;5. Please continue buying ingredients after having reached the budget limit till you have selected all 10 of them.</div>
+            <div class="info">&emsp;6. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div> 
             <br>
         </div>
         <div class="buttons">
@@ -246,12 +261,11 @@
         <!-- footer of Quiz Box -->
         <footer>
             <div class="total_que">
-                <!-- Here I've inserted fruit Number from JavaScript -->
-          
+                <!-- Here I've inserted Question Count Number from JavaScript -->
             </div>
             
-            <div class="buttons"> 
-                <button  class="cancel_btn" style="background-color: rgb(170, 11, 11);">Cancel</button>          
+            <div class="buttons">  
+                <button  class="cancel_btn" style="background-color: rgb(170, 11, 11);">Cancel</button>           
                 <button  class="next_btn" >Buy Now</button>
                 
             </div>
@@ -263,13 +277,13 @@
         <div class="icon">
             <i class="fas fa-crown"></i>
         </div>
-        <div class="complete_text">You have completed the task!</div>
+        <div class="complete_text">You've completed the task!</div>
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
         <div class="buttons">
             <button class="restart" hidden>Replay task</button>
-            <button class="quit">Continue</button>
+            <button class="quit" >Finish</button>
         </div>
     </div>
     <div  style="background-color: rgba(0,0,0,.5);width: 600px; "></div>
@@ -278,7 +292,7 @@
         <div class="icon">
             <img src="images/alert.png" alt="close" width="150"  >
         </div>
-        <div class="complete_text">&emsp;Your data won't be saved.<br>Do you really want to stop?</div>
+        <div class="complete_text">Your data won't be saved.<br>Do you really want to stop?</div>
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
@@ -290,8 +304,8 @@
     </div>
 
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
-    <script src="exp_2/js/questions.js"></script>
-    <script src="exp_2/js/unique_id.js"></script>
+    <script src="js/questions.js"></script>
+    <script src="js/unique_id.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase-database.js"></script>
     <!-- Inside this JavaScript file I've coded all Quiz Codes -->

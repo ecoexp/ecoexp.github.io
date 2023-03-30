@@ -69,11 +69,10 @@ exit_btn.onclick = ()=>{
 
 // if continue button clicked
 continue_btn.onclick = ()=>{
-    window.location.href = 'https://forms.office.com/e/AyMZ2sqQDw';
-    //window.open('https://forms.office.com/e/AyMZ2sqQDw',"popup", "width=1500,height=700");
-    //window.location.href = 'Pre-study/index.html';
-    
-
+    const links = ['https://forms.office.com/e/mXuCbwysME', 'https://forms.office.com/e/41Wy6EFCVQ'];
+    const linkIndex = Math.floor(Math.random() * links.length);
+    const linkToOpen = links[linkIndex];
+    window.location.href = linkToOpen;
 }
 
 let timeValue =  15;
