@@ -69,6 +69,7 @@ exit_btn.onclick = ()=>{
 
 // if continue button clicked
 continue_btn.onclick = ()=>{
+    copyParticipantId();
     const links = ['https://forms.office.com/e/mXuCbwysME', 'https://forms.office.com/e/41Wy6EFCVQ'];
     const linkIndex = Math.floor(Math.random() * links.length);
     const linkToOpen = links[linkIndex];

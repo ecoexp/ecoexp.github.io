@@ -210,7 +210,7 @@ next_btn.onclick = ()=>{
     
     }
     if(money_spend>budget && flag==0){
-        alert("You have crossed the budget. \nBut dont worry, kindly continue by selecting your choice for the remaining fruits to complete this task");
+        alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
         document.getElementById("budg").style.backgroundColor = "red";
         flag=1;
     }
