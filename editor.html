@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PDF Editor</title>
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+
+		#pdf-container {
+			border: 1px solid black;
+			margin: 20px 0;
+			height: 500px;
+			overflow: scroll;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>PDF Editor</h1>
+		<form>
+			<label for="pdf-file">Upload PDF:</label>
+			<input type="file" id="pdf-file" name="pdf-file">
+			<button type="button" id="load-pdf">Load PDF</button>
+		</form>
+	</div>
+
+	<div id="pdf-container"></div>
+
+	<div>
+		<button type="button" id="prev-page">Prev</button>
+		<span>Page <span id="page-num"></span> of <span id="page-count"></span></span>
+		<button type="button" id="next-page">Next</button>
+	</div>
+
+	<div>
+		<label for="text-input">Text to add:</label>
+		<input type="text" id="text-input" name="text-input">
+		<button type="button" id="add-text">Add Text</button>
+	</div>
+
+	<div>
+		<button type="button" id="download-pdf">Download PDF</button>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.8.335/pdf.min.js"></script>
+	<script>
+		let pdfDoc = null;
+		let pageNum = 1;
+		let pageRendering = false;
+		let pageNumPending = null;
+		let canvas = document.createElement("canvas");
+		let ctx = canvas.getContext("2d");
+		let scale = 1.5;
+		let pdfContainer = document.getElementById("pdf-container");
+
+		function renderPage(num) {
+			pageRendering = true;
+			pdfDoc.getPage(num).then(function(page) {
+				let viewport = page.getViewport({scale: scale});
+				canvas.height = viewport.height;
+				canvas.width = viewport.width;
+
+				let renderContext = {
+					canvasContext: ctx,
+					viewport: viewport
+				};
+
+				let renderTask = page.render(renderContext);
+
+				renderTask.promise.then(function() {
+					pageRendering = false;
+					if (pageNumPending !== null) {
+						renderPage(pageNumPending);
+						pageNumPending = null;
+					}
+				});
+			});
+
+			document.getElementById("page-num").textContent = num;
+		}
+
+		function queueRenderPage(num) {
+			if (pageRendering) {
+				pageNumPending = num;
+			} else {
+				renderPage(num);
+			}
+		}
+
+		function onPrevPage() {
+			if (pageNum <= 1) {
+				return;
+			}
+			pageNum--;
+			queueRenderPage(pageNum);
+		}
+
+		function onNextPage() {
+			if (pageNum >= pdfDoc.numPages) {
+				return;
+			}
+			pageNum++;
+			queueRenderPage(pageNum);
+		}
+
+		document.getElementById("load-pdf").addEventListener("click", function() {
+			let file = document.getElementById("pdf-file").files[0];
+			let fileReader = new FileReader();
+
+			fileReader.onload = function() {
+				let pdfData = new Uint8Array(this.result);
+				pdfjsLib.getDocument(pdfData).promise.then(function(pdf) {
+                    pdfDoc = pdf;
+                    document.getElementById("page-count").textContent = pdfDoc.numPages;
+                    renderPage(pageNum);
+                    });
+                    };
+
+
+
+
+                    fileReader.readAsArrayBuffer(file);
+	});
+
+	document.getElementById("prev-page").addEventListener("click", onPrevPage);
+	document.getElementById("next-page").addEventListener("click", onNextPage);
+
+	document.getElementById("add-text").addEventListener("click", function() {
+		let text = document.getElementById("text-input").value;
+		if (text) {
+			let div = document.createElement("div");
+			div.textContent = text;
+			div.style.position = "absolute";
+			div.style.left = "50px";
+			div.style.top = "50px";
+			div.style.fontSize = "20px";
+			pdfContainer.appendChild(div);
+		}
+	});
+
+	document.getElementById("download-pdf").addEventListener("click", function() {
+		let pdfAsArray = [];
+
+		for (let i = 1; i <= pdfDoc.numPages; i++) {
+			pdfDoc.getPage(i).then(function(page) {
+				let viewport = page.getViewport({scale: scale});
+				canvas.height = viewport.height;
+				canvas.width = viewport.width;
+
+				let renderContext = {
+					canvasContext: ctx,
+					viewport: viewport
+				};
+
+				let renderTask = page.render(renderContext);
+
+				renderTask.promise.then(function() {
+					let pdfPageAsArray = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
+					pdfAsArray.push(pdfPageAsArray);
+
+					if (pdfAsArray.length === pdfDoc.numPages) {
+						let pdf = new jsPDF();
+
+						for (let j = 0; j < pdfAsArray.length; j++) {
+							pdf.addImage(pdfAsArray[j], "PNG", 0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height);
+							if (j !== pdfAsArray.length - 1) {
+								pdf.addPage();
+							}
+						}
+
+						pdf.save("edited.pdf");
+					}
+				});
+			});
+		}
+	});
+</script>
+
+
+</body>
+</html>
