@@ -57,9 +57,11 @@ start_btn.onclick = ()=>{
         }
 }
 close_btn.onclick = ()=>{
+    myTimer.stop();
     quiz_box.classList.remove("activeQuiz"); 
 }
 cancel_btn.onclick = ()=>{
+    myTimer.stop();
     quiz_box.classList.remove("activeQuiz"); 
 }
 
