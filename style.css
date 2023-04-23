@@ -16,7 +16,6 @@ h1 {
   form {
     margin: auto;
     max-width: 100%;
-
     padding:15px;
     background-color: rgb(255, 255, 255);
     width: 100%;
@@ -27,9 +26,8 @@ h1 {
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             
   }
+  
   .question {
-
-
     align-items: center;
     margin-bottom: 20px;
   }
