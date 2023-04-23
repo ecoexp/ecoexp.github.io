@@ -63,7 +63,7 @@
     
     <!-- start Quiz button -->
     <div class="terms"  style="font-size: 20px;visibility: visible;" ><b>CONSENT FORM</b> <br>
-        <textarea readonly style="width : 100%;height:400px; padding: 0px 25px;"  rows="20">
+        <textarea readonly style=" width : 100%;height:85%; padding: 0px 25px;font-size: 17px;"  rows="20">
 
 1.	WHAT IS THIS DOCUMENT?
 
@@ -123,50 +123,26 @@
         <input type="checkbox" style="width: 20px;height: 20px;" name="terms" id="terms" onchange="activateButton(this)"><span style="font-size: 17px;visibility: visible;font-weight: 600;"> &nbsp;I agree to take part in this study</span>
     </div>
     
-    <div class="start_btn" ><button id="submit" >Start Experiment</button></div>
-    <div class="play_btn" ><button id="btn" >Start Experiment</button></div>
-    <script>
+    <div class="start_btn" ><button id="submit" >Start</button></div>
+
       
-    document.getElementById('btn').addEventListener('mouseover', function () {
-        
-
-        if(c==1){
-            document.getElementById('btn').style.left = `75%`;
-            //document.getElementById('btn').style.left = (Math.floor(Math.random() * 90) + 20)+`%`;
-            c=0;
-        }
-        else{
-            document.getElementById('btn').style.left = `15%`;
-            c=1;
-        }
-        
-        document.getElementById('btn').style.top = `85%`;
-    });
-    document.getElementById('btn').addEventListener('click', function () {
-        alert('Please agree to the constent form')
-    })
-   </script>
-
+    
     <!-- Info Box -->
     <div class="info_box">
-        <div class="info-title"><span>About this Experimental Study</span></div>
+        <div class="info-title"><span>Questionnaire Rules</span></div>
         <div class="info-list">
-            <div class="info">In this experiment you will be asked to complete a questionnaire and then to perform a shopping task. when you do the questionnaire, kindly note following points:</div>
+            <div class="info">In this study you will need to complete a questionnaire and then to perform a shopping task. Kindly note following points for the questionnaire:</div>
             <br>
-            <div class="info">&emsp;1. A unique ID is allocated to you. Kindly <span>use</span> this ID (copied to your clipboard) for the questionnaire. 
-                <p>&emsp;&emsp;Participant ID:
-                    <input type="text" onclick="copyParticipantId()" id="participant-id"  readonly>
-                    <!--button id="copy-button" onclick="copyParticipantId()">Click to Copy Participant ID</button--></p></div>
-            <div class="info">&emsp;2. After completing the questionnaire, you will be provided with the link to the shopping task. </div>
-            <div class="info">&emsp;3. Kindly read the instructions of the task before you start.</div>
-            <div class="info">&emsp;4. If you have any questions during the experiment, you can contact the researcher in-charge.</div> 
-            <br>
-            <br>
-            <br>
+            <div class="info">&emsp;1. This questionnaire is called the Environmental Attitudes Inventory (EAI). </div>
+            <div class="info">&emsp;2. The Environmental Attitudes Inventory (EAI) is a tool used to measure individuals' attitudes towards the environment.</div>
+            <div class="info">&emsp;3. After completing the questionnaire, you will be provided with the link to the shopping task. </div>
+            <div class="info">&emsp;4. Kindly read the instructions of the task before you start.</div>
+            <div class="info">&emsp;5. If you have any questions during the experiment, you can contact the researcher in-charge.</div> 
+        
         </div>
         <div class="buttons">
-            <button class="quit">Exit</button>
-            <button class="restart">Take Survey</button>
+            <button class="quit" hidden>Exit</button>
+            <button class="restart">Goto Questionnaire</button>
         </div>
     </div>
 
@@ -200,17 +176,348 @@
 
     <!-- Result Box -->
     <div class="result_box">
-        <div class="icon">
-            <i class="fas fa-crown"></i>
-        </div>
-        <div class="complete_text">You've completed the task!</div>
-        <div class="score_text">
-            <!-- Here I've inserted Score Result from JavaScript -->
-        </div>
-        <div class="buttons">
-            <button class="restart">Replay task</button>
-            <button class="quit">Quit task</button>
-        </div>
+        
+        <h1>The Environmental Attitudes Inventory</h1>
+        <form id="survey-form">
+            <div class="question" id="question1">
+                <hr>
+                <div class="question-number">1.</div>
+                <div class="question-text">I really like going on trips into the countryside, for example to forests or fields.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q1" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q1" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q1" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q1" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q1" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question2">
+                <hr>
+                <div class="question-number">2.</div>
+                <div class="question-text">I think spending time in nature is boring.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q2" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q2" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q2" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q2" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q2" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question3">
+                <hr>
+                <div class="question-number">3.</div>
+                <div class="question-text">Governments should control the rate at which raw materials are used to ensure that they last as long as possible.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q3" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q3" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q3" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q3" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q3" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question4">
+                <hr>
+                <div class="question-number">4.</div>
+                <div class="question-text">I am opposed to governments controlling and regulating the way raw materials are used in order to try and make them last longer.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q4" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q4" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q4" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q4" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q4" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question5">
+                <hr>
+                <div class="question-number">5.</div>
+                <div class="question-text">I would like to join and actively participate in an environmentalist group.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q5" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q5" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q5" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q5" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q5" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question6">
+                <hr>
+                <div class="question-number">6.</div>
+                <div class="question-text">I would NOT get involved in an environmentalist organization.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q6" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q6" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q6" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q6" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q6" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question7">
+                <hr>
+                <div class="question-number">7.</div>
+                <div class="question-text">One of the most important reasons to keep lakes and rivers clean is so that people have a place to enjoy water sports.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q7" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q7" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q7" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q7" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q7" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question8">
+                <hr>
+                <div class="question-number">8.</div>
+                <div class="question-text">We need to keep rivers and lakes clean in order to protect the environment, and NOT as places for people to enjoy water sports.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q8" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q8" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q8" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q8" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q8" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question9">
+                <hr>
+                <div class="question-number">9.</div>
+                <div class="question-text">Modern science will NOT be able to solve our environmental problems.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q9" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q9" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q9" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q9" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q9" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question10">
+                <hr>
+                <div class="question-number">10.</div>
+                <div class="question-text">Modern science will solve our environmental problems.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q10" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q10" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q10" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q10" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q10" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question11">
+                <hr>
+                <div class="question-number">11.</div>
+                <div class="question-text">Humans are severely abusing the environment.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q11" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q11" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q11" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q11" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q11" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question12">
+                <hr>
+                <div class="question-number">12.</div>
+                <div class="question-text">I do not believe that the environment has been severely abused by humans.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q12" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q12" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q12" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q12" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q12" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question13">
+                <hr>
+                <div class="question-number">13.</div>
+                <div class="question-text">I’d prefer a garden that is wild and natural to a well-groomed and ordered one.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q13" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q13" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q13" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q13" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q13" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question14">
+                <hr>
+                <div class="question-number">14.</div>
+                <div class="question-text">I’d much prefer a garden that is well groomed and ordered to a wild and natural one.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q14" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q14" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q14" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q14" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q14" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question15">
+                <hr>
+                <div class="question-number">15.</div>
+                <div class="question-text">I am NOT the kind of person who makes efforts to conserve natural resources.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q15" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q15" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q15" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q15" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q15" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question16">
+                <hr>
+                <div class="question-number">16.</div>
+                <div class="question-text">Whenever possible, I try to save natural resources.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q16" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q16" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q16" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q16" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q16" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question17">
+                <hr>
+                <div class="question-number">17.</div>
+                <div class="question-text">Human beings were created or evolved to dominate the rest of nature.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q17" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q17" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q17" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q17" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q17" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question18">
+                <hr>
+                <div class="question-number">18.</div>
+                <div class="question-text">I DO NOT believe humans were created or evolved to dominate the rest of nature.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q18" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q18" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q18" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q18" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q18" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question19">
+                <hr>
+                <div class="question-number">19.</div>
+                <div class="question-text">Protecting peoples’ jobs is more important than protecting the environment.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q19" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q19" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q19" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q19" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q19" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question20">
+                <hr>
+                <div class="question-number">20.</div>
+                <div class="question-text">Protecting the environment is more important than protecting peoples’ jobs.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q20" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q20" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q20" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q20" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q20" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question21">
+                <hr>
+                <div class="question-number">21.</div>
+                <div class="question-text">It makes me sad to see forests cleared for agriculture.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q21" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q21" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q21" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q21" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q21" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question22">
+                <hr>
+                <div class="question-number">22.</div>
+                <div class="question-text">It does NOT make me sad to see natural environments destroyed.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q22" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q22" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q22" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q22" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q22" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question23">
+                <hr>
+                <div class="question-number">23.</div>
+                <div class="question-text">People should be encouraged to limit themselves to two children or less.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q23" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q23" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q23" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q23" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q23" value="5">Strongly Agree</label>
+                </div>
+              </div>
+              
+              <div class="question" id="question24">
+                <hr>
+                <div class="question-number">24.</div>
+                <div class="question-text">People should have as many children as they wish, as long as they can adequately provide for them.</div>
+                <br>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q24" value="1">Strongly Disagree</label>
+                  <label class="option"><input type="radio" name="q24" value="2">Disagree</label>
+                  <label class="option"><input type="radio" name="q24" value="3">Neutral</label>
+                  <label class="option"><input type="radio" name="q24" value="4">Agree</label>
+                  <label class="option"><input type="radio" name="q24" value="5">Strongly Agree</label>
+                </div>
+              </div>
+        </form>
+              <br>
+              <hr>
+                <button class="submit-button" onclick="submitAnswers()">Submit and Proceed to Shopping Task</button>
     </div>
 </div>
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->

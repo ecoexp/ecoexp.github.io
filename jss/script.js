@@ -13,9 +13,57 @@ firebase.initializeApp(firebaseConfig);
     
     // reference your database
 var userdata = firebase.database().ref("UserData");
-
+var order = [];
 var uniqueId = localStorage.getItem('pre_study_unique_id');
+function submitAnswers() {
+    const answerData = {};
+    for (let i = 1; i <= 24; i++) {
+        const q = document.querySelector(`input[name="q${i}"]:checked`);
+        if (q) {
+            answerData[`q${i}`] = q.value;
+        }
+        else{
+            answerData[`q${i}`] = -1;
+        }
+    }
+    
+    
+    var newuserdata = userdata.push();
+  
+    newuserdata.set({
+      Display_order: order,
+      User_ID: uniqueId,
+      Response: answerData,
 
+    });
+    const links = ['Pre-study/index.html', 'Pre-study/exp_1/index.html'];
+    const linkIndex = Math.floor(Math.random() * links.length);
+    const linkToOpen = links[linkIndex];
+    window.location.href = linkToOpen;
+
+}
+  var question = document.getElementsByClassName("question");
+ 
+    var count=1;
+    for (var i = 1; i <= question.length; i++) {
+    order.push(i);
+    }
+    order.sort(function() {
+    return Math.random() - 0.5;
+    });
+    for (var i = 0; i < order.length; i++) {
+    var questio = question[order[i]-1];
+    questio.parentNode.insertBefore(questio, questio.parentNode.children[i]);
+    var questionText = questio.querySelector(".question-text");
+
+    }
+
+    for (var i = 0; i < question.length; i++) {
+    var questio = question[i];
+    var questionnumber = questio.querySelector(".question-number");
+    questionnumber.innerHTML = count + ". ";
+    count++;
+    }
 
 
 
@@ -69,11 +117,14 @@ exit_btn.onclick = ()=>{
 
 // if continue button clicked
 continue_btn.onclick = ()=>{
-    copyParticipantId();
-    const links = ['https://forms.office.com/e/mXuCbwysME', 'https://forms.office.com/e/41Wy6EFCVQ'];
-    const linkIndex = Math.floor(Math.random() * links.length);
-    const linkToOpen = links[linkIndex];
-    window.location.href = linkToOpen;
+    info_box.classList.remove("activeInfo");
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.remove("activeQuiz"); //hide quiz box
+    result_box.classList.add("activeResult"); //show result box
+    //const links = ['https://forms.office.com/e/mXuCbwysME', 'https://forms.office.com/e/41Wy6EFCVQ'];
+    //const linkIndex = Math.floor(Math.random() * links.length);
+    //const linkToOpen = links[linkIndex];
+    //window.location.href = linkToOpen;
 }
 
 let timeValue =  15;

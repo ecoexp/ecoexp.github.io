@@ -10,7 +10,78 @@
 body{
     background: #ffffff;
 }
+h1 {
+    text-align: center;
+  }
+  form {
+    margin: auto;
+    max-width: 100%;
 
+    padding:15px;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 93%;
+    overflow: auto;
+    text-align:justify;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+  }
+  .question {
+
+
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .question-number {
+ 
+    margin-right: 10px;
+  }
+  .question-text {
+    font-weight: bold;
+    margin-left: 15px;
+    margin-right: 10px;
+    font-size: 18px;
+    white-space: pre-line;
+  }
+  .options {
+    margin-left: 20%;
+    justify-content: space-between;
+  }
+  .option-label {
+    font-weight: bold;
+  }
+  .option {
+    margin-left: 50px;
+    font-size: 18px;
+  }
+
+  .option:hover {
+    background-color: #d0d0d0;
+
+    cursor: pointer;
+  }
+  .submit-button {
+    margin-top: 20px;
+    margin-left: 70%;
+    padding: 10px 20px;
+    width: 400px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  .submit-button:hover {
+    background-color: #0069d9;
+  }
+  @media only screen and (max-width: 950px) {
+    form {
+    margin: auto;
+    max-width: 95%;
+  }
+}
 ::selection{
     color: #fff;
     background: #3aee8e;
@@ -42,7 +113,7 @@ body{
   }
 .start_btn{
     position: absolute;
-    top: 87%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
    
@@ -75,7 +146,8 @@ body{
 }
 .terms{
     position: absolute;
-    width: 60%;
+    width: 85%;
+    height:68%;
     top: 45%;
     left: 50%;
     text-align: center;
@@ -124,7 +196,8 @@ body{
 }
 
 .info_box{
-    width: 65%;
+    width: 90%;
+    height: 90%;
     top: 50%;
     background: #fff;
     border-radius: 5px;
@@ -148,6 +221,7 @@ body{
 
 .info_box .info-list{
     padding: 15px 30px;
+    height: 80%;
 }
 
 .info_box .info-list .info{
@@ -388,7 +462,8 @@ footer button.show{
     border-radius: 5px;
     display: flex;
     padding: 25px 30px;
-    width: 450px;
+    width: 90%;
+    height: 90%;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -449,6 +524,8 @@ footer button.show{
 }
 .buttons button.restart{
     color: #fff;
+    padding: 0px 10px;
+    width: 300px;
     background: #007bff;
 }
 
