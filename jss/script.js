@@ -42,6 +42,19 @@ function submitAnswers() {
     window.location.href = linkToOpen;
 
 }
+function boldLabel(radioButton) {
+    // remove bold style from all labels in the selected radio button group
+    let radioGroupName = radioButton.getAttribute('name');
+    let radioGroup = document.querySelectorAll(`input[name="${radioGroupName}"]`);
+    radioGroup.forEach(radio => {
+      let label = radio.parentElement;
+      label.classList.remove('bold-label');
+    });
+    // add bold style to the selected label
+    let selectedLabel = radioButton.parentElement;
+    selectedLabel.classList.add('bold-label');
+  }
+
   var question = document.getElementsByClassName("question");
  
     var count=1;
