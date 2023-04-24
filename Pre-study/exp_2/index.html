@@ -18,12 +18,12 @@
     
 </head>
 <body>
-    <div class="factor" style="top: 6%;left: 8%;background-color: rgb(134, 9, 132);">
-        <div class="factor_txt">Participant ID: </div>
-        <div class="factor_value" style="width: 120px;"><span id="id1">ID</span></div>
+    <div class="factor_q" style="top: 6%;left: 8%;background-color: rgb(134, 9, 132);" hidden>
+        <div class="factor_txt" hidden>Participant ID: </div>
+        <div class="factor_value" style="width: 120px;" hidden><span id="id1">ID</span></div>
     </div>
-    <div class="start_btn"style="top: 10%;left: 84%;"><button>Rules</button></div>
-    <div class="start_btn"style="top: 10%;left: 92%;" onclick="stop_exp();"><button style="background: rgb(232, 75, 36);">STOP</button></div>
+    <div class="start_btn"style="top: 10%;left: 90%;"><button>Instructions</button></div>
+    <div class="start_btn"style="top: 10%;left: 92%;" onclick="stop_exp();" hidden><button style="background: rgb(232, 75, 36);">STOP</button></div>
     <!--button style="position: absolute;top: 5%;left: 92%;outline: none;border: none;height: 40px;cursor: pointer;" id="close_id">
         <img src="stop.jpg" alt="close" width="60" -->
     </button>
@@ -214,16 +214,32 @@
     <div class="info_box">
         <div class="info-title"><span>The Rules of this Task</span></div>
         <div class="info-list">
-            <div class="info" style="padding: 0 0 0 5px;">For this task, you have a change in budget. Kindly read the instructions below:</div>
+            <div class="info" style="padding: 0 0 0 5px;">It is a sunny <span>Summar</span> day and you want to make a salad for a friend. Your friend is a convinced pro-environmental consumer and pays serious attention to the ecological footprint of her food.</div>
             <br>
-            <div class="info">&emsp;1. You need to help your friend in purchasing <span>10 ingredients</span> that is needed to prepare a recipe.</div>
-            <div class="info">&emsp;2. When you arrived at the billing section, you realised that you had just <span>20 euros left over</span> for the purchase.</div>
-            <div class="info">&emsp;3. You need to make <span class="tooltip">eco-friendly<span class="tooltiptext">Decisions that have the least damaging effect on the environment</span></span> decisions while doing your purchase and </div>
-            <div class="info">&emsp;&emsp;once you buy an ingredient, it can't be <span>undone</span>. </div>
-            <div class="info">&emsp;4. Your Performance depends on the <span>number of ingredients</span> you could buy within the budget.</div>
-            <div class="info">&emsp;5. Please continue buying ingredients after having reached the budget limit till you have selected all 10 of them.</div>
-            <div class="info">&emsp;6. If at any point in time, you decide that you no longer wish to participate, please use the <span>"STOP"</span> button.</div> 
-            <br>
+            <div class="info">&emsp;1. Your receipt includes:  </div>
+            <table>
+                <tr>
+                    <td>Apple</td>
+                    <td>Orange</td>
+                </tr>
+                <tr>
+                    <td>Broccoli</td>
+                    <td>Banana</td>
+                </tr>
+                <tr>
+                    <td>Carrot</td>
+                    <td>Peach</td>
+                </tr>
+                <tr>
+                    <td>Potato</td>
+                    <td>Tomato</td>
+                </tr>
+                <tr>
+                    <td>Lettuce</td>
+                    <td>Strawberry</td>
+                </tr>
+            </table>
+            <div class="info">&emsp;2. You have <span>20 Euros</span>. Buy the most <span class="tooltip">ecological product<span class="tooltiptext">Products that have the least damaging effect on the environment</span></span> you can within this budget. </div>
         </div>
         <div class="buttons">
             <button class="restart" hidden></button>
@@ -277,7 +293,7 @@
         <div class="icon">
             <i class="fas fa-crown"></i>
         </div>
-        <div class="complete_text">You've completed the task!</div>
+        <div class="complete_text">You've completed all the shopping tasks!</div>
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>

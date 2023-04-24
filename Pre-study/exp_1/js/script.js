@@ -185,6 +185,7 @@ restart_alert.onclick = ()=>{
 // if Next  button clicked
 next_btn.onclick = ()=>{
     progr(flag);
+    response_time[que_count]=myTimer.stop();
     //next_btn.classList.remove("show");
     changeStyle(questions[f_number-1].fruit);
     o=userAns[0];
@@ -294,45 +295,25 @@ function showQuetions(index){
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon tick"><i class="fas fa-times"></i></div>';
+let selectedOption = null; // track the selected option
 
-//if user clicked on option
+// if user clicked on an option
 function optionSelected(answer){
-   
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
-    userAns = answer.textContent; //getting user selected option
-    response_time[que_count]=myTimer.stop();
-    //response[que_count]=questions[f_number-1].fruit+userAns;
-    
-    
-    console.log(response_time[que_count]);
-    let correcAns = questions[que_count].answer; //getting correct answer from array
-    const allOptions = option_list.children.length; //getting all option items
+    userAns = answer.textContent;
+    //console.log(userAns);
 
-    if(userAns == correcAns){ //if user selected option is equal to array's correct answer
-        userScore += 1; //upgrading score value with 1
-        answer.classList.add("correct"); //adding green color to correct selected option
-        answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
-        //console.log("Correct Answer");
-        //console.log("Your correct answers = " + userScore);
-    }else{
-        answer.classList.add("incorrect"); //adding red color to correct selected option
-        answer.insertAdjacentHTML("beforeend", tickIconTag); //adding cross icon to correct selected option
-        //console.log("Wrong Answer");
+    if (selectedOption) { // if a previous option was selected
+        selectedOption.classList.remove("correct"); // remove the green color from the previous selected option
+        selectedOption.removeChild(selectedOption.querySelector(".tick")); // remove the tick icon from the previous selected option
+    }
 
-        for(i=0; i < allOptions; i++){
-            if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer 
-                option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                //console.log("Auto selected correct answer.");
-            }
-        }
-    }
-    for(i=0; i < allOptions; i++){
-        option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-    }
-    next_btn.classList.add("show"); //show the next button if user selected any option
-    cancel_btn.classList.add("show"); //hide the next button
+    selectedOption = answer; // track the current selected option
+    answer.classList.add("correct"); // adding green color to current selected option
+    answer.insertAdjacentHTML("beforeend", tickIconTag); // adding tick icon to current selected option
+    next_btn.classList.add("show"); // show the next button if user selected any option
+    cancel_btn.classList.add("show"); // hide the next button
 }
 
 function showResult(){
@@ -375,10 +356,10 @@ function showResult(){
       });
 
 
-    if (b_fruits > 4){ // if user scored more than 3
+      if (b_fruits > 4){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
         
-        let scoreTag = 'You now have a budget of <b>30 euros</b> to complete the shopping task, which we are assisting you with by providing 10 euros. Therefore, you will need to redo the shopping task using this new budge';
+        let scoreTag = 'Now you have to do the second shopping task with <b>30 euros budget</b>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
 

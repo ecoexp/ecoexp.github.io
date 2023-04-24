@@ -181,6 +181,7 @@ restart_alert.onclick = ()=>{
 // if Next  button clicked
 next_btn.onclick = ()=>{
     progr(flag);
+    response_time[que_count]=myTimer.stop();
     changeStyle(questions[f_number-1].fruit);
     o=userAns[0];
     o=arr[o-1];
@@ -286,46 +287,25 @@ function showQuetions(index){
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon tick"><i class="fas fa-times"></i></div>';
+let selectedOption = null; // track the selected option
 
-//if user clicked on option
+// if user clicked on an option
 function optionSelected(answer){
-   
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
-    userAns = answer.textContent; //getting user selected option
-  
-    //response[que_count]=questions[f_number-1].fruit+userAns;
-    
-    
-    //console.log(response_time[que_count]);
-    let correcAns = questions[que_count].answer; //getting correct answer from array
-    const allOptions = option_list.children.length; //getting all option items
-    response_time[que_count]=myTimer.stop();
-    console.log(response_time[que_count]);
-    if(userAns == correcAns){ //if user selected option is equal to array's correct answer
-        userScore += 1; //upgrading score value with 1
-        answer.classList.add("correct"); //adding green color to correct selected option
-        answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
-        //console.log("Correct Answer");
-        //console.log("Your correct answers = " + userScore);
-    }else{
-        answer.classList.add("incorrect"); //adding red color to correct selected option
-        answer.insertAdjacentHTML("beforeend", tickIconTag); //adding cross icon to correct selected option
-        //console.log("Wrong Answer");
+    userAns = answer.textContent;
+    //console.log(userAns);
 
-        for(i=0; i < allOptions; i++){
-            if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer 
-                option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-                option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                //console.log("Auto selected correct answer.");
-            }
-        }
+    if (selectedOption) { // if a previous option was selected
+        selectedOption.classList.remove("correct"); // remove the green color from the previous selected option
+        selectedOption.removeChild(selectedOption.querySelector(".tick")); // remove the tick icon from the previous selected option
     }
-    for(i=0; i < allOptions; i++){
-        option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-    }
-    next_btn.classList.add("show"); //show the next button if user selected any option
-    cancel_btn.classList.add("show");
+
+    selectedOption = answer; // track the current selected option
+    answer.classList.add("correct"); // adding green color to current selected option
+    answer.insertAdjacentHTML("beforeend", tickIconTag); // adding tick icon to current selected option
+    next_btn.classList.add("show"); // show the next button if user selected any option
+    cancel_btn.classList.add("show"); // hide the next button
 }
 
 function showResult(){
@@ -369,18 +349,11 @@ function showResult(){
         Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits, Total_impact: total_impact,_User_ID: uniqueId, Budget_Group: budget_group,UI_Order: orderedFruits,
     });
 
-    if (b_fruits > 7){ // if user scored more than 3
+    if (b_fruits > 4){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ b_fruits +'</p> out of <p>10</p></span>';
+        
+        let scoreTag = 'Thank You';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
-    }
-    else if(b_fruits > 6){ // if user scored more than 1
-        let scoreTag = '<span>and  nice 😎, You got <p>'+ b_fruits +'</p> out of <p>10</p></span>';
-        scoreText.innerHTML = scoreTag;
-    }
-    else{ // if user scored less than 1
-        let scoreTag = '<span>Bravo 😎, Grazie mille</span>';
-        scoreText.innerHTML = scoreTag;
     }
 }
 
