@@ -71,7 +71,7 @@
             
 2.	WHY ARE WE DOING THIS RESEARCH STUDY?
 
-                This study seeks to explore how game elements could affect shopping behaviour. This will be tested in form of a gamified task, which can be completed using an online web application. The results will contribute to the development of improved computational capabilities of an electronic device that could augment our ability to make optimal decisions.
+                This study seeks to explore how ecological information could affect shopping behaviour. This will be tested in form of a shopping task, which can be completed using an online web application. The results will contribute to the development of improved computational capabilities of an electronic device that could augment our ability to make optimal decisions.
             
 3.	WHO CAN PARTICIPATE IN THIS RESEARCH STUDY?
 
@@ -80,10 +80,8 @@
 4.	WHERE WILL THIS RESEARCH STUDY TAKE PLACE AND HOW MANY PEOPLE WILL PARTICIPATE?
 
             The study will take place at the Human-Centered Technologies and Machine Intelligence Lab (HCT), NOI TechPark, Via Alessandro Volta, 13, 39100 Bolzano BZ. 
-                    OR
-            The study will take place at the Faculty of Engineering, Piazza Domenicani 3, 39100 Bolzano BZ.
             
-            We expect to have between 170 and 200 participants.
+            We expect to have between 40-50 participants.
             
 5.	WHAT WILL I BE ASKED TO DO AND HOW MUCH TIME WILL IT TAKE?
 
@@ -114,7 +112,8 @@
             
 11.	WHAT HAPPENS IF I SAY YES, BUT I CHANGE MY MIND LATER?
 
-            If during the experiment you decide that you no longer wish to participate in this study, you can click on the stop/abort button provided to you and the experiment will be stopped immediately, withdrawing the data collected so far. Nonetheless, your data cannot be withdrawn once the data has been anonymized and submitted. All direct identifiers from your data will be destroyed after the session. 
+            If during the experiment you decide that you no longer wish to participate in this study, you can contact the researcher in-charge and the experiment will be stopped immediately, withdrawing the data collected so far. Nonetheless, your data cannot be withdrawn once the data has been anonymized and submitted. All direct identifiers from your data will be destroyed after the session. 
+            
             Thank you for reading this and considering taking part in this study. Do not hesitate to contact the researchers mentioned under point 10 for further information or clarification about this study.
              
               </textarea><br>
@@ -127,397 +126,589 @@
     
     <!-- Info Box -->
     <div class="info_box">
-        <div class="info-title"><span>Questionnaire Instructions</span></div>
+        <div class="info-title"><span>Experiment Instructions</span></div>
         <div class="info-list">
             <div class="info">In this study you will need to complete a questionnaire and then to perform a shopping task. <br><br> <img src="Pre-study/images/exp_flow.jpg" alt="Flow Image" width="50%">
                 
-            <br><br>Kindly note following points for the questionnaire:</div>
+            <br><br>Kindly note following points:</div>
             <br>
-            <div class="info">&emsp;1. This questionnaire is called the Environmental Attitudes Inventory (EAI). </div>
-            <div class="info">&emsp;2. The Environmental Attitudes Inventory (EAI) is a tool used to measure individuals' attitudes towards the environment.</div>
-            <div class="info">&emsp;3. After completing this questionnaire, you will be directed to the shopping task. </div>
-            <div class="info">&emsp;4. Kindly <span>the instructions of the shopping task</span>  before you start.</div>
-            <div class="info">&emsp;5. If you have any questions during the experiment, you can contact the researcher in-charge.</div> 
+            <div class="info">&emsp;1. Firstly, you will be asked to do a questionnaire called the Environmental Attitudes Inventory (EAI). </div>
+            <div class="info">&emsp;2. After completing this questionnaire, you will be directed to the shopping tasks. </div>
+            <div class="info">&emsp;3. Kindly <span>read the instructions of the two shopping tasks</span>  before you start.</div>
+            <div class="info">&emsp;4. If you have any questions during the experiment, you can contact the researcher in-charge.</div> 
         </div>
         <div class="buttons">
             <button class="quit" hidden>Exit</button>
             <button class="restart">Goto Questionnaire</button>
         </div>
     </div>
-
-    <!-- Quiz Box -->
-    <div class="quiz_box">
-        <header>
-            <div class="title">Make your Salad</div>
-            <div class="timer">
-                <div class="time_left_txt">Time Left</div>
-                <div class="timer_sec">15</div>
-            </div>
-            <div class="time_line"></div>
-        </header>
-        <section>
-            <div class="que_text">
-                <!-- Here I've inserted question from JavaScript -->
-            </div>
-            <div class="option_list">
-                <!-- Here I've inserted options from JavaScript -->
-            </div>
-        </section>
-
-        <!-- footer of Quiz Box -->
-        <footer>
-            <div class="total_que">
-                <!-- Here I've inserted Question Count Number from JavaScript -->
-            </div>
-            <button class="next_btn">Next</button>
-        </footer>
-    </div>
-
-    <!-- Result Box -->
     <div class="result_box">
         
-        <h1>The Environmental Attitudes Inventory</h1>
+      <h1>The Environmental Attitudes Inventory</h1>
+      <h4>The Environmental Attitudes Inventory consists of a series of statements about your attitudes and beliefs toward the environment. For each statement, there are five response options: Strongly Agree, Agree, Neutral, Disagree, and Strongly Disagree. Choose the response option that best reflects your level of agreement or disagreement with the statement.</h4>
+      <form id="survey-form">
+          <div class="question" id="question1">
+<hr>
+<div class="question-number">1.</div>
+<div class="question-text">I really like going on trips into the countryside, for example to forests or fields.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q1" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q1" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q1" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q1" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q1" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question2">
+<hr>
+<div class="question-number">2.</div>
+<div class="question-text">I think spending time in nature is boring.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q2" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q2" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q2" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q2" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q2" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question3">
+<hr>
+<div class="question-number">3.</div>
+<div class="question-text">Governments should control the rate at which raw materials are used to ensure that they last as long as possible.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q3" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q3" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q3" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q3" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q3" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question4">
+<hr>
+<div class="question-number">4.</div>
+<div class="question-text">I am opposed to governments controlling and regulating the way raw materials are used in order to try and make them last longer.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q4" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q4" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q4" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q4" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q4" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question5">
+<hr>
+<div class="question-number">5.</div>
+<div class="question-text">I would like to join and actively participate in an environmentalist group.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q5" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q5" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q5" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q5" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q5" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question6">
+<hr>
+<div class="question-number">6.</div>
+<div class="question-text">I would NOT get involved in an environmentalist organization.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q6" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q6" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q6" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q6" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q6" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question7">
+<hr>
+<div class="question-number">7.</div>
+<div class="question-text">One of the most important reasons to keep lakes and rivers clean is so that people have a place to enjoy water sports.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q7" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q7" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q7" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q7" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q7" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question8">
+<hr>
+<div class="question-number">8.</div>
+<div class="question-text">We need to keep rivers and lakes clean in order to protect the environment, and NOT as places for people to enjoy water sports.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q8" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q8" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q8" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q8" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q8" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question9">
+<hr>
+<div class="question-number">9.</div>
+<div class="question-text">Modern science will NOT be able to solve our environmental problems.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q9" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q9" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q9" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q9" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q9" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question10">
+<hr>
+<div class="question-number">10.</div>
+<div class="question-text">Modern science will solve our environmental problems.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q10" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q10" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q10" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q10" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q10" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question11">
+<hr>
+<div class="question-number">11.</div>
+<div class="question-text">Humans are severely abusing the environment.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q11" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q11" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q11" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q11" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q11" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question12">
+<hr>
+<div class="question-number">12.</div>
+<div class="question-text">I do not believe that the environment has been severely abused by humans.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q12" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q12" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q12" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q12" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q12" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question13">
+<hr>
+<div class="question-number">13.</div>
+<div class="question-text">I’d prefer a garden that is wild and natural to a well-groomed and ordered one.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q13" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q13" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q13" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q13" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q13" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question14">
+<hr>
+<div class="question-number">14.</div>
+<div class="question-text">I’d much prefer a garden that is well groomed and ordered to a wild and natural one.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q14" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q14" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q14" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q14" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q14" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question15">
+<hr>
+<div class="question-number">15.</div>
+<div class="question-text">I am NOT the kind of person who makes efforts to conserve natural resources.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q15" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q15" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q15" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q15" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q15" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question16">
+<hr>
+<div class="question-number">16.</div>
+<div class="question-text">Whenever possible, I try to save natural resources.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q16" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q16" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q16" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q16" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q16" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question17">
+<hr>
+<div class="question-number">17.</div>
+<div class="question-text">Human beings were created or evolved to dominate the rest of nature.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q17" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q17" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q17" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q17" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q17" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question18">
+<hr>
+<div class="question-number">18.</div>
+<div class="question-text">I DO NOT believe humans were created or evolved to dominate the rest of nature.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q18" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q18" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q18" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q18" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q18" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question19">
+<hr>
+<div class="question-number">19.</div>
+<div class="question-text">Protecting peoples’ jobs is more important than protecting the environment.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q19" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q19" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q19" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q19" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q19" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question20">
+<hr>
+<div class="question-number">20.</div>
+<div class="question-text">Protecting the environment is more important than protecting peoples’ jobs.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q20" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q20" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q20" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q20" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q20" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question21">
+<hr>
+<div class="question-number">21.</div>
+<div class="question-text">It makes me sad to see forests cleared for agriculture.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q21" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q21" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q21" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q21" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q21" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question22">
+<hr>
+<div class="question-number">22.</div>
+<div class="question-text">It does NOT make me sad to see natural environments destroyed.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q22" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q22" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q22" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q22" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q22" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question23">
+<hr>
+<div class="question-number">23.</div>
+<div class="question-text">People should be encouraged to limit themselves to two children or less.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q23" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q23" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q23" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q23" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q23" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+
+<div class="question" id="question24">
+<hr>
+<div class="question-number">24.</div>
+<div class="question-text">People should have as many children as they wish, as long as they can adequately provide for them.</div>
+<br>
+<div class="options">
+  <label class="option"><input type="radio" name="q24" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
+  <label class="option"><input type="radio" name="q24" value="2" onchange="boldLabel(this)">Disagree</label>
+  <label class="option"><input type="radio" name="q24" value="3" onchange="boldLabel(this)">Neutral</label>
+  <label class="option"><input type="radio" name="q24" value="4" onchange="boldLabel(this)">Agree</label>
+  <label class="option"><input type="radio" name="q24" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+</div>
+</div>
+      </form>
+            <br>
+            <hr>
+              <button class="submit-button" onclick="submitAnswers()">Submit and Proceed to Shopping Task</button>
+  </div>
+    <!-- Quiz Box -->
+    <div class="quiz_box">
+        <h1>The Knowledge Questionnaire</h1>
+        <h4>The next questions are about foods and their life cycle assessment, in particular, which
+          negative effects their production, processing, distribution and storage have on the
+          environment. Unless otherwise stated, the products concerned are conventionally
+          produced (not organic products). Please indicate the answer that you think is correct. If you
+          are unsure, please click on "don't know" instead of guessing. This increases the accuracy of
+          the results.</h4>
         <form id="survey-form">
+
             <div class="question" id="question1">
   <hr>
   <div class="question-number">1.</div>
-  <div class="question-text">I really like going on trips into the countryside, for example to forests or fields.</div>
+  <div class="question-text">The largest environmental impact in the food sectors has ...</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q1" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q1" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q1" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q1" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q1" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q1" value="1" onchange="boldLabel(this)">Production</label><br>
+    <label class="option"><input type="radio" name="q1" value="2" onchange="boldLabel(this)">Storage</label><br>
+    <label class="option"><input type="radio" name="q1" value="3" onchange="boldLabel(this)">Packaging</label><br>
+    <label class="option"><input type="radio" name="q1" value="4" onchange="boldLabel(this)">Transportation (Ship, truck)</label><br>
+    <label class="option"><input type="radio" name="q1" value="5" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question2">
   <hr>
   <div class="question-number">2.</div>
-  <div class="question-text">I think spending time in nature is boring.</div>
+  <div class="question-text">Production of meat and milk products leads to higher C02 emissions per kg than production of vegetables.</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q2" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q2" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q2" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q2" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q2" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q2" value="1" onchange="boldLabel(this)">Righ </label><br>
+    <label class="option"><input type="radio" name="q2" value="2" onchange="boldLabel(this)">Wrong</label><br>
+    <label class="option"><input type="radio" name="q2" value="3" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question3">
   <hr>
   <div class="question-number">3.</div>
-  <div class="question-text">Governments should control the rate at which raw materials are used to ensure that they last as long as possible.</div>
+  <div class="question-text">The production of 1 kg of beef causes more greenhouse gases than the production of 1 kg of wheat.</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q3" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q3" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q3" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q3" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q3" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q3" value="1" onchange="boldLabel(this)">Right</label><br>
+    <label class="option"><input type="radio" name="q3" value="2" onchange="boldLabel(this)">Wrong</label><br>
+    <label class="option"><input type="radio" name="q3" value="3" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question4">
   <hr>
   <div class="question-number">4.</div>
-  <div class="question-text">I am opposed to governments controlling and regulating the way raw materials are used in order to try and make them last longer.</div>
+  <div class="question-text">The negative effects of food consumption on the environment can be reduced by switching to a vegetarian diet (no meat consumption).</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q4" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q4" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q4" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q4" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q4" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q4" value="1" onchange="boldLabel(this)">Right</label><br>
+    <label class="option"><input type="radio" name="q4" value="2" onchange="boldLabel(this)">Wrong</label><br>
+    <label class="option"><input type="radio" name="q4" value="3" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question5">
   <hr>
   <div class="question-number">5.</div>
-  <div class="question-text">I would like to join and actively participate in an environmentalist group.</div>
+  <div class="question-text"> Which of the following foods is associated with the lowest climate impact (per 100g)?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q5" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q5" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q5" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q5" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q5" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q5" value="1" onchange="boldLabel(this)">Potato chips</label><br>
+    <label class="option"><input type="radio" name="q5" value="2" onchange="boldLabel(this)">Bread roll</label><br>
+    <label class="option"><input type="radio" name="q5" value="3" onchange="boldLabel(this)">Salami stick</label><br>
+    <label class="option"><input type="radio" name="q5" value="4" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question6">
   <hr>
   <div class="question-number">6.</div>
-  <div class="question-text">I would NOT get involved in an environmentalist organization.</div>
+  <div class="question-text"> Which of the following foods is associated with the lowest climate impact (per 100g)?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q6" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q6" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q6" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q6" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q6" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q6" value="1" onchange="boldLabel(this)">Milk chocolate</label><br>
+    <label class="option"><input type="radio" name="q6" value="2" onchange="boldLabel(this)">White chocolate</label><br>
+    <label class="option"><input type="radio" name="q6" value="3" onchange="boldLabel(this)">Dark chocolate</label><br>
+    <label class="option"><input type="radio" name="q6" value="4" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question7">
   <hr>
   <div class="question-number">7.</div>
-  <div class="question-text">One of the most important reasons to keep lakes and rivers clean is so that people have a place to enjoy water sports.</div>
+  <div class="question-text">Which Of the following meals is the most climate friendly?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q7" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q7" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q7" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q7" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q7" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q7" value="1" onchange="boldLabel(this)">Pasta with beef bolognese</label><br>
+    <label class="option"><input type="radio" name="q7" value="2" onchange="boldLabel(this)">Pasta with vegetable and tomato sauce</label><br>
+    <label class="option"><input type="radio" name="q7" value="3" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question8">
   <hr>
   <div class="question-number">8.</div>
-  <div class="question-text">We need to keep rivers and lakes clean in order to protect the environment, and NOT as places for people to enjoy water sports.</div>
+  <div class="question-text"> Which of the following meals is the most climate friendly?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q8" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q8" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q8" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q8" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q8" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q8" value="1" onchange="boldLabel(this)">Organic beefburger</label><br>
+    <label class="option"><input type="radio" name="q8" value="2" onchange="boldLabel(this)">Organic salmon burger</label><br>
+    <label class="option"><input type="radio" name="q8" value="3" onchange="boldLabel(this)">Quinoaburger</label><br>
+    <label class="option"><input type="radio" name="q8" value="4" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question9">
   <hr>
   <div class="question-number">9.</div>
-  <div class="question-text">Modern science will NOT be able to solve our environmental problems.</div>
+  <div class="question-text"> Which of the following meals is the most environmentally friendly?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q9" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q9" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q9" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q9" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q9" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q9" value="1" onchange="boldLabel(this)">Kebab with meat</label><br>
+    <label class="option"><input type="radio" name="q9" value="2" onchange="boldLabel(this)">Kebab with falafel</label><br>
+    <label class="option"><input type="radio" name="q9" value="3" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question10">
   <hr>
   <div class="question-number">10.</div>
-  <div class="question-text">Modern science will solve our environmental problems.</div>
+  <div class="question-text"> Which of the following meals is the most environmentally friendly?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q10" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q10" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q10" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q10" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q10" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q10" value="1" onchange="boldLabel(this)">Beef ragout, mashed potatoes and beans</label><br>
+    <label class="option"><input type="radio" name="q10" value="2" onchange="boldLabel(this)">Poultry ragout, mashed potatoes and beans</label><br>
+    <label class="option"><input type="radio" name="q10" value="3" onchange="boldLabel(this)">Mushroom ragout, mashed potatoes and beans</label><br>
+    <label class="option"><input type="radio" name="q10" value="4" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question11">
   <hr>
   <div class="question-number">11.</div>
-  <div class="question-text">Humans are severely abusing the environment.</div>
+  <div class="question-text"> Which product is the most environmentally friendly?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q11" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q11" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q11" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q11" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q11" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q11" value="1" onchange="boldLabel(this)">100g asparagus from overseas (air transport)</label><br>
+    <label class="option"><input type="radio" name="q11" value="2" onchange="boldLabel(this)">100g Swiss chicken</label><br>
+    <label class="option"><input type="radio" name="q11" value="3" onchange="boldLabel(this)">100g Swiss beef</label><br>
+    <label class="option"><input type="radio" name="q11" value="4" onchange="boldLabel(this)">100g tofu from overseas (ship transport)</label><br>
+    <label class="option"><input type="radio" name="q11" value="5" onchange="boldLabel(this)">100g Swiss pork</label><br>
+    <label class="option"><input type="radio" name="q11" value="6" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question12">
   <hr>
   <div class="question-number">12.</div>
-  <div class="question-text">I do not believe that the environment has been severely abused by humans.</div>
+  <div class="question-text"> You want to prepare a dinner that is as environmentally friendly as possible. Which ingredient do you choose for the main course?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q12" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q12" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q12" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q12" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q12" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q12" value="1" onchange="boldLabel(this)">Tofu from overseas</label><br>
+    <label class="option"><input type="radio" name="q12" value="2" onchange="boldLabel(this)">Swiss beef meat loaf</label><br>
+    <label class="option"><input type="radio" name="q12" value="3" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question13">
   <hr>
   <div class="question-number">13.</div>
-  <div class="question-text">I’d prefer a garden that is wild and natural to a well-groomed and ordered one.</div>
+  <div class="question-text">You want to prepare a dinner that is as environmentally friendly as possible. Which side dish do you choose?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q13" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q13" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q13" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q13" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q13" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q13" value="1" onchange="boldLabel(this)">Asparagus (flight import)</label><br>
+    <label class="option"><input type="radio" name="q13" value="2" onchange="boldLabel(this)">Beans (ship import)</label><br>
+    <label class="option"><input type="radio" name="q13" value="3" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question14">
   <hr>
   <div class="question-number">14.</div>
-  <div class="question-text">I’d much prefer a garden that is well groomed and ordered to a wild and natural one.</div>
+  <div class="question-text">Which beverage is more environmentally friendly?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q14" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q14" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q14" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q14" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q14" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q14" value="1" onchange="boldLabel(this)">Coffee</label><br>
+    <label class="option"><input type="radio" name="q14" value="2" onchange="boldLabel(this)">Black tea</label><br>
+    <label class="option"><input type="radio" name="q14" value="3" onchange="boldLabel(this)">Do not know</label>
   </div>
 </div>
 
 <div class="question" id="question15">
   <hr>
   <div class="question-number">15.</div>
-  <div class="question-text">I am NOT the kind of person who makes efforts to conserve natural resources.</div>
+  <div class="question-text">Which beverage is more environmentally friendly?</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q15" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q15" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q15" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q15" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q15" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="radio" name="q15" value="1" onchange="boldLabel(this)">Mineral water</label><br>
+    <label class="option"><input type="radio" name="q15" value="2" onchange="boldLabel(this)">Tap water</label><br>
+    <label class="option"><input type="radio" name="q15" value="3" onchange="boldLabel(this)">Do not know.</label>
   </div>
 </div>
 
 <div class="question" id="question16">
   <hr>
   <div class="question-number">16.</div>
-  <div class="question-text">Whenever possible, I try to save natural resources.</div>
+  <div class="question-text"> Which of the following fruits can be harvested outdoors in Switzerland throughout the summer (June to August)? (Multiple answers possible)</div>
   <br>
   <div class="options">
-    <label class="option"><input type="radio" name="q16" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q16" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q16" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q16" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q16" value="5" onchange="boldLabel(this)">Strongly Agree</label>
-  </div>
-</div>
-
-<div class="question" id="question17">
-  <hr>
-  <div class="question-number">17.</div>
-  <div class="question-text">Human beings were created or evolved to dominate the rest of nature.</div>
-  <br>
-  <div class="options">
-    <label class="option"><input type="radio" name="q17" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q17" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q17" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q17" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q17" value="5" onchange="boldLabel(this)">Strongly Agree</label>
-  </div>
-</div>
-
-<div class="question" id="question18">
-  <hr>
-  <div class="question-number">18.</div>
-  <div class="question-text">I DO NOT believe humans were created or evolved to dominate the rest of nature.</div>
-  <br>
-  <div class="options">
-    <label class="option"><input type="radio" name="q18" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q18" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q18" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q18" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q18" value="5" onchange="boldLabel(this)">Strongly Agree</label>
-  </div>
-</div>
-
-<div class="question" id="question19">
-  <hr>
-  <div class="question-number">19.</div>
-  <div class="question-text">Protecting peoples’ jobs is more important than protecting the environment.</div>
-  <br>
-  <div class="options">
-    <label class="option"><input type="radio" name="q19" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q19" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q19" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q19" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q19" value="5" onchange="boldLabel(this)">Strongly Agree</label>
-  </div>
-</div>
-
-<div class="question" id="question20">
-  <hr>
-  <div class="question-number">20.</div>
-  <div class="question-text">Protecting the environment is more important than protecting peoples’ jobs.</div>
-  <br>
-  <div class="options">
-    <label class="option"><input type="radio" name="q20" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q20" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q20" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q20" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q20" value="5" onchange="boldLabel(this)">Strongly Agree</label>
-  </div>
-</div>
-
-<div class="question" id="question21">
-  <hr>
-  <div class="question-number">21.</div>
-  <div class="question-text">It makes me sad to see forests cleared for agriculture.</div>
-  <br>
-  <div class="options">
-    <label class="option"><input type="radio" name="q21" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q21" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q21" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q21" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q21" value="5" onchange="boldLabel(this)">Strongly Agree</label>
-  </div>
-</div>
-
-<div class="question" id="question22">
-  <hr>
-  <div class="question-number">22.</div>
-  <div class="question-text">It does NOT make me sad to see natural environments destroyed.</div>
-  <br>
-  <div class="options">
-    <label class="option"><input type="radio" name="q22" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q22" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q22" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q22" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q22" value="5" onchange="boldLabel(this)">Strongly Agree</label>
-  </div>
-</div>
-
-<div class="question" id="question23">
-  <hr>
-  <div class="question-number">23.</div>
-  <div class="question-text">People should be encouraged to limit themselves to two children or less.</div>
-  <br>
-  <div class="options">
-    <label class="option"><input type="radio" name="q23" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q23" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q23" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q23" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q23" value="5" onchange="boldLabel(this)">Strongly Agree</label>
-  </div>
-</div>
-
-<div class="question" id="question24">
-  <hr>
-  <div class="question-number">24.</div>
-  <div class="question-text">People should have as many children as they wish, as long as they can adequately provide for them.</div>
-  <br>
-  <div class="options">
-    <label class="option"><input type="radio" name="q24" value="1" onchange="boldLabel(this)">Strongly Disagree</label>
-    <label class="option"><input type="radio" name="q24" value="2" onchange="boldLabel(this)">Disagree</label>
-    <label class="option"><input type="radio" name="q24" value="3" onchange="boldLabel(this)">Neutral</label>
-    <label class="option"><input type="radio" name="q24" value="4" onchange="boldLabel(this)">Agree</label>
-    <label class="option"><input type="radio" name="q24" value="5" onchange="boldLabel(this)">Strongly Agree</label>
+    <label class="option"><input type="checkbox" name="q16" value="1" >Strawberries</label><br>
+    <label class="option"><input type="checkbox" name="q16" value="2" >Cherries</label><br>
+    <label class="option"><input type="checkbox" name="q16" value="3" >Pears</label><br>
+    <label class="option"><input type="checkbox" name="q16" value="4" >Kiwi</label><br>
+    <label class="option"><input type="checkbox" name="q16" value="5" >Banana</label><br>
+    <label class="option"><input type="checkbox" name="q16" value="6" >Do not know</label>
   </div>
 </div>
         </form>
               <br>
               <hr>
-                <button class="submit-button" onclick="submitAnswers()">Submit and Proceed to Shopping Task</button>
+                <button class="submit-button" onclick="submitAnswersK()">Submit and Proceed to Shopping Task</button>
     </div>
+
+
+   
 </div>
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
     <script src="jss/questions.js"></script>

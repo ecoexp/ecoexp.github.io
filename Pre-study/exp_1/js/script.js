@@ -185,8 +185,9 @@ restart_alert.onclick = ()=>{
 // if Next  button clicked
 next_btn.onclick = ()=>{
     progr(flag);
-    response_time[que_count]=myTimer.stop();
     //next_btn.classList.remove("show");
+    response_time[que_count]=myTimer.stop();
+
     changeStyle(questions[f_number-1].fruit);
     o=userAns[0];
     o=arr[o-1];
@@ -213,11 +214,11 @@ next_btn.onclick = ()=>{
     
     }
     if(money_spend>budget && flag==0){
-        alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
-        document.getElementById("budg").style.backgroundColor = "red";
+        //alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
+        //document.getElementById("budg").style.backgroundColor = "red";
         flag=1;
     }
-    document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
+    //document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
     //console.log(money_left);
     quiz_box.classList.remove("activeQuiz"); 
     if(response_cost[que_count]==-1) {
@@ -265,7 +266,7 @@ function showQuetions(index){
     const j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-    console.log(arr);
+
 
 
     const que_text = document.querySelector(".que_text");
@@ -288,6 +289,7 @@ function showQuetions(index){
 
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
+        
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
     
@@ -295,6 +297,7 @@ function showQuetions(index){
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon tick"><i class="fas fa-times"></i></div>';
+
 let selectedOption = null; // track the selected option
 
 // if user clicked on an option
@@ -316,6 +319,8 @@ function optionSelected(answer){
     cancel_btn.classList.add("show"); // hide the next button
 }
 
+  
+
 function showResult(){
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
@@ -328,7 +333,7 @@ function showResult(){
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
     var budget_group= "Low_Budget";
-    var datetime = "Pres Study Conducted on "+ currentdate.getDate() + "/"
+    var datetime = "Pres Study Conducted on"+ currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  
@@ -356,10 +361,10 @@ function showResult(){
       });
 
 
-      if (b_fruits > 4){ // if user scored more than 3
+    if (b_fruits > 4){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
         
-        let scoreTag = 'Now you have to do the second shopping task with <b>30 euros budget</b>';
+        let scoreTag = 'Now you have to do the second shopping task. For this shopping task, the products with the smallest ecological footprint will be highlighted using <b>a green border line</b>.';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
 

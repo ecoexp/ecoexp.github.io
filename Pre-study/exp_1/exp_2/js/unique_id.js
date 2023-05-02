@@ -12,5 +12,8 @@ if (!uniqueId) {
   uniqueId = generateUniqueId();
   localStorage.setItem('pre_study_unique_id', uniqueId);
 }
+function delete_id(){
+  localStorage.removeItem('pre_study_unique_id');
+}
 
 console.log(uniqueId);

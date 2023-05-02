@@ -87,7 +87,7 @@ let userScore = 0;
 let counter;
 var money_spend =0.0;
 var total_impact =0.0;
-var budget =30.00;
+var budget =20.00;
 var b_fruits=0;
 var money_left =0.0;
 let counterLine;
@@ -163,8 +163,8 @@ function myFunction(x) {
 
 // if quit button clicked
 quit_quiz.onclick = ()=>{
-      //window.location.href = 'https://forms.office.com/e/aS67p7jH0H';
-      window.location.href = 'thank_you.html';
+    //window.location.href = 'https://forms.office.com/e/aS67p7jH0H';
+    window.location.href = 'thank_you.html';
 }
 quit_alert.onclick = ()=>{
     alert_box.classList.remove("activeAlert"); //hide info box
@@ -209,11 +209,11 @@ next_btn.onclick = ()=>{
     
     }
     if(money_spend>budget && flag==0){
-        alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
-        document.getElementById("budg").style.backgroundColor = "red";
+        //alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
+        //document.getElementById("budg").style.backgroundColor = "red";
         flag=1;
     }
-    document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
+    //document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
     //console.log(money_left);
     quiz_box.classList.remove("activeQuiz"); 
     if(response_cost[que_count]==-1) {
@@ -243,7 +243,7 @@ next_btn.onclick = ()=>{
     if(response_cost[0]==-1) {
         alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
         window.location.reload();
-    }
+}
 }
 
 // getting questions and options from array
@@ -278,7 +278,17 @@ function showQuetions(index){
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
     const option = option_list.querySelectorAll(".option");
-
+    let smallestImpact = questions[index].impact[arr[0]];
+    let small_index=0;
+    // loop through the rest of the array and compare each element with the current smallest impact value
+    for (let i = 0; i < 3; i++) {
+    if (questions[index].impact[arr[i]] < smallestImpact) {
+        smallestImpact = questions[index].impact[arr[i]];
+        small_index=i;
+    }
+    }
+    //console.log(small_index);
+    option[small_index].classList.add("best");
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", "optionSelected(this)");
@@ -320,8 +330,8 @@ function showResult(){
 
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
-    var budget_group= "High_Budget";
-    var datetime = "Pres Study Conducted on " + currentdate.getDate() + "/"
+    var budget_group= "Low_Budget_Recc";
+    var datetime = "Pres Study Conducted on" + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  

@@ -10,11 +10,61 @@ const firebaseConfig = {
     
     // initialize firebase
 firebase.initializeApp(firebaseConfig);
-    
+const start_btn = document.querySelector(".start_btn button");
+const info_box = document.querySelector(".info_box");
+const exit_btn = info_box.querySelector(".buttons .quit");
+const continue_btn = info_box.querySelector(".buttons .restart");
+const quiz_box = document.querySelector(".quiz_box");
+const result_box = document.querySelector(".result_box");
+const option_list = document.querySelector(".option_list");
+const time_line = document.querySelector("header .time_line");
+const timeText = document.querySelector(".timer .time_left_txt");
+const timeCount = document.querySelector(".timer .timer_sec");
+const response = [];
+const response_time = [];  
     // reference your database
 var userdata = firebase.database().ref("UserData");
 var order = [];
 var uniqueId = localStorage.getItem('pre_study_unique_id');
+var count=1;
+
+function submitAnswersK() {
+
+const answerData = {};
+for (let i = 1; i <= 15; i++) {
+    const q = document.querySelector(`input[name="q${i}"]:checked`);
+    if (q) {
+        answerData[`q${i}`] = q.value;
+    }
+    else{
+        answerData[`q${i}`] = -1;
+    }
+}
+
+const selectedAnswers = [];
+
+const checkboxes = document.querySelectorAll('input[name="q16"]:checked');
+checkboxes.forEach(checkbox => {
+  selectedAnswers.push(checkbox.value);
+});
+
+answerData['q16'] = selectedAnswers;
+    
+    
+var newuserdata = userdata.push();
+  
+newuserdata.set({
+    Display_order: order,
+    User_ID: uniqueId,
+    Response: answerData,
+ });
+    const links = ['Pre-study/index.html', 'Pre-study/exp_1/index.html'];
+    const linkIndex = Math.floor(Math.random() * links.length);
+    const linkToOpen = links[linkIndex];
+    window.location.href = linkToOpen;
+
+}
+
 function submitAnswers() {
     const answerData = {};
     for (let i = 1; i <= 24; i++) {
@@ -28,7 +78,7 @@ function submitAnswers() {
     }
     
     
-    var newuserdata = userdata.push();
+   var newuserdata = userdata.push();
   
     newuserdata.set({
       Display_order: order,
@@ -39,7 +89,10 @@ function submitAnswers() {
     const links = ['Pre-study/index.html', 'Pre-study/exp_1/index.html'];
     const linkIndex = Math.floor(Math.random() * links.length);
     const linkToOpen = links[linkIndex];
-    window.location.href = linkToOpen;
+    //window.location.href = linkToOpen;
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.add("activeQuiz"); //hide quiz box
+    result_box.classList.remove("activeResult"); //show result box
 
 }
 function boldLabel(radioButton) {
@@ -57,7 +110,7 @@ function boldLabel(radioButton) {
 
   var question = document.getElementsByClassName("question");
  
-    var count=1;
+    
     for (var i = 1; i <= question.length; i++) {
     order.push(i);
     }
@@ -74,6 +127,9 @@ function boldLabel(radioButton) {
     for (var i = 0; i < question.length; i++) {
     var questio = question[i];
     var questionnumber = questio.querySelector(".question-number");
+    if(count==25){
+        count=1;
+    }
     questionnumber.innerHTML = count + ". ";
     count++;
     }
@@ -101,18 +157,7 @@ function copyParticipantId() {
 }
 
 
-const start_btn = document.querySelector(".start_btn button");
-const info_box = document.querySelector(".info_box");
-const exit_btn = info_box.querySelector(".buttons .quit");
-const continue_btn = info_box.querySelector(".buttons .restart");
-const quiz_box = document.querySelector(".quiz_box");
-const result_box = document.querySelector(".result_box");
-const option_list = document.querySelector(".option_list");
-const time_line = document.querySelector("header .time_line");
-const timeText = document.querySelector(".timer .time_left_txt");
-const timeCount = document.querySelector(".timer .timer_sec");
-const response = [];
-const response_time = [];
+
 
 // if startbutton clicked
 start_btn.onclick = ()=>{

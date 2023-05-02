@@ -214,11 +214,11 @@ next_btn.onclick = ()=>{
     
     }
     if(money_spend>budget && flag==0){
-        alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
-        document.getElementById("budg").style.backgroundColor = "red";
+        //alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
+        //document.getElementById("budg").style.backgroundColor = "red";
         flag=1;
     }
-    document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
+    //document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
     //console.log(money_left);
     quiz_box.classList.remove("activeQuiz"); 
     if(response_cost[que_count]==-1) {
@@ -364,7 +364,7 @@ function showResult(){
     if (b_fruits > 4){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
         
-        let scoreTag = 'Now you have to do the second shopping task with <b>20 euros budget</b>';
+        let scoreTag = 'Now you have to do the second shopping task. For this shopping task, the products with the smallest ecological footprint will be highlighted using <b>a green border line</b>.';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
 
