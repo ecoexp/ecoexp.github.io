@@ -25,6 +25,8 @@ const response_time = [];
     // reference your database
 var userdata = firebase.database().ref("UserData");
 var order = [];
+var aorder = [];
+var korder = [];
 var uniqueId = localStorage.getItem('pre_study_unique_id');
 var count=1;
 
@@ -54,7 +56,8 @@ answerData['q16'] = selectedAnswers;
 var newuserdata = userdata.push();
   
 newuserdata.set({
-    Display_order: order,
+    Display_order: korder,
+    Questionnaire: "Knowledge",
     User_ID: uniqueId,
     Response: answerData,
  });
@@ -81,7 +84,8 @@ function submitAnswers() {
    var newuserdata = userdata.push();
   
     newuserdata.set({
-      Display_order: order,
+      Display_order: aorder,
+      Questionnaire: "Attitude",
       User_ID: uniqueId,
       Response: answerData,
 
@@ -123,14 +127,27 @@ function boldLabel(radioButton) {
     var questionText = questio.querySelector(".question-text");
 
     }
-
+    let oflag=0;
     for (var i = 0; i < question.length; i++) {
     var questio = question[i];
     var questionnumber = questio.querySelector(".question-number");
+
     if(count==25){
+        oflag=1;
         count=1;
     }
+    if(oflag==0){
+        aorder[i]=questionnumber.innerHTML;
+        console.log(aorder[i]);
+    }
+    else {
+        korder[count-1]=questionnumber.innerHTML;
+        console.log(korder[count-1]);
+    }
     questionnumber.innerHTML = count + ". ";
+    
+
+    
     count++;
     }
 
