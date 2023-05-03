@@ -98,12 +98,12 @@
    
     
     
-    <div class="apple" style="top: 35%;left: 15%;"><button onclick="myFunction(0);">
+    <div class="apples" style="top: 35%;left: 15%;"><button onclick="myFunction(0);">
         <div class="img_pos"><img src="images/apples.jpg" alt="Apple_Image" width="60" ></div>
         <div class="txt_pos">Apple<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.49</strong></div> 
         </button></div>
-    <div class="orange" style="top: 35%;left: 32%;"><button onclick="myFunction(1);">
+    <div class="oranges" style="top: 35%;left: 32%;"><button onclick="myFunction(1);">
         <div class="img_pos"><img src="images/oranges.jpg" alt="Orange_Image" width="70" ></div>
         <div class="txt_pos">Orange<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.12</strong></div> 
@@ -113,27 +113,27 @@
         <div class="txt_pos">Broccoli<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.89</strong></div> 
     </button></div>
-    <div class="banana" style="top: 35%;left: 66%;"><button onclick="myFunction(2);">
+    <div class="bananas" style="top: 35%;left: 66%;"><button onclick="myFunction(2);">
         <div class="img_pos"><img src="images/bananas.jpg" alt="Banana_Image" width="60" ></div>
         <div class="txt_pos">Banana<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.10</strong></div> 
     </button></div>
-    <div class="carrot" style="top: 58%;left: 15%;"><button onclick="myFunction(6);">
+    <div class="carrots" style="top: 58%;left: 15%;"><button onclick="myFunction(6);">
         <div class="img_pos"><img src="images/carrots.jpg" alt="Raspberry_Image" width="90" ></div>
         <div class="txt_pos">Carrot<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.39</strong></div> 
     </button></div>
-    <div class="peach" style="top: 58%;left: 32%;"><button onclick="myFunction(3);">
+    <div class="peaches" style="top: 58%;left: 32%;"><button onclick="myFunction(3);">
         <div class="img_pos"><img src="images/peaches.jpg" alt="Peach_Image" width="70" ></div>
         <div class="txt_pos">Peach<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.19</strong></div> 
     </button></div>
-    <div class="potato" style="top: 58%;left: 49%;"><button onclick="myFunction(8);">
+    <div class="potatoes" style="top: 58%;left: 49%;"><button onclick="myFunction(8);">
         <div class="img_pos"><img src="images/potatoes.jpg" alt="Potato_Image" width="80" ></div>
         <div class="txt_pos">Potato<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.59</strong></div> 
     </button></div>
-    <div class="tomato" style="top: 58%;left: 66%;"><button onclick="myFunction(4);">
+    <div class="tomatoes" style="top: 58%;left: 66%;"><button onclick="myFunction(4);">
         <div class="img_pos"><img src="images/tomatoes.jpg" alt="Kiwi_Image" width="70" ></div>
         <div class="txt_pos">Tomato<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.78</strong></div> 
@@ -143,7 +143,7 @@
         <div class="txt_pos">Lettuce<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.19</strong></div>  
     </button></div>
-    <div class="strawberry" style="top: 80%;left: 49%;"><button onclick="myFunction(5);">
+    <div class="strawberries" style="top: 80%;left: 49%;"><button onclick="myFunction(5);">
         <div class="img_pos"><img src="images/strawberries.jpg" alt="Strawberry_Image" width="70" ></div>
         <div class="txt_pos">Strawberry<br>(500g)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.64</strong></div> 
@@ -151,7 +151,7 @@
     <script>
 
         const topleft =[[35,15],[35,32],[35,49],[35,66],[58,15],[58,32],[58,49],[58,66],[80,32],[80,49]];
-        const fruits = ['apple', 'orange', 'broccoli', 'banana', 'carrot', 'peach', 'potato', 'tomato', 'lettuce', 'strawberry'];
+        const fruits = ['apples', 'oranges', 'broccoli', 'bananas', 'carrots', 'peaches', 'potatoes', 'tomatoes', 'lettuce', 'strawberries'];
         const indices = [...Array(topleft.length).keys()];
 
         // Shuffle the indices using a random number generator
@@ -180,7 +180,7 @@
         // Reorder the outer array based on the shuffled indices
         const shuffledArray = indices.map(i => topleft[i]);
 
-        const divs = document.querySelectorAll('.apple, .orange, .broccoli, .banana, .carrot, .peach, .potato, .tomato, .lettuce, .strawberry');
+        const divs = document.querySelectorAll('.apples, .oranges, .broccoli, .bananas, .carrots, .peaches, .potatoes, .tomatoes, .lettuce, .strawberries');
 
         // Display the shuffled order
  

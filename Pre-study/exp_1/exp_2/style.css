@@ -227,16 +227,16 @@ tr:nth-child(even) {
 }
 
 
-.apple,
-.orange,
+.apples,
+.oranges,
 .broccoli,
-.banana,
-.carrot,
-.peach,
-.potato,
-.tomato,
+.bananas,
+.carrots,
+.peaches,
+.potatoes,
+.tomatoes,
 .lettuce,
-.strawberry{
+.strawberries{
     position: absolute;
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
@@ -271,16 +271,16 @@ tr:nth-child(even) {
 }
 
 .fruit button,
-.apple button,
-.orange button,
+.apples button,
+.oranges button,
 .broccoli button,
-.banana button,
-.carrot button,
-.peach button,
-.potato button,
-.tomato button,
+.bananas button,
+.carrots button,
+.peaches button,
+.potatoes button,
+.tomatoes button,
 .lettuce button,
-.strawberry button{
+.strawberries button{
     height: 110px;
     width: 190px;
     font-size: 15px;

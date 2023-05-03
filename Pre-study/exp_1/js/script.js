@@ -208,7 +208,7 @@ next_btn.onclick = ()=>{
     total_impact += parseFloat(questions[q-1].impact[o]);
     money_left=budget-money_spend;
     document.getElementById("pr1").innerHTML = money_spend.toFixed(2);
-    document.getElementById("ml1").innerHTML = money_left.toFixed(2);
+   // document.getElementById("ml1").innerHTML = money_left.toFixed(2);
     if(money_spend<budget){
         b_fruits=b_fruits+1;
     
