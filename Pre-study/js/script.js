@@ -363,8 +363,8 @@ function showResult(){
 
     if (b_fruits > 4){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        
-        let scoreTag = 'Now you have to do the second shopping task. For this shopping task, the products with the smallest ecological footprint will be highlighted using <b>a green border line</b>.';
+        let scoreTag = 'Now you have to do the second shopping task.';
+        //let scoreTag = 'Now you have to do the second shopping task. For this shopping task, the products with the smallest ecological footprint will be highlighted using <b>a green border line</b>.';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
 
