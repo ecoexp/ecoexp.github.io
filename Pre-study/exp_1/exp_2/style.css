@@ -15,23 +15,22 @@ body{
 }
 table {
     border-collapse: collapse;
-    width: 50%;
+    width: 400px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
     font-size: 16px;
     text-align: center;
 }
 th, td {
-    padding: 10px;
+    padding:5px;
     border: 1px solid black;
 }
 th {
     background-color: #4CAF50;
-    color: white;
+    color: rgb(9, 9, 9);
 }
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
+
+
 .tooltip {
     position: relative;
     display: inline-block;
@@ -93,22 +92,28 @@ tr:nth-child(even) {
     border: 1px solid #343a40;
     user-select: none;
 }
+.tick_pos{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 .img_pos{
     position: absolute;
     top: 5px;
     right: 10px;
 }
+
 .txt_pos{
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 37px;
 }
 .text_head{
     position: absolute;
     font-size: 25px;
     font-weight: 500;
     height: 500px;
-    width: 300px;
+    width: 420px;
     color: #fff;
     border-radius: 5px;
     line-height: 30px;
@@ -206,6 +211,10 @@ tr:nth-child(even) {
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.final{
+
+    position: absolute;
 }
 
 .info_box,
@@ -316,6 +325,20 @@ tr:nth-child(even) {
     background: rgb(38, 147, 242);
     cursor: pointer;
 }
+.finalize-button {
+    background-color: #00680e;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
 .info_box{
     width:67%;

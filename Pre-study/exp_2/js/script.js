@@ -35,25 +35,28 @@ const close_btn = document.getElementById("close_id");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
 const next_btn = document.querySelector("footer .next_btn");
-const cancel_btn = document.querySelector("footer .cancel_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
+const cancel_btn = document.querySelector("footer .cancel_btn");
 const response_fruit = [];
 const response_cost = [];
 const response_origin = [];
 const response_impact = [];
 const response_reward = [];
 const response_time = [];
+var matrix = [];
+
+
 
 
 // if startbutton clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
     for(let i = 0; i < 10; i++){ 
-        response_fruit[i]=-1;
-        response_cost[i]=-1;
-        response_origin[i]=-1;
-        response_impact[i]=-1;
-        response_reward[i]=-1;
+        response_fruit[i]=0;
+        response_cost[i]=0;
+        response_origin[i]=0;
+        response_impact[i]=0;
+        response_reward[i]=0;
         }
 }
 close_btn.onclick = ()=>{
@@ -88,13 +91,16 @@ let counter;
 var money_spend =0.0;
 var total_impact =0.0;
 var budget =30.00;
+var cflag=0;
 var b_fruits=0;
 var money_left =0.0;
 let counterLine;
 let widthValue = 0;
 var t_temp=0;
 var flag=0;
-var f_number="0";
+var attempts=0;
+var c_sln=0;
+var f_number=0;
 let userAns ="nill";
 const myTimer = timer();
 var q=0;
@@ -116,12 +122,12 @@ function codeAddress() {
     timeValue = 13; 
     //que_count = 0;
     for(let i = 0; i < 10; i++){ 
-        response_fruit[i]=-1;
-        response_cost[i]=-1;
-        response_time[i]=-1;
-        response_origin[i]=-1;
-        response_impact[i]=-1;
-        response_reward[i]=-1;
+        response_fruit[i]=0;
+        response_cost[i]=0;
+        response_time[i]=0;
+        response_origin[i]=0;
+        response_impact[i]=0;
+        response_reward[i]=0;
         }
     que_numb = 1;
     userScore = 0;
@@ -136,6 +142,7 @@ function codeAddress() {
     next_btn.classList.remove("show"); //hide the next button
     cancel_btn.classList.remove("show");
 }
+
 
 
 function stop_exp() {
@@ -155,52 +162,127 @@ function myFunction(x) {
     quiz_box.classList.add("activeQuiz"); //show quiz box
     showQuetions(x); //calling showQestions function
     f_number=x+1;
+
     myTimer.start();
+
+    
+   
 }
 
-// if restartQuiz button clicked
 
 
 // if quit button clicked
 quit_quiz.onclick = ()=>{
-    //window.location.href = 'https://forms.office.com/e/aS67p7jH0H';
-    window.location.href = 'thank_you.html';
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.remove("activeQuiz"); //hide quiz box
+    result_box.classList.remove("activeResult"); //show result box
+    
 }
 quit_alert.onclick = ()=>{
     alert_box.classList.remove("activeAlert"); //hide info box
 }
 
 restart_alert.onclick = ()=>{
+    showResult();
     window.location.href = 'thank_you.html';
 
 }
 
 
+  // Function to generate and fill the table rows
+  function generateTableRows() {
+    var tableBody = document.getElementById('fruit-table-body');
+    tableBody.innerHTML = ''; // Clear the table body before filling it
+    
+    var totalCost = 0; // Variable to store the total cost
+    
+    c_sln=0;
+    for (var i = 0; i < response_cost.length; i++) {
+        if (response_cost[i] > 0) {
+            var row = document.createElement('tr');
+            var slnCell = document.createElement('td');
+            var itemCell = document.createElement('td');
+            var originCell = document.createElement('td');
+            var costCell = document.createElement('td');
+            c_sln+=1;
+            slnCell.innerText = c_sln;
+            itemCell.innerText = response_fruit[i];
+            originCell.innerText = response_origin[i];
+            costCell.innerText = '€ ' + response_cost[i];
+            totalCost += response_cost[i]; // Add the cost to the total cost variable
 
+            row.appendChild(slnCell);
+            row.appendChild(itemCell);
+            row.appendChild(originCell);
+            row.appendChild(costCell);
+
+            tableBody.appendChild(row);
+            
+        }
+    } 
+ 
+    
+    // Add an extra row for the total cost
+    var totalRow = document.createElement('tr');
+    var totalSlnCell = document.createElement('td');
+    var totalItemCell = document.createElement('td');
+    var totalOriginCell = document.createElement('td');
+    var totalCostCell = document.createElement('td');
+    
+    totalSlnCell.innerText = '';
+    totalItemCell.innerText = '';
+    totalOriginCell.innerText = 'Total: ';
+    totalCostCell.innerText = '€ ' + parseFloat(money_spend).toFixed(2) +'/' + budget; // Display the total cost in the cell
+    totalCostCell.style.fontWeight = 'bold';
+    totalOriginCell.style.fontWeight = 'bold';
+
+    
+    totalRow.appendChild(totalSlnCell);
+    totalRow.appendChild(totalItemCell);
+    totalRow.appendChild(totalOriginCell);
+    totalRow.appendChild(totalCostCell);
+    
+    tableBody.appendChild(totalRow);
+}
 
 
 // if Next  button clicked
 next_btn.onclick = ()=>{
-    progr(flag);
+    //progr(flag);
+    //next_btn.classList.remove("show");
     response_time[que_count]=myTimer.stop();
+
     changeStyle(questions[f_number-1].fruit);
     o=userAns[0];
     o=arr[o-1];
-    console.log("submitted");
+    console.log("submit clicked");
     //console.log(arr[userAns[0]]);
     q=f_number;
     //console.log(q);
     //console.log(o);
-    response_fruit[que_count]=questions[f_number-1].fruit;
-    response_cost[que_count]=questions[f_number-1].price[o];
-    response_origin[que_count]=questions[f_number-1].origin[o];
-    response_impact[que_count]=questions[f_number-1].impact[o];
-    response_reward[que_count]=-1;
-    console.log(response_origin[que_count]);
+    response_fruit[f_number-1]=questions[f_number-1].fruit;
+    response_cost[f_number-1]=questions[f_number-1].price[o];
+    response_origin[f_number-1]=questions[f_number-1].origin[o];
+    response_impact[f_number-1]=questions[f_number-1].impact[o];
+    response_reward[f_number-1]=-1;
+
+
+    
+
+
+    
+    console.log(response_origin[f_number-1]);
     console.log(o);
     console.log(questions[f_number-1].fruit);
-    money_spend += parseFloat(questions[q-1].price[o]);
-    total_impact += parseFloat(questions[q-1].impact[o]);
+    money_spend=0;
+    total_impact=0;
+    for(let i=0;i<10;i++){
+        money_spend += parseFloat(response_cost[i]);
+        total_impact += parseFloat(response_impact[i]);
+    }
+    console.log(money_spend);
+    //money_spend += parseFloat(questions[q-1].price[o]);
+    //total_impact += parseFloat(questions[q-1].impact[o]);
     money_left=budget-money_spend;
     document.getElementById("pr1").innerHTML = money_spend.toFixed(2);
     document.getElementById("ml1").innerHTML = money_left.toFixed(2);
@@ -213,54 +295,75 @@ next_btn.onclick = ()=>{
         //document.getElementById("budg").style.backgroundColor = "red";
         flag=1;
     }
+
+
+    var row = [ response_fruit.slice(), response_origin.slice(), response_cost.slice(), response_impact.slice(), response_time.slice(), response_reward.slice()];
+
+    matrix[attempts] = row;
+
+    
+    generateTableRows();
     //document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
-    //console.log(money_left);
+    console.log(matrix);
     quiz_box.classList.remove("activeQuiz"); 
-    if(response_cost[que_count]==-1) {
-        alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
-        window.location.reload();
+    if(response_cost[f_number-1]==0) {
+            alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
+            window.location.reload();
     }
+    attempts++;
     if(que_count < questions.length - 1){ //if question count is less than total question length
 
-       // console.log(response_time[que_count]);
         que_count++; //increment the que_count value
-        que_numb++; //increment the que_numb value
+
+        //que_numb++; //increment the que_numb value
         showQuetions(que_count); //calling showQestions function
-        queCounter(que_numb); //passing que_numb value to queCounter
+        //queCounter(que_numb); //passing que_numb value to queCounter
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
         startTimer(timeValue); //calling startTimer function
         startTimerLine(widthValue); //calling startTimerLine function
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
-        cancel_btn.classList.remove("show");
-    }else{
-
+        cancel_btn.classList.remove("show"); //hide the next button
+    }
+    console.log(c_sln);
+   
+    if(c_sln==10 && cflag==0){
+        cflag=1;
+        var finalDiv = document.querySelector('.final');
+        finalDiv.hidden = false;
         clearInterval(counter); //clear counter
         clearInterval(counterLine); //clear counterLine
-        showResult(); //calling showResult function
+        //showResult(); //calling showResult function
+        info_box.classList.remove("activeInfo"); //hide info box
+        quiz_box.classList.remove("activeQuiz"); //hide quiz box
+        result_box.classList.add("activeResult"); //show result box
+        const scoreText = result_box.querySelector(".score_text");
+        let scoreTag = 'Now you can finalise the shopping cart or you could modify the list';
+        //let scoreTag = 'Now you have to do the second shopping task. For this shopping task, the products with the smallest ecological footprint will be highlighted using <b>a green border line</b>.';
+        scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
-    if(response_cost[0]==-1) {
-        alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
-        window.location.reload();
-}
+
+  
 }
 
 // getting questions and options from array
 function showQuetions(index){
+    
+
     // Fill array with numbers from 123 to 999
     for (let i = 0; i < 3; i++) {
-        arr[i]=i;
-        }
-    
-        // Shuffle the array using Fisher-Yates algorithm
-        for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-        }
-        //console.log(arr);
-    
-    
+    arr[i]=i;
+    }
+
+    // Shuffle the array using Fisher-Yates algorithm
+    for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+
+
+
     const que_text = document.querySelector(".que_text");
 
     //creating a new span and div tag for question and option and passing the value using array index
@@ -289,8 +392,10 @@ function showQuetions(index){
     }
     //console.log(small_index);
     option[small_index].classList.add("best");
+
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
+        
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
     
@@ -298,6 +403,7 @@ function showQuetions(index){
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon tick"><i class="fas fa-times"></i></div>';
+
 let selectedOption = null; // track the selected option
 
 // if user clicked on an option
@@ -319,53 +425,33 @@ function optionSelected(answer){
     cancel_btn.classList.add("show"); // hide the next button
 }
 
-function showResult(){
-    info_box.classList.remove("activeInfo"); //hide info box
-    quiz_box.classList.remove("activeQuiz"); //hide quiz box
-    result_box.classList.add("activeResult"); //show result box
-    const scoreText = result_box.querySelector(".score_text");
-    var ipAddress ="nill";
+  
 
-    
+function showResult(){
 
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
     var budget_group= "High_Budget_Recc";
-    var datetime = "Pres Study Conducted on" + currentdate.getDate() + "/"
+    var datetime = "Pres Study Conducted on"+ currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
 
-                
-    for(let i = 0; i < 10; i++){ 
-
-        if(response_cost[i]==-1)
-            window.location.href = 'error.html';
-
-    }
 
     newuserdata.set({
-        Fruit_0: response_fruit[0], Origin_0: response_origin[0], Price_0: response_cost[0], EcoImpact_0: response_impact[0], Reward_0: response_reward[0], Time_0: response_time[0],
-        Fruit_1: response_fruit[1], Origin_1: response_origin[1], Price_1: response_cost[1], EcoImpact_1: response_impact[1], Reward_1: response_reward[1], Time_1: response_time[1],
-        Fruit_2: response_fruit[2], Origin_2: response_origin[2], Price_2: response_cost[2], EcoImpact_2: response_impact[2], Reward_2: response_reward[2], Time_2: response_time[2],
-        Fruit_3: response_fruit[3], Origin_3: response_origin[3], Price_3: response_cost[3], EcoImpact_3: response_impact[3], Reward_3: response_reward[3], Time_3: response_time[3],
-        Fruit_4: response_fruit[4], Origin_4: response_origin[4], Price_4: response_cost[4], EcoImpact_4: response_impact[4], Reward_4: response_reward[4], Time_4: response_time[4],
-        Fruit_5: response_fruit[5], Origin_5: response_origin[5], Price_5: response_cost[5], EcoImpact_5: response_impact[5], Reward_5: response_reward[5], Time_5: response_time[5],
-        Fruit_6: response_fruit[6], Origin_6: response_origin[6], Price_6: response_cost[6], EcoImpact_6: response_impact[6], Reward_6: response_reward[6], Time_6: response_time[6],
-        Fruit_7: response_fruit[7], Origin_7: response_origin[7], Price_7: response_cost[7], EcoImpact_7: response_impact[7], Reward_7: response_reward[7], Time_7: response_time[7],
-        Fruit_8: response_fruit[8], Origin_8: response_origin[8], Price_8: response_cost[8], EcoImpact_8: response_impact[8], Reward_8: response_reward[8], Time_8: response_time[8],
-        Fruit_9: response_fruit[9], Origin_9: response_origin[9], Price_9: response_cost[9], EcoImpact_9: response_impact[9], Reward_9: response_reward[9], Time_9: response_time[9],
-        Date_Time: datetime, Total_Money_Spend: money_spend, Total_Fruits: b_fruits, Total_impact: total_impact,_User_ID: uniqueId, Budget_Group: budget_group,UI_Order: orderedFruits,
-    });
 
-    if (b_fruits > 4){ // if user scored more than 3
-        //creating a new span tag and passing the user score number and total question number
-        
-        let scoreTag = 'Thank You';
-        scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
-    }
+        Date_Time: datetime, 
+        Total_Money_Spend: money_spend, 
+        Total_Fruits: b_fruits, 
+        Total_impact: total_impact,
+        _User_ID: uniqueId, 
+        Budget_Group: budget_group, 
+        UI_Order: orderedFruits, 
+        Response_all: matrix,
+      });
+
 }
 
 function startTimer(time){
@@ -394,6 +480,7 @@ function startTimer(time){
             }
             
             next_btn.classList.add("show"); //show the next button if user selected any option
+            cancel_btn.classList.add("show"); 
         }
         t_temp = time;
         
@@ -416,9 +503,10 @@ function startTimerLine(time){
 
 function queCounter(index){
     //creating a new span tag and passing the question number and total question
-    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> fruits</span>';
+    let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> items</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
+
 function timer() {
     let startTime, endTime, running = false;
     

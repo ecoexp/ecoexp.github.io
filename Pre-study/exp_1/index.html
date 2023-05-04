@@ -18,16 +18,16 @@
     
 </head>
 <body>
-    <div class="factor_q" style="top: 6%;left: 8%;background-color: rgb(134, 9, 132);" hidden>
+    <div class="factor_q" style="top: 10px;left: 8%;background-color: rgb(134, 9, 132);" hidden>
         <div class="factor_txt" hidden>Participant ID: </div>
         <div class="factor_value" style="width: 120px;" hidden><span id="id1">ID</span></div>
     </div>
-    <div class="start_btn"style="top: 10%;left: 90%;"><button>Instructions</button></div>
-    <div class="start_btn"style="top: 10%;left: 92%;" onclick="stop_exp();" hidden><button style="background: rgb(232, 75, 36);">STOP</button></div>
+    <div class="start_btn"style="top: 10%;left: 10%;"><button>Instructions</button></div>
+  
     <!--button style="position: absolute;top: 5%;left: 92%;outline: none;border: none;height: 40px;cursor: pointer;" id="close_id">
         <img src="stop.jpg" alt="close" width="60" -->
     </button>
-    <div id="progress">
+    <div id="progress" hidden>
         <div id="progress-bar"></div>
         <ul id="progress-num">
           <li class="step">1</li>
@@ -76,11 +76,26 @@
         <div class="factor_txt">Money Spend: </div>
         <div class="factor_value">€ <span id="pr1">0</span> / 27</div>
     </div-->
-    <div class="text_head" style="top: 25%; right: 1%;height: 150px;"> <br> <strong>Performance</strong>
-        <div class="factor" style="top: 80px;left: 10px;">
-            <div class="factor_txt">Money Spend: </div>
-            <div class="factor_value">€ <span id="pr1">0</span> / <span id="bg1">27</span></div>
+    <div class="text_head" style="top: 10px; right: 3%;height: 560px;"> <br> <strong>Your Cart</strong>
+        <div class="factorghj" style="top: 200px;left: 10px;" hidden>
+            <div class="factor_txt" hidden>Money Spend: </div>
+            <div class="factor_value" hidden>€ <span id="pr1">0</span> / <span id="bg1">27</span></div>
         </div>
+       
+            <table>
+                <thead>
+                  <tr style="color: black;">
+                    <th>No.</th>
+                    <th>Item</th>
+                    <th>Origin</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+                <tbody id="fruit-table-body">
+                  <!-- Table rows will be added here dynamically -->
+                </tbody>
+              </table>
+     
         <!--div class="factor" id="budg" style="top: 140px;left: 10px;">
             <div class="factor_txt">Fruits within budget: </div>
             <div class="factor_value"> <span id="fb1">0</span> / 10</div>
@@ -95,55 +110,66 @@
             <div class="factor_value"style="height: 150px;width:120px;background: white; "> <div class="tree"style="top: 80px;left: 232px;"><img src="images/tree_1.gif" alt="Apple_Image" width="50" ></div></div>
         </div-->
     </div> 
+    <div class="final" style="top: 570px;left: 80%;" hidden><button class="finalize-button"  onclick="stop_exp();">Finalise</button></div>
    
     
     
     <div class="apples" style="top: 35%;left: 15%;"><button onclick="myFunction(0);">
-        <div class="img_pos"><img src="images/apples.jpg" alt="Apple_Image" width="60" ></div>
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
+        <div class="img_pos" ><img src="images/apples.jpg" alt="Apple_Image" width="60" ></div>
         <div class="txt_pos">Apple<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.49</strong></div> 
         </button></div>
     <div class="oranges" style="top: 35%;left: 32%;"><button onclick="myFunction(1);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/oranges.jpg" alt="Orange_Image" width="70" ></div>
         <div class="txt_pos">Orange<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.12</strong></div> 
     </button></div>
     <div class="broccoli" style="top: 35%;left: 49%;"><button onclick="myFunction(7);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/broccoli.jpg" alt="pear_Image" width="70" ></div>
         <div class="txt_pos">Broccoli<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.89</strong></div> 
     </button></div>
     <div class="bananas" style="top: 35%;left: 66%;"><button onclick="myFunction(2);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/bananas.jpg" alt="Banana_Image" width="60" ></div>
         <div class="txt_pos">Banana<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.10</strong></div> 
     </button></div>
     <div class="carrots" style="top: 58%;left: 15%;"><button onclick="myFunction(6);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/carrots.jpg" alt="Raspberry_Image" width="90" ></div>
         <div class="txt_pos">Carrot<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.39</strong></div> 
     </button></div>
     <div class="peaches" style="top: 58%;left: 32%;"><button onclick="myFunction(3);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/peaches.jpg" alt="Peach_Image" width="70" ></div>
         <div class="txt_pos">Peach<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.19</strong></div> 
     </button></div>
     <div class="potatoes" style="top: 58%;left: 49%;"><button onclick="myFunction(8);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/potatoes.jpg" alt="Potato_Image" width="80" ></div>
         <div class="txt_pos">Potato<br>(1kg)</div>
-        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.59</strong></div> 
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.29</strong></div> 
     </button></div>
     <div class="tomatoes" style="top: 58%;left: 66%;"><button onclick="myFunction(4);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/tomatoes.jpg" alt="Kiwi_Image" width="70" ></div>
         <div class="txt_pos">Tomato<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.78</strong></div> 
     </button></div>
     <div class="lettuce" style="top: 80%;left: 32%;"><button onclick="myFunction(9);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/lettuce.jpg" alt="Watermelon_Image" width="70" ></div>
         <div class="txt_pos">Lettuce<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.19</strong></div>  
     </button></div>
     <div class="strawberries" style="top: 80%;left: 49%;"><button onclick="myFunction(5);">
+        <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/strawberries.jpg" alt="Strawberry_Image" width="70" ></div>
         <div class="txt_pos">Strawberry<br>(500g)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.64</strong></div> 
@@ -151,6 +177,10 @@
     <script>
 
         const topleft =[[35,15],[35,32],[35,49],[35,66],[58,15],[58,32],[58,49],[58,66],[80,32],[80,49]];
+        for (var i = 0; i < topleft.length; i++) {
+            topleft[i][0] += 0;
+            topleft[i][1] += -5;
+        }
         const fruits = ['apples', 'oranges', 'broccoli', 'bananas', 'carrots', 'peaches', 'potatoes', 'tomatoes', 'lettuce', 'strawberries'];
         const indices = [...Array(topleft.length).keys()];
 
@@ -223,7 +253,7 @@
                     <td>Strawberry</td>
                 </tr>
             </table>
-            <div class="info">&emsp;2. You have <span>20 Euros</span>.  Buy the most <span class="tooltip">ecological products<span class="tooltiptext">Products that have the least damaging effect on the environment</span></span> with this budget. </div>
+            <div class="info">&emsp;2. You have <span>24 Euros</span>.  Buy the most <span class="tooltip">ecological products<span class="tooltiptext">Products that have the least damaging effect on the environment</span></span> with this budget. </div>
 
         </div>
         <div class="buttons">
@@ -258,10 +288,11 @@
                 <!-- Here I've inserted options from JavaScript -->
             </div>
         </section>
+    
 
         <!-- footer of Quiz Box -->
         <footer>
-            <div class="total_que">
+            <div class="total_que" hidden>
                 <!-- Here I've inserted fruit Number from JavaScript -->
           
             </div>
@@ -277,15 +308,15 @@
     <!-- Result Box -->
     <div class="result_box">
         <div class="icon">
-            <i class="fas fa-crown"></i>
+            <img src="images/alert.png" alt="close" width="150"  >
         </div>
-        <div class="complete_text">You have completed the first shopping task!</div>
+        <div class="complete_text">You have selected all 10 fruits. </div>
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
         <div class="buttons">
             <button class="restart" hidden>Replay task</button>
-            <button class="quit">Continue</button>
+            <button class="quit">Okay</button>
         </div>
     </div>
     <div  style="background-color: rgba(0,0,0,.5);width: 600px; "></div>
@@ -294,7 +325,7 @@
         <div class="icon">
             <img src="images/alert.png" alt="close" width="150"  >
         </div>
-        <div class="complete_text">&emsp;Your data won't be saved.<br>Do you really want to stop?</div>
+        <div class="complete_text">&emsp;You could still modify your selections.<br><br>Do you really want to finalise this cart? <b>Note: After confirming this, you will be directed to the second shopping task.</b> </div>
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
@@ -314,12 +345,15 @@
     <script src="js/script.js"></script>
     <script>
            
-        function changeStyle(div_name){
-            //console.log(div_name);
-            var element = document.getElementsByClassName(div_name)
-            element[0].style.visibility = 'hidden';
-            //console.log(element[0]);
-        }
+           function changeStyle(div_name){
+            var element = document.getElementsByClassName(div_name);
+            element[0].style.border = "5px solid blue";
+            var tick_div = element[0].querySelector(".tick_pos");
+            tick_div.hidden = false;
+
+            
+            }
+
         </script>
 
 </body>
