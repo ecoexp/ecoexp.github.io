@@ -109,7 +109,7 @@ const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 const restart_alert = alert_box.querySelector(".buttons .restart");
 const quit_alert = alert_box.querySelector(".buttons .quit");
-
+let selectedOption = null; 
 window.onload = codeAddress();
 
 function codeAddress() {
@@ -392,7 +392,16 @@ function showQuetions(index){
     }
     //console.log(small_index);
     option[small_index].classList.add("best");
-
+    
+    if (response_cost[index] > 0) {
+        for (let i = 0; i < 3; i++) {    
+            if (questions[index].price[arr[i]] == response_cost[index]) {
+                option[i].insertAdjacentHTML("beforeend", tickIconTag);
+                selectedOption = option[i];
+            }
+        }
+    }
+    
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
         
@@ -404,7 +413,7 @@ function showQuetions(index){
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon tick"><i class="fas fa-times"></i></div>';
 
-let selectedOption = null; // track the selected option
+// track the selected option
 
 // if user clicked on an option
 function optionSelected(answer){

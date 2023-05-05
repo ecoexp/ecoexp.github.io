@@ -124,7 +124,7 @@
         <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
         <div class="img_pos"><img src="images/oranges.jpg" alt="Orange_Image" width="70" ></div>
         <div class="txt_pos">Orange<br>(1kg)</div>
-        <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 1.12</strong></div> 
+        <div class="cost_var" style="bottom: 2px; right: 2px;"> United Kingdom <strong>€ 1.12</strong></div> 
     </button></div>
     <div class="broccoli" style="top: 35%;left: 49%;"><button onclick="myFunction(7);">
         <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
@@ -345,11 +345,13 @@
     <script src="js/script.js"></script>
     <script>
            
-           function changeStyle(div_name){
+           function changeStyle(div_name, torigin, tcost){
             var element = document.getElementsByClassName(div_name);
             element[0].style.border = "5px solid blue";
             var tick_div = element[0].querySelector(".tick_pos");
             tick_div.hidden = false;
+            //var cost_div = element[0].querySelector(".cost_var");
+            //cost_div.innerHTML= torigin  +", <strong>€ "+ tcost +"</strong>";
 
             
             }

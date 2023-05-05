@@ -109,6 +109,7 @@ const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 const restart_alert = alert_box.querySelector(".buttons .restart");
 const quit_alert = alert_box.querySelector(".buttons .quit");
+let selectedOption = null;
 
 window.onload = codeAddress();
 
@@ -288,7 +289,6 @@ next_btn.onclick = ()=>{
     document.getElementById("ml1").innerHTML = money_left.toFixed(2);
     if(money_spend<budget){
         b_fruits=b_fruits+1;
-    
     }
     if(money_spend>budget && flag==0){
         //alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
@@ -381,7 +381,14 @@ function showQuetions(index){
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
     const option = option_list.querySelectorAll(".option");
-
+    if (response_cost[index] > 0) {
+        for (let i = 0; i < 3; i++) {    
+            if (questions[index].price[arr[i]] == response_cost[index]) {
+                option[i].insertAdjacentHTML("beforeend", tickIconTag);
+                selectedOption = option[i];
+            }
+        }
+    }
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
         
@@ -393,7 +400,7 @@ function showQuetions(index){
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon tick"><i class="fas fa-times"></i></div>';
 
-let selectedOption = null; // track the selected option
+ // track the selected option
 
 // if user clicked on an option
 function optionSelected(answer){

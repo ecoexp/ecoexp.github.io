@@ -44,6 +44,7 @@ const response_impact = [];
 const response_reward = [];
 const response_time = [];
 var matrix = [];
+let selectedOption = null; 
 
 
 
@@ -252,7 +253,7 @@ next_btn.onclick = ()=>{
     //next_btn.classList.remove("show");
     response_time[que_count]=myTimer.stop();
 
-    changeStyle(questions[f_number-1].fruit);
+    
     o=userAns[0];
     o=arr[o-1];
     console.log("submit clicked");
@@ -268,7 +269,7 @@ next_btn.onclick = ()=>{
 
 
     
-
+    changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1] );
 
     
     console.log(response_origin[f_number-1]);
@@ -381,7 +382,14 @@ function showQuetions(index){
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
     const option = option_list.querySelectorAll(".option");
-
+    if (response_cost[index] > 0) {
+        for (let i = 0; i < 3; i++) {    
+            if (questions[index].price[arr[i]] == response_cost[index]) {
+                option[i].insertAdjacentHTML("beforeend", tickIconTag);
+                selectedOption = option[i];
+            }
+        }
+    }
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
         
@@ -393,7 +401,7 @@ function showQuetions(index){
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon tick"><i class="fas fa-times"></i></div>';
 
-let selectedOption = null; // track the selected option
+
 
 // if user clicked on an option
 function optionSelected(answer){
