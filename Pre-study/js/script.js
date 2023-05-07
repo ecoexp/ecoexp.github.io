@@ -1,26 +1,4 @@
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAjxcNAb1pZI4usSK1jzxhHx0x1KNn6rO8",
-    authDomain: "ecological-experiment-da-a196d.firebaseapp.com",
-    databaseURL: "https://ecological-experiment-da-a196d-default-rtdb.firebaseio.com",
-    projectId: "ecological-experiment-da-a196d",
-    storageBucket: "ecological-experiment-da-a196d.appspot.com",
-    messagingSenderId: "48549347586",
-    appId: "1:48549347586:web:0caac946b0b64bb0f6821b"
-    };
-    
-    // initialize firebase
-firebase.initializeApp(firebaseConfig);
-    
-    // reference your database
-var userdata = firebase.database().ref("UserData");
-var uniqueId = localStorage.getItem('pre_study_unique_id');
-//console.log(uniqueId); 
-
-
-
-
-
 
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
@@ -45,44 +23,44 @@ const response_reward = [];
 const response_time = [];
 var matrix = [];
 let selectedOption = null; 
+let updated_fruits = [];
+var budget_group= "Low_Budget";
+var base_group= "_No_Treatment";
+var sTime = new Date(); 
+var eTime = new Date(); 
+var durationSec = 0.00;
 
 
 
 
-// if startbutton clicked
+
+
 start_btn.onclick = ()=>{
-    info_box.classList.add("activeInfo"); //show info box
-    for(let i = 0; i < 10; i++){ 
-        response_fruit[i]=0;
-        response_cost[i]=0;
-        response_origin[i]=0;
-        response_impact[i]=0;
-        response_reward[i]=0;
-        }
+    info_box.classList.add("activeInfo"); 
 }
 close_btn.onclick = ()=>{
     myTimer.stop();
     quiz_box.classList.remove("activeQuiz"); 
 }
+
 cancel_btn.onclick = ()=>{
     myTimer.stop();
     quiz_box.classList.remove("activeQuiz"); 
 }
 
-// if exit button clicked
+
 exit_btn.onclick = ()=>{
-    info_box.classList.remove("activeInfo"); //hide info box
+    info_box.classList.remove("activeInfo"); 
 }
 
-// if continue button clicked
+
 continue_btn.onclick = ()=>{
-    info_box.classList.remove("activeInfo"); //hide info box
-    quiz_box.classList.add("activeQuiz"); //show quiz box
-    showQuetions(0); //calling showQestions function
-    queCounter(1); //passing 1 parameter to queCounter
-    startTimer(13); //calling startTimer function
-    startTimerLine(0); //calling startTimerLine function
+    info_box.classList.remove("activeInfo"); 
+    quiz_box.classList.add("activeQuiz"); 
 }
+
+let small_index=0;   
+let selection_index=0;
 const arr = [];
 let timeValue =  13;
 let que_count = 0;
@@ -91,7 +69,7 @@ let userScore = 0;
 let counter;
 var money_spend =0.0;
 var total_impact =0.0;
-var budget =30.00;
+
 var cflag=0;
 var b_fruits=0;
 var money_left =0.0;
@@ -111,11 +89,56 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 const restart_alert = alert_box.querySelector(".buttons .restart");
 const quit_alert = alert_box.querySelector(".buttons .quit");
 
+var bgroups=0;
+var baseline=0;
+var budget =24.00;
+
+if(baseline==1){
+    const infoListElement = document.querySelector('.info-list');
+    base_group= "_Treatment";
+    const thirdInstruction = document.createElement('div');
+    thirdInstruction.className = 'info instruction';
+    thirdInstruction.innerHTML = `
+    <div class="instruction-number">3.</div>
+    <div class="instruction-text">The products with the smallest ecological footprint will be highlighted with a<span style=" color: #00680e;" > green border line</span>.</div>
+    `;
+
+    infoListElement.appendChild(thirdInstruction);
+}
+
+
+// Change the value from 24 Euros to 30 Euros
+if(bgroups==1){
+    budget =30.00;
+    budget_group= "High_Budget";
+    const eurosElement = document.querySelector('.euros');
+    eurosElement.textContent = '30 Euros';
+    const noteElement = document.querySelector('.complete_text b');
+    noteElement.textContent = 'Note: After confirming this, you will complete this study.';
+}
+const firebaseConfig = {
+    apiKey: "AIzaSyAjxcNAb1pZI4usSK1jzxhHx0x1KNn6rO8",
+    authDomain: "ecological-experiment-da-a196d.firebaseapp.com",
+    databaseURL: "https://ecological-experiment-da-a196d-default-rtdb.firebaseio.com",
+    projectId: "ecological-experiment-da-a196d",
+    storageBucket: "ecological-experiment-da-a196d.appspot.com",
+    messagingSenderId: "48549347586",
+    appId: "1:48549347586:web:0caac946b0b64bb0f6821b"
+    };
+    
+ 
+firebase.initializeApp(firebaseConfig);
+    
+
+var userdata = firebase.database().ref("UserData");
+var uniqueId = localStorage.getItem('pre_study_unique_id');
+
 window.onload = codeAddress();
 
 function codeAddress() {
-    document.getElementById("bg1").innerHTML = budget.toFixed(0);
-    document.getElementById("ml1").innerHTML = budget.toFixed(0);
+    generateTableRows();
+    stTime = new Date(); // Store current time
+    document.getElementById("bg").innerHTML = budget.toFixed(0);
     document.getElementById("id1").innerHTML = uniqueId;
    info_box.classList.add("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //show  box
@@ -147,10 +170,27 @@ function codeAddress() {
 
 
 function stop_exp() {
-   /* if(confirm("\bAlert!\nDo you really want to stop this experiment? \nKindly press 'OK' to stop and 'Cancel' to continue this experiment") == true){
-        window.location.href = 'thank_you.html';
-    }*/
+    const completeText = document.getElementById('txt_check');
+    const yesButton = document.getElementById('yes_b');
+    const noButton = document.getElementById('no_b');
     alert_box.classList.add("activeAlert"); //show result box
+    info_box.classList.remove("activeInfo"); //hide info box
+    quiz_box.classList.remove("activeQuiz"); //show quiz box
+    result_box.classList.remove("activeResult"); //show result box
+    if(money_spend<=budget&&c_sln==10){
+
+        completeText.innerHTML = "<center>Do you really want to check out?<br><br> <b>Note: After confirming this, you will be directed to the second shopping task.</b></center>";
+        yesButton.style.display = 'block';
+        yesButton.textContent = 'Yes';
+        noButton.textContent = 'No';
+        
+    }
+    else{
+        completeText.innerHTML = "<center>Unable to Checkout! <br><br> <b>Please select all 10 items within the given budget</b></center>";
+        yesButton.style.display = 'none';
+        noButton.textContent = 'Okay';
+    }
+
 
 }
 
@@ -185,8 +225,12 @@ quit_alert.onclick = ()=>{
 
 restart_alert.onclick = ()=>{
     showResult();
-    window.location.href = 'exp_2/index.html';
-
+    if(baseline==0){
+        window.location.href = 'exp_2/index.html';
+    }
+    else{
+        window.location.href = 'thank_you.html';
+    }
 }
 
 
@@ -194,34 +238,32 @@ restart_alert.onclick = ()=>{
   function generateTableRows() {
     var tableBody = document.getElementById('fruit-table-body');
     tableBody.innerHTML = ''; // Clear the table body before filling it
-    
+  
     var totalCost = 0; // Variable to store the total cost
-    
-    c_sln=0;
-    for (var i = 0; i < response_cost.length; i++) {
-        if (response_cost[i] > 0) {
-            var row = document.createElement('tr');
-            var slnCell = document.createElement('td');
-            var itemCell = document.createElement('td');
-            var originCell = document.createElement('td');
-            var costCell = document.createElement('td');
-            c_sln+=1;
-            slnCell.innerText = c_sln;
-            itemCell.innerText = response_fruit[i];
-            originCell.innerText = response_origin[i];
-            costCell.innerText = '€ ' + response_cost[i];
-            totalCost += response_cost[i]; // Add the cost to the total cost variable
-
-            row.appendChild(slnCell);
-            row.appendChild(itemCell);
-            row.appendChild(originCell);
-            row.appendChild(costCell);
-
-            tableBody.appendChild(row);
-            
-        }
-    } 
- 
+    var fruitIndexes = updated_fruits.map(fruit => response_fruit.indexOf(fruit)); // Get the indexes of the fruits in the updated_fruits array
+  
+    c_sln = 0;
+    for (var i = 0; i < fruitIndexes.length; i++) {
+      var index = fruitIndexes[i];
+      var row = document.createElement('tr');
+      var slnCell = document.createElement('td');
+      var itemCell = document.createElement('td');
+      var originCell = document.createElement('td');
+      var costCell = document.createElement('td');
+      c_sln += 1;
+      slnCell.innerText = c_sln;
+      itemCell.innerText = response_fruit[index];
+      originCell.innerText = response_origin[index];
+      costCell.innerText = '€ ' + response_cost[index];
+      totalCost += response_cost[index]; // Add the cost to the total cost variable
+  
+      row.appendChild(slnCell);
+      row.appendChild(itemCell);
+      row.appendChild(originCell);
+      row.appendChild(costCell);
+  
+      tableBody.appendChild(row);
+    }
     
     // Add an extra row for the total cost
     var totalRow = document.createElement('tr');
@@ -233,7 +275,7 @@ restart_alert.onclick = ()=>{
     totalSlnCell.innerText = '';
     totalItemCell.innerText = '';
     totalOriginCell.innerText = 'Total: ';
-    totalCostCell.innerText = '€ ' + parseFloat(money_spend).toFixed(2) +'/' + budget; // Display the total cost in the cell
+    totalCostCell.innerText = '€ ' + parseFloat(money_spend).toFixed(2) +' / ' + budget; // Display the total cost in the cell
     totalCostCell.style.fontWeight = 'bold';
     totalOriginCell.style.fontWeight = 'bold';
 
@@ -244,37 +286,54 @@ restart_alert.onclick = ()=>{
     totalRow.appendChild(totalCostCell);
     
     tableBody.appendChild(totalRow);
+    var table = document.getElementById("fruit-table");
+    var tableHeight = table.offsetHeight;
+
+    // Set the height of the text_head div to the table height
+    var textHead = document.querySelector(".text_head");
+    textHead.style.height = 130 + tableHeight + "px";
 }
 
 
 // if Next  button clicked
 next_btn.onclick = ()=>{
-    //progr(flag);
-    //next_btn.classList.remove("show");
-    response_time[que_count]=myTimer.stop();
 
-    
+    response_time[que_count]=myTimer.stop();
     o=userAns[0];
     o=arr[o-1];
-    console.log("submit clicked");
-    //console.log(arr[userAns[0]]);
+    
     q=f_number;
-    //console.log(q);
-    //console.log(o);
     response_fruit[f_number-1]=questions[f_number-1].fruit;
     response_cost[f_number-1]=questions[f_number-1].price[o];
     response_origin[f_number-1]=questions[f_number-1].origin[o];
     response_impact[f_number-1]=questions[f_number-1].impact[o];
     response_reward[f_number-1]=-1;
+    console.log(questions[f_number-1].price[selection_index]);
+    console.log(questions[f_number-1].price[o]);
+    let smallestValue = questions[f_number - 1].impact[0];
+    for (let j = 0; j < 3; j++) {
+        if (questions[f_number-1].impact[j] < smallestValue) {
+          smallestValue = questions[f_number-1].impact[j];
+        }
+    }
+    if(baseline==1){
+        if(questions[f_number-1].impact[o]==smallestValue){
+            changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1], "green" );
+            console.log("green clicked");
+        }
+        else {
+            changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1], "blue" );       
+        }
+    }
+    else {
+        changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1], "blue" );       
+    }
 
 
+    if (!updated_fruits.includes(response_fruit[f_number-1])) {
+        updated_fruits.push(response_fruit[f_number-1]);
+      }
     
-    changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1] );
-
-    
-    console.log(response_origin[f_number-1]);
-    console.log(o);
-    console.log(questions[f_number-1].fruit);
     money_spend=0;
     total_impact=0;
     for(let i=0;i<10;i++){
@@ -282,18 +341,15 @@ next_btn.onclick = ()=>{
         total_impact += parseFloat(response_impact[i]);
     }
     console.log(money_spend);
-    //money_spend += parseFloat(questions[q-1].price[o]);
-    //total_impact += parseFloat(questions[q-1].impact[o]);
     money_left=budget-money_spend;
     document.getElementById("pr1").innerHTML = money_spend.toFixed(2);
-    document.getElementById("ml1").innerHTML = money_left.toFixed(2);
+    document.getElementById("ml1").innerHTML = money_spend.toFixed(2);
     if(money_spend<budget){
         b_fruits=b_fruits+1;
     
     }
     if(money_spend>budget && flag==0){
-        //alert("You have crossed the budget.\nBut don't worry, kindly continue your shopping by selecting also the remaining items to complete this task. Select the order of the remaining items following the same principles as applied before");
-        //document.getElementById("budg").style.backgroundColor = "red";
+ 
         flag=1;
     }
 
@@ -304,22 +360,17 @@ next_btn.onclick = ()=>{
 
     
     generateTableRows();
-    //document.getElementById("fb1").innerHTML = b_fruits.toFixed(0);
-    console.log(matrix);
     quiz_box.classList.remove("activeQuiz"); 
     if(response_cost[f_number-1]==0) {
             alert("Something went wrong in loading the experiment. Press OK to reload the experiment correctly.");
             window.location.reload();
     }
     attempts++;
-    if(que_count < questions.length - 1){ //if question count is less than total question length
+    if(que_count < questions.length - 1){ 
 
-        que_count++; //increment the que_count value
-
-        //que_numb++; //increment the que_numb value
-        showQuetions(que_count); //calling showQestions function
-        //queCounter(que_numb); //passing que_numb value to queCounter
-        clearInterval(counter); //clear counter
+        que_count++; 
+        showQuetions(que_count); 
+        clearInterval(counter); 
         clearInterval(counterLine); //clear counterLine
         startTimer(timeValue); //calling startTimer function
         startTimerLine(widthValue); //calling startTimerLine function
@@ -327,25 +378,35 @@ next_btn.onclick = ()=>{
         next_btn.classList.remove("show"); //hide the next button
         cancel_btn.classList.remove("show"); //hide the next button
     }
-    console.log(c_sln);
-   
-    if(c_sln==10 && cflag==0){
-        cflag=1;
-        var finalDiv = document.querySelector('.final');
-        finalDiv.hidden = false;
-        clearInterval(counter); //clear counter
-        clearInterval(counterLine); //clear counterLine
-        //showResult(); //calling showResult function
+    if(c_sln==10){
+        if(cflag==0){
         info_box.classList.remove("activeInfo"); //hide info box
         quiz_box.classList.remove("activeQuiz"); //hide quiz box
         result_box.classList.add("activeResult"); //show result box
+        cflag=1;
+        }
         const scoreText = result_box.querySelector(".score_text");
-        let scoreTag = 'Now you can finalise the shopping cart or you could modify the list';
-        //let scoreTag = 'Now you have to do the second shopping task. For this shopping task, the products with the smallest ecological footprint will be highlighted using <b>a green border line</b>.';
-        scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
-    }
+        const cbutton = document.getElementById('checkout');
+        let scoreTag = 'Now you can check out the shopping cart or you could modify the list';
+        const checkoutButton = document.querySelector('.final button');
 
-  
+
+        if(money_spend<=budget){  
+            cbutton.hidden = false;
+            scoreTag = '<center><br>Now you can check out the shopping cart <br> OR <br> You can modify the list</center>';
+            document.getElementById("cart").style.backgroundColor = "#168dc0";
+            checkoutButton.style.backgroundColor = '#00680e';
+            checkoutButton.style.color = 'white';
+        }
+        else{
+            cbutton.hidden = true;
+            checkoutButton.style.backgroundColor = '#2a312b';
+            checkoutButton.style.color = 'rgb(187, 176, 176)';
+            document.getElementById("cart").style.backgroundColor = "#0e526f";
+            scoreTag = '<br><center><b>You have crossed the budget.</b><br> Kindly modify your cart to stay within the budget to checkout.</center>'; 
+        }
+        scoreText.innerHTML = scoreTag;  
+    } 
 }
 
 // getting questions and options from array
@@ -380,16 +441,34 @@ function showQuetions(index){
     +questions[index].origin[arr[2]]+'</strong></div>' ;
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
-    
+
     const option = option_list.querySelectorAll(".option");
     if (response_cost[index] > 0) {
         for (let i = 0; i < 3; i++) {    
             if (questions[index].price[arr[i]] == response_cost[index]) {
                 option[i].insertAdjacentHTML("beforeend", tickIconTag);
                 selectedOption = option[i];
+                selection_index=i;
             }
         }
     }
+    if(baseline==1){
+        let smallestImpact = questions[index].impact[arr[0]];
+        small_index=0;
+        // loop through the rest of the array and compare each element with the current smallest impact value
+        for (let i = 0; i < 3; i++) {
+        if (questions[index].impact[arr[i]] < smallestImpact) {
+            smallestImpact = questions[index].impact[arr[i]];
+            small_index=i;
+        }
+        }
+        option[small_index].classList.add("best");
+    }
+
+    
+
+
+
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
         
@@ -408,7 +487,6 @@ function optionSelected(answer){
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     userAns = answer.textContent;
-    //console.log(userAns);
 
     if (selectedOption) { // if a previous option was selected
         selectedOption.classList.remove("correct"); // remove the green color from the previous selected option
@@ -428,7 +506,13 @@ function showResult(){
 
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
-    var budget_group= "High_Budget";
+    eTime = new Date();
+    const durationMs = eTime - sTime; // Calculate duration in milliseconds
+    durationSec = (durationMs / 1000).toFixed(2); // Convert to seconds with 2 decimal points
+
+    console.log("Start time:", stTime);
+    console.log("End time:", eTime);
+    console.log("Duration:", durationSec, "seconds");
     var datetime = "Pres Study Conducted on"+ currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
@@ -440,12 +524,14 @@ function showResult(){
     newuserdata.set({
 
         Date_Time: datetime, 
+        Total_Duration: durationSec,
         Total_Money_Spend: money_spend, 
-        Total_Fruits: b_fruits, 
+        Total_Attempts: attempts, 
         Total_impact: total_impact,
         _User_ID: uniqueId, 
-        Budget_Group: budget_group, 
+        Budget_Group: budget_group+base_group, 
         UI_Order: orderedFruits, 
+        User_Order: updated_fruits,
         Response_all: matrix,
       });
 
@@ -482,8 +568,6 @@ function startTimer(time){
         t_temp = time;
         
     }
-    
-    //console.log(response_time[que_count]);
     
 }
 

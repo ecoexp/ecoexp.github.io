@@ -19,11 +19,10 @@ h1 {
     padding:15px;
     background-color: rgb(255, 255, 255);
     width: 100%;
-    height: 93%;
+
     overflow: auto;
     text-align:justify;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
             
   }
 
@@ -135,13 +134,30 @@ h1 {
     background-color: rgb(211, 127, 127);
 }
 
-.info_box,
-.quiz_box,
-.result_box{
+.info_box{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.quiz_box{
+    position: absolute;
+    top: 1650px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.result_box{
+    position: relative;
+    top: 1650px;
+    left: 50%;
+
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -260,10 +276,10 @@ h1 {
 .quiz_box{
     background: #fff;
     border-radius: 5px;
-    display: flex;
+    display: block;
     padding: 25px 30px;
     width: 90%;
-    height: 90%;
+
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -469,7 +485,7 @@ footer button.show{
     display: flex;
     padding: 25px 30px;
     width: 90%;
-    height: 90%;
+
     align-items: center;
     flex-direction: column;
     justify-content: center;
