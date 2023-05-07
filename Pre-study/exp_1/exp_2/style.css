@@ -592,10 +592,11 @@ section .option_list .option.incorrect{
 section .option_list .option.best{
 
     border: 2px solid #0fae01;
+    color: green;
 }
 
 section .option_list .option.correct{
-    color: #192fd3;
+   
     background: #d4d9ed;
     border: 1px solid #1b02ff;
 }

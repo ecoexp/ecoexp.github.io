@@ -19,10 +19,11 @@ h1 {
     padding:15px;
     background-color: rgb(255, 255, 255);
     width: 100%;
-
+    height: 93%;
     overflow: auto;
     text-align:justify;
-
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
             
   }
 
@@ -63,7 +64,7 @@ h1 {
   }
   .submit-button {
     margin-top: 20px;
-    margin-left: 70%;
+    margin-left: 90%;
     padding: 10px 20px;
   
     background-color: #007bff;
@@ -142,22 +143,20 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 .quiz_box{
     position: absolute;
-    top: 1650px;
+    top: 250%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-
 .result_box{
-    position: relative;
-    top: 1650px;
+    position: absolute;
+    top: 230%;
     left: 50%;
-
+    transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -214,7 +213,7 @@ h1 {
 
 .info_box{
     width: 90%;
-    height: 90%;
+   
     top: 50%;
     background: #fff;
     border-radius: 5px;
@@ -276,7 +275,7 @@ h1 {
 .quiz_box{
     background: #fff;
     border-radius: 5px;
-    display: block;
+    display: flex;
     padding: 25px 30px;
     width: 90%;
 

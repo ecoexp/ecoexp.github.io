@@ -55,14 +55,14 @@ checkboxes.forEach(checkbox => {
 answerData['q16'] = selectedAnswers;
     
     
-/* var newuserdata = userdata.push();
+var newuserdata = userdata.push();
   
 newuserdata.set({
     Display_order: korder,
     Questionnaire: "Knowledge",
     User_ID: uniqueId,
     Response: answerData,
- }); */
+ }); 
     const links = ['Pre-study/index.html', 'Pre-study/exp_1/index.html'];
     const linkIndex = Math.floor(Math.random() * links.length);
     const linkToOpen = links[linkIndex];
@@ -85,7 +85,7 @@ window.scrollTo({ top: 0 });
         }
     }
     
-    /*
+    
    var newuserdata = userdata.push();
   
     newuserdata.set({
@@ -94,7 +94,7 @@ window.scrollTo({ top: 0 });
       User_ID: uniqueId,
       Response: answerData,
 
-    });*/
+    });
     const links = ['Pre-study/index.html', 'Pre-study/exp_1/index.html'];
     const linkIndex = Math.floor(Math.random() * links.length);
     const linkToOpen = links[linkIndex];

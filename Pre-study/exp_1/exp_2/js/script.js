@@ -318,7 +318,7 @@ next_btn.onclick = ()=>{
     }
     if(baseline==1){
         if(questions[f_number-1].impact[o]==smallestValue){
-            changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1], "green" );
+            changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1], "#43c443" );
             console.log("green clicked");
         }
         else {
