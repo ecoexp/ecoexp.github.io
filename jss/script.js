@@ -1,15 +1,4 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyAjxcNAb1pZI4usSK1jzxhHx0x1KNn6rO8",
-    authDomain: "ecological-experiment-da-a196d.firebaseapp.com",
-    databaseURL: "https://ecological-experiment-da-a196d-default-rtdb.firebaseio.com",
-    projectId: "ecological-experiment-da-a196d",
-    storageBucket: "ecological-experiment-da-a196d.appspot.com",
-    messagingSenderId: "48549347586",
-    appId: "1:48549347586:web:0caac946b0b64bb0f6821b"
-    };
-    
-    // initialize firebase
-firebase.initializeApp(firebaseConfig);
+
 const start_btn = document.querySelector(".start_btn button");
 const info_box = document.querySelector(".info_box");
 const exit_btn = info_box.querySelector(".buttons .quit");
@@ -23,12 +12,30 @@ const timeCount = document.querySelector(".timer .timer_sec");
 const response = [];
 const response_time = [];  
     // reference your database
+    var order = [];
+    var aorder = [];
+    var korder = [];
+    var uniqueId = localStorage.getItem('pre_study_unique_id');
+    var count=1;
+    var stime=0;
+    var etime=0;
+
+
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyAjxcNAb1pZI4usSK1jzxhHx0x1KNn6rO8",
+        authDomain: "ecological-experiment-da-a196d.firebaseapp.com",
+        databaseURL: "https://ecological-experiment-da-a196d-default-rtdb.firebaseio.com",
+        projectId: "ecological-experiment-da-a196d",
+        storageBucket: "ecological-experiment-da-a196d.appspot.com",
+        messagingSenderId: "48549347586",
+        appId: "1:48549347586:web:0caac946b0b64bb0f6821b"
+        };
+        
+        // initialize firebase
+    firebase.initializeApp(firebaseConfig);
 var userdata = firebase.database().ref("UserData");
-var order = [];
-var aorder = [];
-var korder = [];
-var uniqueId = localStorage.getItem('pre_study_unique_id');
-var count=1;
+
 
 function submitAnswersK() {
 // Scroll to the top of the page
@@ -53,12 +60,18 @@ checkboxes.forEach(checkbox => {
 });
 
 answerData['q16'] = selectedAnswers;
-    
+
+etime = new Date(); // Store end time
+var durationMs = etime - stime; // Calculate duration in milliseconds
+var durationSec = (durationMs / 1000).toFixed(2); // Convert to seconds with 2 decimal points
+
+
     
 var newuserdata = userdata.push();
   
 newuserdata.set({
     Display_order: korder,
+    Time_Duration: durationSec,
     Questionnaire: "Knowledge",
     User_ID: uniqueId,
     Response: answerData,
@@ -84,12 +97,15 @@ window.scrollTo({ top: 0 });
             answerData[`q${i}`] = -1;
         }
     }
-    
+    etime = new Date(); // Store end time
+    var durationMs = etime - stime; // Calculate duration in milliseconds
+    var durationSec = (durationMs / 1000).toFixed(2); // Convert to seconds with 2 decimal points
     
    var newuserdata = userdata.push();
   
     newuserdata.set({
       Display_order: aorder,
+      Time_Duration: durationSec,
       Questionnaire: "Attitude",
       User_ID: uniqueId,
       Response: answerData,
@@ -102,6 +118,7 @@ window.scrollTo({ top: 0 });
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //hide quiz box
     result_box.classList.remove("activeResult"); //show result box
+    stime= new Date(); 
 
 }
 function boldLabel(radioButton) {
@@ -185,9 +202,6 @@ function copyParticipantId() {
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
  
-    for(let i = 0; i < 5; i++){ 
-        response[i]=-1;
-        }
 }
 
 // if exit button clicked
@@ -203,6 +217,7 @@ continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
+    stime= new Date(); 
 
 }
 
