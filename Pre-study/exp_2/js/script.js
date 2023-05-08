@@ -99,7 +99,7 @@ if(baseline==1){
     const thirdInstruction = document.createElement('div');
     thirdInstruction.className = 'info instruction';
     thirdInstruction.innerHTML = `
-    <div class="instruction-number">3.</div>
+    <div class="instruction-number">></div>
     <div class="instruction-text">The products with the smallest ecological footprint will be highlighted with a<span style=" color: #00680e;" > green border line</span>.</div>
     `;
 

@@ -100,7 +100,7 @@ if(baseline==1){
     thirdInstruction.className = 'info instruction';
     thirdInstruction.innerHTML = `
     <div class="instruction-number">3.</div>
-    <div class="instruction-text">The products with the smallest ecological footprint will be highlighted with a<span style=" color: #00680e;" > green border line</span>.</div>
+    <div class="instruction-text">The system will recommend the most eco-friendly solution with a<span style=" color: #00680e;" > green border line</span>.</div>
     `;
 
     infoListElement.appendChild(thirdInstruction);
