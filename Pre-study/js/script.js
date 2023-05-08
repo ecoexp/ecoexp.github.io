@@ -394,13 +394,13 @@ next_btn.onclick = ()=>{
         if(money_spend<=budget){  
             cbutton.hidden = false;
             scoreTag = '<center><br>Now you can check out the shopping cart <br> OR <br> You can modify the list</center>';
-            document.getElementById("cart").style.backgroundColor = "#168dc0";
+            //document.getElementById("cart").style.backgroundColor = "#168dc0";
             checkoutButton.style.backgroundColor = '#00680e';
             checkoutButton.style.color = 'white';
         }
         else{
             cbutton.hidden = true;
-            checkoutButton.style.backgroundColor = '#2a312b';
+            //checkoutButton.style.backgroundColor = '#2a312b';
             checkoutButton.style.color = 'rgb(187, 176, 176)';
             document.getElementById("cart").style.backgroundColor = "#0e526f";
             scoreTag = '<br><center><b>You have crossed the budget.</b><br> Kindly modify your cart to stay within the budget to checkout.</center>'; 
