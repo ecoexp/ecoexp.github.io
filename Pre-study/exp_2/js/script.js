@@ -92,15 +92,17 @@ const quit_alert = alert_box.querySelector(".buttons .quit");
 var bgroups=0;
 var baseline=1;
 var budget =24.00;
+const info_m = document.getElementById('info_m');
 
 if(baseline==1){
     const infoListElement = document.querySelector('.info-list');
+    info_m.hidden = false;
     base_group= "_Treatment";
     const thirdInstruction = document.createElement('div');
     thirdInstruction.className = 'info instruction';
     thirdInstruction.innerHTML = `
     <div class="instruction-number">></div>
-    <div class="instruction-text">The products with the smallest ecological footprint will be highlighted with a<span style=" color: #00680e;" > green border line</span>.</div>
+    <div class="instruction-text">The system will recommend the most eco-friendly solution with a<span style=" color: #00680e;" > green border line</span>.</div>
     `;
 
     infoListElement.appendChild(thirdInstruction);

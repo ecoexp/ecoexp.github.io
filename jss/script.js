@@ -118,6 +118,11 @@ window.scrollTo({ top: 0 });
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //hide quiz box
     result_box.classList.remove("activeResult"); //show result box
+    const quizBox = document.querySelector('.quiz_box');
+    const height = quizBox.offsetHeight;
+    const distanceFromTop = (height / 2)+20;
+    quizBox.style.top = `${distanceFromTop}px`;
+
     stime= new Date(); 
 
 }
@@ -217,6 +222,11 @@ continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
+    const resultBox = document.querySelector('.result_box');
+    const height = resultBox.offsetHeight;
+    const distanceFromTop = (height / 2)+20;
+    resultBox.style.top = `${distanceFromTop}px`;
+
     stime= new Date(); 
 
 }

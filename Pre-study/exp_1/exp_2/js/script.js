@@ -92,9 +92,11 @@ const quit_alert = alert_box.querySelector(".buttons .quit");
 var bgroups=1;
 var baseline=1;
 var budget =24.00;
+const info_m = document.getElementById('info_m');
 
 if(baseline==1){
     const infoListElement = document.querySelector('.info-list');
+    info_m.hidden = false;
     base_group= "_Treatment";
     const thirdInstruction = document.createElement('div');
     thirdInstruction.className = 'info instruction';
