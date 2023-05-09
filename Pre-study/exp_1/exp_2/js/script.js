@@ -180,8 +180,13 @@ function stop_exp() {
     quiz_box.classList.remove("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //show result box
     if(money_spend<=budget&&c_sln==10){
-
-        completeText.innerHTML = "<center>Do you really want to check out?<br><br> <b>Note: After confirming this, you will be directed to the second shopping task.</b></center>";
+        if(baseline==0){
+            completeText.innerHTML = "<center>Do you really want to check out?<br><br> <b>Note: After confirming this, you will be directed to the second shopping task.</b></center>";
+        }   
+        else{
+            completeText.innerHTML = "<center>Do you really want to check out?<br><br> <b>Note: After confirming, you finish this study.</b></center>";
+        }
+        
         yesButton.style.display = 'block';
         yesButton.textContent = 'Yes';
         noButton.textContent = 'No';
