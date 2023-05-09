@@ -98,14 +98,14 @@ if(baseline==1){
     const infoListElement = document.querySelector('.info-list');
     info_m.hidden = false;
     base_group= "_Treatment";
-    const thirdInstruction = document.createElement('div');
-    thirdInstruction.className = 'info instruction';
-    thirdInstruction.innerHTML = `
-    <div class="instruction-number">></div>
-    <div class="instruction-text">The system will recommend the most eco-friendly solution with a<span style=" color: #00680e;" > green border line</span>.</div>
-    `;
+    //const thirdInstruction = document.createElement('div');
+    //thirdInstruction.className = 'info instruction';
+    //thirdInstruction.innerHTML = `
+    //<div class="instruction-number">></div>
+    //<div class="instruction-text">The system will recommend the most eco-friendly solution with a<span style=" color: #00680e;" > green border line</span>.</div>
+    //`;
 
-    infoListElement.appendChild(thirdInstruction);
+    //infoListElement.appendChild(thirdInstruction);
 }
 
 
