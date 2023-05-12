@@ -76,9 +76,11 @@ newuserdata.set({
     User_ID: uniqueId,
     Response: answerData,
  }); 
-    const links = ['Pre-study/index.html', 'Pre-study/exp_1/index.html'];
+    
+    const links = ['00', '10'];
     const linkIndex = Math.floor(Math.random() * links.length);
-    const linkToOpen = links[linkIndex];
+    localStorage.setItem('a_group', links[linkIndex] );
+    const linkToOpen='Pre-study/index.html'
     window.location.href = linkToOpen;
 
 }

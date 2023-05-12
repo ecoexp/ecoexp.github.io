@@ -88,9 +88,30 @@ const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 const restart_alert = alert_box.querySelector(".buttons .restart");
 const quit_alert = alert_box.querySelector(".buttons .quit");
-
+var a_group = localStorage.getItem('a_group');
+if (!a_group) {
+  a_group = '00';
+  localStorage.setItem('a_group', '00');
+}
 var bgroups=0;
 var baseline=0;
+if(a_group=='00'){
+    bgroups=0;
+    localStorage.setItem('a_group', '01');
+}
+if(a_group=='10'){
+    bgroups=1;
+    localStorage.setItem('a_group', '11');
+}
+if(a_group=='01'){
+    bgroups=0;
+    baseline=1;
+}
+if(a_group=='11'){
+    bgroups=1;
+    baseline=1;
+}
+
 var budget =24.00;
 const info_m = document.getElementById('info_m');
 
@@ -98,14 +119,14 @@ if(baseline==1){
     const infoListElement = document.querySelector('.info-list');
     info_m.hidden = false;
     base_group= "_Treatment";
-    const thirdInstruction = document.createElement('div');
-    thirdInstruction.className = 'info instruction';
-    thirdInstruction.innerHTML = `
-    <div class="instruction-number">></div>
-    <div class="instruction-text">The system will recommend the most eco-friendly solution with a<span style=" color: #00680e;" > green border line</span>.</div>
-    `;
+    //const thirdInstruction = document.createElement('div');
+    //thirdInstruction.className = 'info instruction';
+    //thirdInstruction.innerHTML = `
+    //<div class="instruction-number">></div>
+    //<div class="instruction-text">The system will recommend the most eco-friendly solution with a<span style=" color: #00680e;" > green border line</span>.</div>
+    //`;
 
-    infoListElement.appendChild(thirdInstruction);
+    //infoListElement.appendChild(thirdInstruction);
 }
 
 
@@ -232,7 +253,7 @@ quit_alert.onclick = ()=>{
 restart_alert.onclick = ()=>{
     showResult();
     if(baseline==0){
-        window.location.href = 'exp_2/index.html';
+        window.location.reload();
     }
     else{
         window.location.href = 'thank_you.html';
