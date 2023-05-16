@@ -112,30 +112,22 @@ if(a_group=='11'){
     baseline=1;
 }
 
-var budget =24.00;
+var budget =21.00;
+const eurosElement = document.querySelector('.euros');
+eurosElement.textContent = budget + ' Euros';
 const info_m = document.getElementById('info_m');
 
 if(baseline==1){
     const infoListElement = document.querySelector('.info-list');
     info_m.hidden = false;
     base_group= "_Treatment";
-    //const thirdInstruction = document.createElement('div');
-    //thirdInstruction.className = 'info instruction';
-    //thirdInstruction.innerHTML = `
-    //<div class="instruction-number">></div>
-    //<div class="instruction-text">The system will recommend the most eco-friendly solution with a<span style=" color: #00680e;" > green border line</span>.</div>
-    //`;
 
-    //infoListElement.appendChild(thirdInstruction);
 }
 
-
-// Change the value from 24 Euros to 30 Euros
 if(bgroups==1){
-    budget =30.00;
+    budget =28.00;
     budget_group= "High_Budget";
-    const eurosElement = document.querySelector('.euros');
-    eurosElement.textContent = '30 Euros';
+    eurosElement.textContent = budget + ' Euros';
     const noteElement = document.querySelector('.complete_text b');
     noteElement.textContent = 'Note: After confirming this, you will complete this study.';
 }
@@ -183,8 +175,6 @@ function codeAddress() {
     queCounter(que_numb); //passing que_numb value to queCounter
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
-    startTimer(timeValue); //calling startTimer function
-    startTimerLine(widthValue); //calling startTimerLine function
     timeText.textContent = "Time Left"; //change the text of timeText to Time Left
     next_btn.classList.remove("show"); //hide the next button
     cancel_btn.classList.remove("show");
@@ -399,8 +389,6 @@ next_btn.onclick = ()=>{
         showQuetions(que_count); 
         clearInterval(counter); 
         clearInterval(counterLine); //clear counterLine
-        startTimer(timeValue); //calling startTimer function
-        startTimerLine(widthValue); //calling startTimerLine function
         timeText.textContent = "Time Left"; //change the timeText to Time Left
         next_btn.classList.remove("show"); //hide the next button
         cancel_btn.classList.remove("show"); //hide the next button
@@ -564,50 +552,7 @@ function showResult(){
 
 }
 
-function startTimer(time){
-    counter = setInterval(timer, 13);
-    function timer(){
-        timeCount.textContent = time; //changing the value of timeCount with time value
-        time--; //decrement the time value
-        if(time < 9){ //if timer is less than 9
-            let addZero = timeCount.textContent; 
-            timeCount.textContent = "0" + addZero; //add a 0 before time value
-        }
-        if(time < 0){ //if timer is less than 0
-            clearInterval(counter); //clear counter
-            timeText.textContent = "Time Out"; //change the time text to time off
-            const allOptions = option_list.children.length; //getting all option items
-            let correcAns = questions[que_count].answer; //getting correct answer from array
-            for(i=0; i < allOptions; i++){
-                if(option_list.children[i].textContent == correcAns){ //if there is an option which is matched to an array answer
-                    option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-                    option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-                    //console.log("Time Off: Auto selected correct answer.");
-                }
-            }
-            for(i=0; i < allOptions; i++){
-                option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-            }
-            
-            next_btn.classList.add("show"); //show the next button if user selected any option
-            cancel_btn.classList.add("show"); 
-        }
-        t_temp = time;
-        
-    }
-    
-}
 
-function startTimerLine(time){
-    counterLine = setInterval(timer, 160);
-    function timer(){
-        time += 1; //upgrading time value with 1
-        time_line.style.width = time + "%"; //increasing width of time_line with px by time value
-        if(time > 100){ //if time value is greater than 549
-            clearInterval(counterLine); //clear counterLine
-        }
-    }
-}
 
 function queCounter(index){
     //creating a new span tag and passing the question number and total question

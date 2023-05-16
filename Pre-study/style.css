@@ -271,7 +271,7 @@ th {
 .potatoes,
 .tomatoes,
 .lettuce,
-.strawberries{
+.onions{
     position: absolute;
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
@@ -315,7 +315,7 @@ th {
 .potatoes button,
 .tomatoes button,
 .lettuce button,
-.strawberries button{
+.onions button{
     height: 110px;
     width: 190px;
     font-size: 15px;

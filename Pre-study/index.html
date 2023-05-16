@@ -174,10 +174,10 @@
         <div class="txt_pos">Lettuce<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 2.19</strong></div>  
     </button></div>
-    <div class="strawberries" style="top: 80%;left: 49%;"><button onclick="myFunction(5);">
+    <div class="onions" style="top: 80%;left: 49%;"><button onclick="myFunction(5);">
         <div class="tick_pos" hidden><img src="images/tick.png" alt="Apple_Image" width="20" ></div>
-        <div class="img_pos"><img src="images/strawberries.jpg" alt="Strawberry_Image" width="70" ></div>
-        <div class="txt_pos">Strawberry<br>(500g)</div>
+        <div class="img_pos"><img src="images/onions.jpg" alt="Onion_Image" width="70" ></div>
+        <div class="txt_pos">Onion<br>(1kg)</div>
         <div class="cost_var" style="bottom: 2px; right: 2px;"> Starting from <strong>€ 3.65</strong></div> 
     </button></div>
     <script>
@@ -187,7 +187,7 @@
             topleft[i][0] += -5;
             topleft[i][1] += -5;
         }
-        const fruits = ['apples', 'oranges', 'broccoli', 'bananas', 'carrots', 'peaches', 'potatoes', 'tomatoes', 'lettuce', 'strawberries'];
+        const fruits = ['apples', 'oranges', 'broccoli', 'bananas', 'carrots', 'peaches', 'potatoes', 'tomatoes', 'lettuce', 'onions'];
         const indices = [...Array(topleft.length).keys()];
 
         // Shuffle the indices using a random number generator
@@ -216,7 +216,7 @@
         // Reorder the outer array based on the shuffled indices
         const shuffledArray = indices.map(i => topleft[i]);
 
-        const divs = document.querySelectorAll('.apples, .oranges, .broccoli, .bananas, .carrots, .peaches, .potatoes, .tomatoes, .lettuce, .strawberries');
+        const divs = document.querySelectorAll('.apples, .oranges, .broccoli, .bananas, .carrots, .peaches, .potatoes, .tomatoes, .lettuce, .onions');
 
         // Display the shuffled order
  
@@ -261,7 +261,7 @@
                 </tr>
                 <tr>
                   <td>Lettuce</td>
-                  <td>Strawberry</td>
+                  <td>Onion</td>
                 </tr>
               </table>
               <div class="info instruction">
