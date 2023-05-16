@@ -90,8 +90,8 @@ const restart_alert = alert_box.querySelector(".buttons .restart");
 const quit_alert = alert_box.querySelector(".buttons .quit");
 var a_group = localStorage.getItem('a_group');
 if (!a_group) {
-  a_group = '00';
-  localStorage.setItem('a_group', '00');
+  a_group = '01';
+  localStorage.setItem('a_group', '01');
 }
 var bgroups=0;
 var baseline=0;
@@ -112,9 +112,9 @@ if(a_group=='11'){
     baseline=1;
 }
 
-var budget =21.00;
+var budget =21.50;
 const eurosElement = document.querySelector('.euros');
-eurosElement.textContent = budget + ' Euros';
+eurosElement.textContent = budget.toFixed(2) + ' Euros';
 const info_m = document.getElementById('info_m');
 
 if(baseline==1){
@@ -127,7 +127,7 @@ if(baseline==1){
 if(bgroups==1){
     budget =28.00;
     budget_group= "High_Budget";
-    eurosElement.textContent = budget + ' Euros';
+    eurosElement.textContent = budget.toFixed(2) + ' Euros';
     const noteElement = document.querySelector('.complete_text b');
     noteElement.textContent = 'Note: After confirming this, you will complete this study.';
 }
@@ -152,8 +152,8 @@ window.onload = codeAddress();
 
 function codeAddress() {
     generateTableRows();
-    stTime = new Date(); // Store current time
-    document.getElementById("bg").innerHTML = budget.toFixed(0);
+    sTime = new Date(); // Store current time
+    document.getElementById("bg").innerHTML = budget.toFixed(2);
     document.getElementById("id1").innerHTML = uniqueId;
    info_box.classList.add("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //show  box
@@ -292,7 +292,7 @@ restart_alert.onclick = ()=>{
     totalSlnCell.innerText = '';
     totalItemCell.innerText = '';
     totalOriginCell.innerText = 'Total: ';
-    totalCostCell.innerText = '€ ' + parseFloat(money_spend).toFixed(2) +' / ' + budget; // Display the total cost in the cell
+    totalCostCell.innerText = '€ ' + parseFloat(money_spend).toFixed(2) +' / ' + budget.toFixed(2); // Display the total cost in the cell
     totalCostCell.style.fontWeight = 'bold';
     totalOriginCell.style.fontWeight = 'bold';
 
@@ -525,7 +525,7 @@ function showResult(){
     const durationMs = eTime - sTime; // Calculate duration in milliseconds
     durationSec = (durationMs / 1000).toFixed(2); // Convert to seconds with 2 decimal points
 
-    console.log("Start time:", stTime);
+    console.log("Start time:", sTime);
     console.log("End time:", eTime);
     console.log("Duration:", durationSec, "seconds");
     var datetime = "Pres Study Conducted on"+ currentdate.getDate() + "/"
