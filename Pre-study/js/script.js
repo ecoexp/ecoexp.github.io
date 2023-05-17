@@ -37,6 +37,9 @@ var durationSec = 0.00;
 
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); 
+    quiz_box.classList.remove("activeQuiz"); 
+    result_box.classList.remove("activeResult");
+    alert_box.classList.remove("activeAlert"); 
 }
 close_btn.onclick = ()=>{
     myTimer.stop();
@@ -56,7 +59,9 @@ exit_btn.onclick = ()=>{
 
 continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); 
-    quiz_box.classList.add("activeQuiz"); 
+    quiz_box.classList.add("activeQuiz"); ; 
+    result_box.classList.remove("activeResult");
+    alert_box.classList.remove("activeAlert"); 
 }
 
 let small_index=0;   
@@ -145,7 +150,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
     
 
-var userdata = firebase.database().ref("UserData");
+var userdata = firebase.database().ref("UserData_Experiment");
 var uniqueId = localStorage.getItem('pre_study_unique_id');
 
 window.onload = codeAddress();
@@ -216,7 +221,7 @@ function myFunction(x) {
     next_btn.classList.remove("show");
     cancel_btn.classList.remove("show");
     info_box.classList.remove("activeInfo"); //hide info box
-    info_box.classList.remove("activeAlert"); //hide info box
+    alert_box.classList.remove("activeAlert"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
     showQuetions(x); //calling showQestions function
     f_number=x+1;

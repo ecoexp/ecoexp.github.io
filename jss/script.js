@@ -34,7 +34,7 @@ const response_time = [];
         
         // initialize firebase
     firebase.initializeApp(firebaseConfig);
-var userdata = firebase.database().ref("UserData");
+var userdata = firebase.database().ref("UserData_Survey");
 
 
 function submitAnswersK() {
@@ -116,6 +116,7 @@ window.scrollTo({ top: 0 });
     const links = ['Pre-study/index.html', 'Pre-study/exp_1/index.html'];
     const linkIndex = Math.floor(Math.random() * links.length);
     const linkToOpen = links[linkIndex];
+    document.getElementById("survey-form").reset();
     //window.location.href = linkToOpen;
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.add("activeQuiz"); //hide quiz box
@@ -207,7 +208,9 @@ function copyParticipantId() {
 
 // if startbutton clicked
 start_btn.onclick = ()=>{
-    info_box.classList.add("activeInfo"); //show info box
+    //info_box.classList.add("activeInfo"); //show info box
+    result_box.classList.add("activeResult"); //show result box
+
  
 }
 
