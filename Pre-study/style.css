@@ -15,7 +15,7 @@ body{
 }
 table {
     border-collapse: collapse;
-    width: 400px;
+    width: 410px;
     margin: 10px auto;
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -124,8 +124,7 @@ th {
     position: absolute;
     font-size: 25px;
     font-weight: 500;
-    height: 500px;
-    width: 420px;
+    width: 430px;
     color: #fff;
     border-radius: 5px;
     line-height: 30px;
