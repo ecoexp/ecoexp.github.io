@@ -319,6 +319,10 @@
     </div>
 
     <!-- Result Box -->
+    <div class="container">
+        
+      </div>
+      
     <div class="result_box">
         <div class="icon">
             <center>ALERT</center> 
@@ -362,7 +366,13 @@
            
            function changeStyle(div_name, torigin, tcost, color){
             var element = document.getElementsByClassName(div_name);
-            element[0].style.border = "5px solid " + color;
+            if( color == "blue"){
+                element[0].style.border = "2px solid " + color;
+            }
+            else {
+                element[0].style.border = "5px solid " + color;   
+            }
+            
             var tick_div = element[0].querySelector(".tick_pos");
             tick_div.hidden = false;
             //var cost_div = element[0].querySelector(".cost_var");

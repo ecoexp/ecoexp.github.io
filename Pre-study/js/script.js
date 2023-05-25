@@ -6,6 +6,7 @@ const exit_btn = info_box.querySelector(".buttons .quit");
 const continue_btn = info_box.querySelector(".buttons .restart");
 const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
+const bgd_popup = document.querySelector(".container");
 const alert_box = document.querySelector(".alert_box");
 const option_list = document.querySelector(".option_list");
 const time_line = document.querySelector("header .time_line");
@@ -18,14 +19,17 @@ const cancel_btn = document.querySelector("footer .cancel_btn");
 const response_fruit = [];
 const response_cost = [];
 const response_origin = [];
+const agent_policy= [];
+agent_policy[0]="SS"
+var action_count=1;
 const response_impact = [];
 const response_reward = [];
 const response_time = [];
 var matrix = [];
 let selectedOption = null; 
 let updated_fruits = [];
-var budget_group= "Low_Budget";
-var base_group= "_No_Treatment";
+var budget_group= "LB";
+var base_group= "_B";
 var sTime = new Date(); 
 var eTime = new Date(); 
 var durationSec = 0.00;
@@ -37,6 +41,7 @@ var durationSec = 0.00;
 
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); 
+    bgd_popup.style.display = 'block';
     quiz_box.classList.remove("activeQuiz"); 
     result_box.classList.remove("activeResult");
     alert_box.classList.remove("activeAlert"); 
@@ -44,22 +49,26 @@ start_btn.onclick = ()=>{
 close_btn.onclick = ()=>{
     myTimer.stop();
     quiz_box.classList.remove("activeQuiz"); 
+    bgd_popup.style.display = 'none';
 }
 
 cancel_btn.onclick = ()=>{
     myTimer.stop();
     quiz_box.classList.remove("activeQuiz"); 
+    bgd_popup.style.display = 'none';
 }
 
 
 exit_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); 
+    bgd_popup.style.display = 'none';
 }
 
 
 continue_btn.onclick = ()=>{
     info_box.classList.remove("activeInfo"); 
-    quiz_box.classList.add("activeQuiz"); ; 
+    quiz_box.classList.add("activeQuiz"); 
+    bgd_popup.style.display = 'block';
     result_box.classList.remove("activeResult");
     alert_box.classList.remove("activeAlert"); 
 }
@@ -77,6 +86,7 @@ var total_impact =0.0;
 
 var cflag=0;
 var b_fruits=0;
+var e_fruits=0;
 var money_left =0.0;
 let counterLine;
 let widthValue = 0;
@@ -125,13 +135,13 @@ const info_m = document.getElementById('info_m');
 if(baseline==1){
     const infoListElement = document.querySelector('.info-list');
     info_m.hidden = false;
-    base_group= "_Treatment";
+    base_group= "_T";
 
 }
 
 if(bgroups==1){
     budget =28.00;
-    budget_group= "High_Budget";
+    budget_group= "HB";
     eurosElement.textContent = budget.toFixed(2) + ' Euros';
     const noteElement = document.querySelector('.complete_text b');
     noteElement.textContent = 'Note: After confirming this, you will complete this study.';
@@ -161,6 +171,7 @@ function codeAddress() {
     document.getElementById("bg").innerHTML = budget.toFixed(2);
     document.getElementById("id1").innerHTML = uniqueId;
    info_box.classList.add("activeInfo"); //hide info box
+   bgd_popup.style.display = 'block';
     quiz_box.classList.remove("activeQuiz"); //show  box
     result_box.classList.remove("activeResult"); //hide result box
     timeValue = 13; 
@@ -192,6 +203,7 @@ function stop_exp() {
     const yesButton = document.getElementById('yes_b');
     const noButton = document.getElementById('no_b');
     alert_box.classList.add("activeAlert"); //show result box
+    bgd_popup.style.display = 'block';
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //show result box
@@ -223,6 +235,7 @@ function myFunction(x) {
     info_box.classList.remove("activeInfo"); //hide info box
     alert_box.classList.remove("activeAlert"); //hide info box
     quiz_box.classList.add("activeQuiz"); //show quiz box
+    bgd_popup.style.display = 'block';
     showQuetions(x); //calling showQestions function
     f_number=x+1;
 
@@ -239,10 +252,12 @@ quit_quiz.onclick = ()=>{
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.remove("activeResult"); //show result box
+    bgd_popup.style.display = 'none';
     
 }
 quit_alert.onclick = ()=>{
     alert_box.classList.remove("activeAlert"); //hide info box
+    bgd_popup.style.display = 'none';
 }
 
 restart_alert.onclick = ()=>{
@@ -319,7 +334,7 @@ restart_alert.onclick = ()=>{
 
 // if Next  button clicked
 next_btn.onclick = ()=>{
-
+    bgd_popup.style.display = 'none';
     response_time[que_count]=myTimer.stop();
     o=userAns[0];
     o=arr[o-1];
@@ -330,8 +345,8 @@ next_btn.onclick = ()=>{
     response_origin[f_number-1]=questions[f_number-1].origin[o];
     response_impact[f_number-1]=questions[f_number-1].impact[o];
     response_reward[f_number-1]=-1;
-    console.log(questions[f_number-1].price[selection_index]);
-    console.log(questions[f_number-1].price[o]);
+    //console.log(questions[f_number-1].price[selection_index]);
+    //console.log(questions[f_number-1].price[o]);
     let smallestValue = questions[f_number - 1].impact[0];
     for (let j = 0; j < 3; j++) {
         if (questions[f_number-1].impact[j] < smallestValue) {
@@ -341,7 +356,7 @@ next_btn.onclick = ()=>{
     if(baseline==1){
         if(questions[f_number-1].impact[o]==smallestValue){
             changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1], "#43c443" );
-            console.log("green clicked");
+            //console.log("green clicked");
         }
         else {
             changeStyle(questions[f_number-1].fruit, response_origin[f_number-1], response_cost[f_number-1], "blue" );       
@@ -362,7 +377,7 @@ next_btn.onclick = ()=>{
         money_spend += parseFloat(response_cost[i]);
         total_impact += parseFloat(response_impact[i]);
     }
-    console.log(money_spend);
+    //console.log(money_spend);
     money_left=budget-money_spend;
     document.getElementById("pr1").innerHTML = money_spend.toFixed(2);
     document.getElementById("ml1").innerHTML = money_spend.toFixed(2);
@@ -403,6 +418,7 @@ next_btn.onclick = ()=>{
         info_box.classList.remove("activeInfo"); //hide info box
         quiz_box.classList.remove("activeQuiz"); //hide quiz box
         result_box.classList.add("activeResult"); //show result box
+        bgd_popup.style.display = 'block';
         cflag=1;
         }
         const scoreText = result_box.querySelector(".score_text");
@@ -412,6 +428,27 @@ next_btn.onclick = ()=>{
 
 
         if(money_spend<=budget){  
+            var divs = ['.apples', '.oranges', '.broccoli', '.bananas', '.carrots', '.peaches', '.potatoes', '.tomatoes', '.lettuce', '.onions'];
+            var greenBorderCount = 0;
+
+            for (var i = 0; i < divs.length; i++) {
+            var elements = document.querySelectorAll(divs[i]);
+            
+            for (var j = 0; j < elements.length; j++) {
+                var computedStyle = window.getComputedStyle(elements[j]);
+                var borderColor = computedStyle.getPropertyValue('border-color');
+                //console.log(borderColor);
+                if (borderColor === 'rgb(67, 196, 67)') { // RGB value for green is (0, 128, 0)
+                greenBorderCount++;
+                }
+            }
+            }
+            e_fruits=greenBorderCount;
+            agent_policy[action_count]= "S"+e_fruits;
+            console.log(agent_policy[action_count]);
+            action_count+=1;
+            console.log('State:', greenBorderCount);
+
             cbutton.hidden = false;
             scoreTag = '<center><br>Now you can check out the shopping cart <br> OR <br> You can modify the list</center>';
             //document.getElementById("cart").style.backgroundColor = "#168dc0";
@@ -466,6 +503,7 @@ function showQuetions(index){
     if (response_cost[index] > 0) {
         for (let i = 0; i < 3; i++) {    
             if (questions[index].price[arr[i]] == response_cost[index]) {
+                option[i].classList.add("correct");
                 option[i].insertAdjacentHTML("beforeend", tickIconTag);
                 selectedOption = option[i];
                 selection_index=i;
@@ -482,6 +520,13 @@ function showQuetions(index){
             small_index=i;
         }
         }
+        if (response_cost[index] > 0) {
+        if(selection_index==small_index){
+            option[small_index].classList.remove("correct");
+            option[small_index].classList.add("mcorrect");
+            
+        }
+    }
         option[small_index].classList.add("best");
     }
 
@@ -509,6 +554,7 @@ function optionSelected(answer){
     userAns = answer.textContent;
 
     if (selectedOption) { // if a previous option was selected
+        selectedOption.classList.remove("mcorrect");
         selectedOption.classList.remove("correct"); // remove the green color from the previous selected option
         selectedOption.removeChild(selectedOption.querySelector(".tick")); // remove the tick icon from the previous selected option
     }
@@ -529,10 +575,10 @@ function showResult(){
     eTime = new Date();
     const durationMs = eTime - sTime; // Calculate duration in milliseconds
     durationSec = (durationMs / 1000).toFixed(2); // Convert to seconds with 2 decimal points
-
-    console.log("Start time:", sTime);
-    console.log("End time:", eTime);
-    console.log("Duration:", durationSec, "seconds");
+    agent_policy[action_count]= "SF";
+    //console.log("Start time:", sTime);
+    //console.log("End time:", eTime);
+    //console.log("Duration:", durationSec, "seconds");
     var datetime = "Pres Study Conducted on"+ currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
@@ -547,7 +593,9 @@ function showResult(){
         Total_Duration: durationSec,
         Total_Money_Spend: money_spend, 
         Total_Attempts: attempts, 
+        Total_Eco_Fruits: e_fruits,
         Total_impact: total_impact,
+        Overall_Policy: agent_policy,
         _User_ID: uniqueId, 
         Budget_Group: budget_group+base_group, 
         UI_Order: orderedFruits, 
