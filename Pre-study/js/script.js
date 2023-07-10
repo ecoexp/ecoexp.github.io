@@ -17,6 +17,7 @@ const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
 const cancel_btn = document.querySelector("footer .cancel_btn");
 const response_fruit = [];
+var Choice_Time = 0;
 const response_cost = [];
 const response_origin = [];
 const agent_policy= [];
@@ -84,6 +85,9 @@ let counter;
 var money_spend =0.0;
 var total_impact =0.0;
 
+var optimal_impact =22.27;
+var optimal_items = 5;
+
 var cflag=0;
 var b_fruits=0;
 var e_fruits=0;
@@ -142,6 +146,8 @@ if(baseline==1){
 if(bgroups==1){
     budget =28.00;
     budget_group= "HB";
+    optimal_impact = 20.2;
+    optimal_items =10;
     eurosElement.textContent = budget.toFixed(2) + ' Euros';
     const noteElement = document.querySelector('.complete_text b');
     noteElement.textContent = 'Note: After confirming this, you will complete this study.';
@@ -238,11 +244,7 @@ function myFunction(x) {
     bgd_popup.style.display = 'block';
     showQuetions(x); //calling showQestions function
     f_number=x+1;
-
     myTimer.start();
-
-    
-   
 }
 
 
@@ -336,6 +338,7 @@ restart_alert.onclick = ()=>{
 next_btn.onclick = ()=>{
     bgd_popup.style.display = 'none';
     response_time[que_count]=myTimer.stop();
+    Choice_Time += response_time[que_count];
     o=userAns[0];
     o=arr[o-1];
     
@@ -586,22 +589,48 @@ function showResult(){
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
 
+    if(baseline==1){
+        newuserdata.set({
+            Date_Time: datetime,
+            Total_Duration_T: durationSec,
+            Optimal_Impact_T: optimal_impact/10,
+            Optimal_Items_T: optimal_items,
+            Optimal_Difference_T: (optimal_impact - total_impact)/10,
+            Mean_Money_Spend_T: money_spend/10,
+            Total_Attempts_T: attempts,
+            Total_Eco_Fruits_T: e_fruits,
+            Mean_impact_T: total_impact/10,
+            Choice_Time_T: Choice_Time/attempts,
+            Overall_Policy: agent_policy,
+            _User_ID: uniqueId,
+            Budget_Group: budget_group + base_group,
+            UI_Order: orderedFruits,
+            User_Order: updated_fruits,
+            Response_all: matrix,
+          });
+    }
+    else{
+        newuserdata.set({
 
-    newuserdata.set({
+            Date_Time: datetime,
+            Total_Duration_B: durationSec,
+            Optimal_Impact_B: optimal_impact/10,
+            Optimal_Items_B: optimal_items,
+            Optimal_Difference_B: (optimal_impact - total_impact)/10,
+            Mean_Money_Spend_B: money_spend/10,
+            Total_Attempts_B: attempts,
+            Total_Eco_Fruits_B: e_fruits,
+            Mean_impact_B: total_impact/10,
+            Choice_Time_B: Choice_Time/attempts,
+            Overall_Policy: agent_policy,
+            _User_ID: uniqueId,
+            Budget_Group: budget_group + base_group,
+            UI_Order: orderedFruits,
+            User_Order: updated_fruits,
+            Response_all: matrix,
+          });
+    }
 
-        Date_Time: datetime, 
-        Total_Duration: durationSec,
-        Total_Money_Spend: money_spend, 
-        Total_Attempts: attempts, 
-        Total_Eco_Fruits: e_fruits,
-        Total_impact: total_impact,
-        Overall_Policy: agent_policy,
-        _User_ID: uniqueId, 
-        Budget_Group: budget_group+base_group, 
-        UI_Order: orderedFruits, 
-        User_Order: updated_fruits,
-        Response_all: matrix,
-      });
 
 }
 
