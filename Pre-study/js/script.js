@@ -24,6 +24,8 @@ const agent_policy= [];
 agent_policy[0]="SS"
 var action_count=1;
 const response_impact = [];
+const choice_time_data = [];
+const choice_time_label = [];
 const response_reward = [];
 const response_time = [];
 var matrix = [];
@@ -33,7 +35,7 @@ var budget_group= "LB";
 var base_group= "_B";
 var sTime = new Date(); 
 var eTime = new Date(); 
-var durationSec = 0.00;
+var durationSec = 0;
 
 
 
@@ -84,13 +86,14 @@ let userScore = 0;
 let counter;
 var money_spend =0.0;
 var total_impact =0.0;
-
+var state_count=0;
 var optimal_impact =22.27;
 var optimal_items = 5;
 
 var cflag=0;
 var b_fruits=0;
 var e_fruits=0;
+var e_items=0;
 var money_left =0.0;
 let counterLine;
 let widthValue = 0;
@@ -114,6 +117,7 @@ if (!a_group) {
 }
 var bgroups=0;
 var baseline=0;
+console.debug(a_group);
 if(a_group=='00'){
     bgroups=0;
     localStorage.setItem('a_group', '01');
@@ -337,8 +341,8 @@ restart_alert.onclick = ()=>{
 // if Next  button clicked
 next_btn.onclick = ()=>{
     bgd_popup.style.display = 'none';
-    response_time[que_count]=myTimer.stop();
-    Choice_Time += response_time[que_count];
+    
+    
     o=userAns[0];
     o=arr[o-1];
     
@@ -347,7 +351,11 @@ next_btn.onclick = ()=>{
     response_cost[f_number-1]=questions[f_number-1].price[o];
     response_origin[f_number-1]=questions[f_number-1].origin[o];
     response_impact[f_number-1]=questions[f_number-1].impact[o];
+    response_time[f_number-1]=myTimer.stop();
+    choice_time_data[attempts]=response_time[f_number-1];
+    choice_time_label[attempts]=response_fruit[f_number-1]
     response_reward[f_number-1]=-1;
+    Choice_Time += response_time[f_number-1];
     //console.log(questions[f_number-1].price[selection_index]);
     //console.log(questions[f_number-1].price[o]);
     let smallestValue = questions[f_number - 1].impact[0];
@@ -446,11 +454,38 @@ next_btn.onclick = ()=>{
                 }
             }
             }
-            e_fruits=greenBorderCount;
+            e_fruits = 0;
+            if(state_count == 0){
+                for(let i =0;i<10;i++){
+                smallestImpact = questions[i].impact[arr[0]];
+                small_index=0;
+                // loop through the rest of the array and compare each element with the current smallest impact value
+                for (let j = 0; j < 3; j++) {
+                if (questions[i].impact[arr[j]] < smallestImpact) {
+                    smallestImpact = questions[i].impact[arr[j]];
+                    small_index=j;
+                }
+                }
+                if (response_cost[i] > 0) {
+                if(response_impact[i]==smallestImpact){
+                    e_fruits+=1;   
+                }
+            }
+        
+            }
             agent_policy[action_count]= "S"+e_fruits;
             console.log(agent_policy[action_count]);
             action_count+=1;
             console.log('State:', greenBorderCount);
+        }
+            
+            if(state_count == 0){state_count=0;}
+
+
+
+
+            
+
 
             cbutton.hidden = false;
             scoreTag = '<center><br>Now you can check out the shopping cart <br> OR <br> You can modify the list</center>';
@@ -573,6 +608,26 @@ function optionSelected(answer){
 
 function showResult(){
 
+    //count e_items
+    for(let i =0;i<10;i++){
+        smallestImpact = questions[i].impact[arr[0]];
+        small_index=0;
+        // loop through the rest of the array and compare each element with the current smallest impact value
+        for (let j = 0; j < 3; j++) {
+        if (questions[i].impact[arr[j]] < smallestImpact) {
+            smallestImpact = questions[i].impact[arr[j]];
+            small_index=j;
+        }
+        }
+        if (response_cost[i] > 0) {
+        if(response_impact[i]==smallestImpact){
+            e_items+=1;   
+        }
+    }
+
+    }
+
+
     var newuserdata = userdata.push(); // store cloud
     var currentdate = new Date(); 
     eTime = new Date();
@@ -598,18 +653,20 @@ function showResult(){
             Optimal_Difference_T: (optimal_impact - total_impact)/10,
             Mean_Money_Spend_T: money_spend/10,
             Total_Attempts_T: attempts,
-            Total_Eco_Fruits_T: e_fruits,
+            Total_Eco_Fruits_T: e_items,
             Mean_impact_T: total_impact/10,
-            Choice_Time_T: Choice_Time/attempts,
+            Mean_Choice_Time_T: Choice_Time/attempts,
+            Choice_Time_T: choice_time_data,
+            Choice_Label_T: choice_time_label,
             Overall_Policy: agent_policy,
             _User_ID: uniqueId,
             Budget_Group: budget_group + base_group,
-            UI_Order: orderedFruits,
-            User_Order: updated_fruits,
+            UI_Order_T: orderedFruits,
+            User_Order_T: updated_fruits,
             Response_all: matrix,
           });
     }
-    else{
+    if(baseline==0){
         newuserdata.set({
 
             Date_Time: datetime,
@@ -619,14 +676,16 @@ function showResult(){
             Optimal_Difference_B: (optimal_impact - total_impact)/10,
             Mean_Money_Spend_B: money_spend/10,
             Total_Attempts_B: attempts,
-            Total_Eco_Fruits_B: e_fruits,
+            Total_Eco_Fruits_B: e_items,
             Mean_impact_B: total_impact/10,
-            Choice_Time_B: Choice_Time/attempts,
+            Mean_Choice_Time_B: Choice_Time/attempts,
+            Choice_Time_B: choice_time_data,
+            Choice_Label_B: choice_time_label,
             Overall_Policy: agent_policy,
             _User_ID: uniqueId,
             Budget_Group: budget_group + base_group,
-            UI_Order: orderedFruits,
-            User_Order: updated_fruits,
+            UI_Order_B: orderedFruits,
+            User_Order_B: updated_fruits,
             Response_all: matrix,
           });
     }
