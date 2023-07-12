@@ -14,6 +14,9 @@ if (!uniqueId) {
 }
 function delete_id(){
   localStorage.removeItem('pre_study_unique_id');
+  const linkToOpen='https://ecoexp.github.io/'
+  window.location.href = linkToOpen;
+
 }
 
 console.log(uniqueId);
