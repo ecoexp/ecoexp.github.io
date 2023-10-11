@@ -79,8 +79,8 @@ newuserdata.set({
     
     const links = ['00', '10'];
     const linkIndex = Math.floor(Math.random() * links.length);
-    localStorage.setItem('a_group', links[linkIndex] );
-    //localStorage.setItem('a_group', '10' );
+    //localStorage.setItem('a_group', links[linkIndex] );
+    localStorage.setItem('a_group', '00' );
     const linkToOpen='Pre-study/index.html'
     window.location.href = linkToOpen;
 
