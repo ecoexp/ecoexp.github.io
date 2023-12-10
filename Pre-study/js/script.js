@@ -113,7 +113,7 @@ const quit_alert = alert_box.querySelector(".buttons .quit");
 var a_group = localStorage.getItem('a_group');
 if (!a_group) {
   a_group = '01';
-  localStorage.setItem('a_group', '01');
+  localStorage.setItem('a_group', '11');
 }
 var bgroups=0;
 var baseline=0;

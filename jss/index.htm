@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ecological Impact Checker</title>
+  <!-- Add Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    label, button {
+      margin-bottom: 10px;
+    }
+    #ecoChart {
+      width: 100%; /* Adjust chart width to fill available space */
+      max-width: 800px; /* Set maximum width for the chart */
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ecological Impact</h1>
+  <p>This tool provides insights into the country-wise production impact of different food items.</p>
+  
+  <label for="product">Select a product:</label>
+  <select id="product"></select>
+  
+  <button onclick="displayChart()">Show Ecological Impact</button>
+  
+  <div>
+    <canvas id="ecoChart"></canvas>
+  </div>
+
+  <script>
+    var excelData = [];
+
+    function populateDropdowns() {
+      var products = [];
+
+      excelData.forEach(function(entry) {
+        if (!products.includes(entry.Product_details)) {
+          products.push(entry.Product_details);
+        }
+      });
+
+      var productDropdown = document.getElementById("product");
+
+      products.forEach(function(product) {
+        var option = document.createElement("option");
+        option.value = product;
+        option.text = product;
+        productDropdown.appendChild(option);
+      });
+    }
+
+    function fetchExcelData() {
+      fetch('eco_impact.json')
+        .then(response => response.json())
+        .then(data => {
+          excelData = data;
+          populateDropdowns();
+        })
+        .catch(error => console.error('Error fetching data:', error));
+    }
+
+    fetchExcelData();
+
+    var myChart = null; // Initialize chart variable
+
+    function displayChart() {
+      var selectedProduct = document.getElementById("product").value;
+
+      var countries = [];
+      var ecoImpacts = [];
+
+      excelData.forEach(function(entry) {
+        if (entry.Product_details === selectedProduct) {
+          countries.push(entry.Country);
+          ecoImpacts.push(entry.Eco_Impact);
+        }
+      });
+
+      if (myChart) {
+        myChart.destroy(); // Destroy the existing chart before creating a new one
+      }
+
+      var ctx = document.getElementById('ecoChart').getContext('2d');
+      myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: countries,
+          datasets: [{
+            label: 'Ecological Impact',
+            data: ecoImpacts,
+            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          indexAxis: 'y', // Display the bars horizontally
+          plugins: {
+            legend: {
+              display: false // Hide the legend
+            }
+          },
+          scales: {
+            x: {
+              beginAtZero: true // Start the x-axis at zero
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

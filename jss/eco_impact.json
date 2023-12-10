@@ -1,0 +1,2222 @@
+[
+  {
+    "Product_details": "Wheat bread",
+    "Country": "Australia",
+    "Eco_Impact": 0.8572887242277526
+  },
+  {
+    "Product_details": "Wheat bread",
+    "Country": "France",
+    "Eco_Impact": 0.4032113648710216
+  },
+  {
+    "Product_details": "Wheat bread",
+    "Country": "Germany",
+    "Eco_Impact": 0.1615615971106974
+  },
+  {
+    "Product_details": "Wheat bread",
+    "Country": "Italy",
+    "Eco_Impact": 0.803405160761338
+  },
+  {
+    "Product_details": "Wheat bread",
+    "Country": "Portugal",
+    "Eco_Impact": 0.2654073962665784
+  },
+  {
+    "Product_details": "Wheat bread",
+    "Country": "Spain",
+    "Eco_Impact": 0.5469150779334047
+  },
+  {
+    "Product_details": "Wheat bread",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.2797076431364562
+  },
+  {
+    "Product_details": "Wheat and rye bread",
+    "Country": "France",
+    "Eco_Impact": 1.775940670268103
+  },
+  {
+    "Product_details": "Wheat and rye bread",
+    "Country": "Norway",
+    "Eco_Impact": 0.3721076454528215
+  },
+  {
+    "Product_details": "Wheat and rye bread",
+    "Country": "Portugal",
+    "Eco_Impact": 0.5529783834266467
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Australia",
+    "Eco_Impact": 0.3338933839598024
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Belgium",
+    "Eco_Impact": 0.2467048854195107
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Chile",
+    "Eco_Impact": 0.3611740121617095
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "China",
+    "Eco_Impact": 2.108261379924818
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Denmark",
+    "Eco_Impact": 0.3425044301278792
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "France",
+    "Eco_Impact": 0.2290243398917865
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Germany",
+    "Eco_Impact": 0.3073221770562976
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "India",
+    "Eco_Impact": 2.290625586012168
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 3.303420745076747
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Italy",
+    "Eco_Impact": 0.2715947999248173
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Mexico",
+    "Eco_Impact": 0.3258146417846512
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Nepal",
+    "Eco_Impact": 1.179345571995787
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Norway",
+    "Eco_Impact": 0.2975691468364363
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Poland",
+    "Eco_Impact": 0.4187671018863406
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Portugal",
+    "Eco_Impact": 1.615174361296438
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "Spain",
+    "Eco_Impact": 0.3220864557749972
+  },
+  {
+    "Product_details": "Wheat",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.1941513974575949
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "China",
+    "Eco_Impact": 2.555528538740627
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "Cyprus",
+    "Eco_Impact": 1.618763498388957
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "France",
+    "Eco_Impact": 0.2415349498620608
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "Germany",
+    "Eco_Impact": 0.286285511038807
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "Italy",
+    "Eco_Impact": 0.2510251835663842
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "Norway",
+    "Eco_Impact": 0.431816644611446
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "Sweden",
+    "Eco_Impact": 0.2360895750327863
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.6365082273954753
+  },
+  {
+    "Product_details": "Winter wheat",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.1876194356599649
+  },
+  {
+    "Product_details": "Soft wheat",
+    "Country": "France",
+    "Eco_Impact": 0.2541939656474682
+  },
+  {
+    "Product_details": "Winter rye",
+    "Country": "Germany",
+    "Eco_Impact": 0.2396312109041718
+  },
+  {
+    "Product_details": "Winter rye",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.5117384104167891
+  },
+  {
+    "Product_details": "Wheat flour",
+    "Country": "Greece",
+    "Eco_Impact": 0.4241606959746941
+  },
+  {
+    "Product_details": "Wheat flour",
+    "Country": "India",
+    "Eco_Impact": 0.5854752954271458
+  },
+  {
+    "Product_details": "Spring wheat",
+    "Country": "Norway",
+    "Eco_Impact": 0.4443492785323416
+  },
+  {
+    "Product_details": "Spring wheat",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.5209855012220476
+  },
+  {
+    "Product_details": "Winter bread wheat",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.2195030726456956
+  },
+  {
+    "Product_details": "Bread wheat",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.3055860795602033
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Argentina",
+    "Eco_Impact": 0.6238445919089386
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Australia",
+    "Eco_Impact": 0.2983238994740683
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Belgium",
+    "Eco_Impact": 0.2464987319613322
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Brazil",
+    "Eco_Impact": 0.3189388896216016
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "China",
+    "Eco_Impact": 0.9336670763530711
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Cyprus",
+    "Eco_Impact": 1.403238060323608
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "France",
+    "Eco_Impact": 0.2674990089374937
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 17.78439280140536
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Italy",
+    "Eco_Impact": 0.233205619794436
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Mexico",
+    "Eco_Impact": 0.3475767039120546
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Portugal",
+    "Eco_Impact": 1.745672195297811
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.4534681150605078
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "Thailand",
+    "Eco_Impact": 0.1986161483017593
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.2805826536437823
+  },
+  {
+    "Product_details": "Maize",
+    "Country": "United States of America",
+    "Eco_Impact": 0.4369711342359176
+  },
+  {
+    "Product_details": "Summer maize",
+    "Country": "China",
+    "Eco_Impact": 1.427636281797014
+  },
+  {
+    "Product_details": "Beer",
+    "Country": "Australia",
+    "Eco_Impact": 0.2607820469279298
+  },
+  {
+    "Product_details": "Beer (Vashon Brewing Company)",
+    "Country": "United States of America",
+    "Eco_Impact": 0.5057556524399731
+  },
+  {
+    "Product_details": "Beer (Vortex IPA, Fort George Brewery)",
+    "Country": "United States of America",
+    "Eco_Impact": 0.4915091541553801
+  },
+  {
+    "Product_details": "Beer (Pinnacle Peak Pale Ale, Harmon Brewing Company)",
+    "Country": "United States of America",
+    "Eco_Impact": 0.2132356484833518
+  },
+  {
+    "Product_details": "Beer (HUB Lager, Hopworks Urban Brewery)",
+    "Country": "United States of America",
+    "Eco_Impact": 0.1904669830107938
+  },
+  {
+    "Product_details": "Beer (Horn Blonde Ale, RAM Brewery)",
+    "Country": "United States of America",
+    "Eco_Impact": 0.1450739177174737
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "Australia",
+    "Eco_Impact": 0.1871638470984725
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "Belgium",
+    "Eco_Impact": 0.1672761236926082
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "Denmark",
+    "Eco_Impact": 0.1655707623272883
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "France",
+    "Eco_Impact": 0.1702140305275764
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "Germany",
+    "Eco_Impact": 0.166984947789958
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 0.5645367728723334
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "Norway",
+    "Eco_Impact": 0.1928898583790104
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "Spain",
+    "Eco_Impact": 0.3710752199771176
+  },
+  {
+    "Product_details": "Barley",
+    "Country": "Sweden",
+    "Eco_Impact": 0.1780685416059733
+  },
+  {
+    "Product_details": "Spring barley",
+    "Country": "Canada",
+    "Eco_Impact": 0.1817762968834335
+  },
+  {
+    "Product_details": "Spring barley",
+    "Country": "Denmark",
+    "Eco_Impact": 0.1802186962510416
+  },
+  {
+    "Product_details": "Spring barley",
+    "Country": "France",
+    "Eco_Impact": 0.1662944218700335
+  },
+  {
+    "Product_details": "Spring barley",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.1750208349233499
+  },
+  {
+    "Product_details": "Winter barley",
+    "Country": "Cyprus",
+    "Eco_Impact": 0.5125910790508733
+  },
+  {
+    "Product_details": "Winter barley",
+    "Country": "Germany",
+    "Eco_Impact": 0.1708672572246456
+  },
+  {
+    "Product_details": "Winter barley",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.2142184292511592
+  },
+  {
+    "Product_details": "Winter barley",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.1704398641503456
+  },
+  {
+    "Product_details": "Summer malting barley",
+    "Country": "France",
+    "Eco_Impact": 0.174476746341781
+  },
+  {
+    "Product_details": "Winter malting barley",
+    "Country": "France",
+    "Eco_Impact": 0.1751649247437513
+  },
+  {
+    "Product_details": "Summer barley",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.2105423591646098
+  },
+  {
+    "Product_details": "Oats",
+    "Country": "Australia",
+    "Eco_Impact": 0.5242478556671036
+  },
+  {
+    "Product_details": "Oats",
+    "Country": "Canada",
+    "Eco_Impact": 0.3219140459830787
+  },
+  {
+    "Product_details": "Oats",
+    "Country": "Finland",
+    "Eco_Impact": 0.5530684338106517
+  },
+  {
+    "Product_details": "Oats",
+    "Country": "Norway",
+    "Eco_Impact": 0.4746041758534848
+  },
+  {
+    "Product_details": "Oats",
+    "Country": "Portugal",
+    "Eco_Impact": 2.182564125970992
+  },
+  {
+    "Product_details": "Oats",
+    "Country": "Sweden",
+    "Eco_Impact": 0.3779772541221293
+  },
+  {
+    "Product_details": "Oats",
+    "Country": "United States of America",
+    "Eco_Impact": 4.746567276441772
+  },
+  {
+    "Product_details": "Rice",
+    "Country": "China",
+    "Eco_Impact": 1.347902372161989
+  },
+  {
+    "Product_details": "Rice",
+    "Country": "India",
+    "Eco_Impact": 13.87627830677059
+  },
+  {
+    "Product_details": "Rice",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 17.64672479626287
+  },
+  {
+    "Product_details": "Rice",
+    "Country": "Italy",
+    "Eco_Impact": 1.41301139144684
+  },
+  {
+    "Product_details": "Rice",
+    "Country": "Japan",
+    "Eco_Impact": 0.7937439304032676
+  },
+  {
+    "Product_details": "Rice",
+    "Country": "United States of America",
+    "Eco_Impact": 7.491597532116674
+  },
+  {
+    "Product_details": "Rice",
+    "Country": "Viet Nam",
+    "Eco_Impact": 0.7794549447395877
+  },
+  {
+    "Product_details": "Long grain rice",
+    "Country": "Italy",
+    "Eco_Impact": 1.117000502764411
+  },
+  {
+    "Product_details": "Jasmine rice",
+    "Country": "Thailand",
+    "Eco_Impact": 2.914627032058449
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Australia",
+    "Eco_Impact": 0.3463524653389911
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Chile",
+    "Eco_Impact": 0.3555334740022389
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "China",
+    "Eco_Impact": 0.1593837843202196
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Cyprus",
+    "Eco_Impact": 0.6303243113604862
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "France",
+    "Eco_Impact": 0.07548420733943435
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Germany",
+    "Eco_Impact": 0.08627047274393702
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "India",
+    "Eco_Impact": 0.1726729661990666
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 1.05373317338823
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Israel",
+    "Eco_Impact": 0.5193004622576691
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Japan",
+    "Eco_Impact": 0.08481402445229286
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Netherlands",
+    "Eco_Impact": 0.1449077029612866
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Poland",
+    "Eco_Impact": 0.1469840255313623
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Russian Federation",
+    "Eco_Impact": 0.1510863774729702
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Spain",
+    "Eco_Impact": 0.4838753248142782
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Sweden",
+    "Eco_Impact": 0.1253355016566667
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.1621550133339574
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "Ukraine",
+    "Eco_Impact": 0.1554819225463262
+  },
+  {
+    "Product_details": "Potatoes",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.09075078101762692
+  },
+  {
+    "Product_details": "Sweet potatoes",
+    "Country": "China",
+    "Eco_Impact": 0.3632094748967883
+  },
+  {
+    "Product_details": "Sweet potatoes",
+    "Country": "Japan",
+    "Eco_Impact": 0.1459910567684045
+  },
+  {
+    "Product_details": "Cassava",
+    "Country": "Thailand",
+    "Eco_Impact": 0.07234726236432712
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "Argentina",
+    "Eco_Impact": 0.4645157429492022
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "Australia",
+    "Eco_Impact": 0.5770945142539888
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "Brazil",
+    "Eco_Impact": 0.1638631801519016
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "Germany",
+    "Eco_Impact": 0.3030919597778849
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "India",
+    "Eco_Impact": 1.539403972212301
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "Japan",
+    "Eco_Impact": 0.5931339810024623
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "Mauritius",
+    "Eco_Impact": 0.2359173403150127
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "Mexico",
+    "Eco_Impact": 1.030467977427401
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "South Africa",
+    "Eco_Impact": 0.6397441512735274
+  },
+  {
+    "Product_details": "Sugar",
+    "Country": "Sweden",
+    "Eco_Impact": 0.2708414634089671
+  },
+  {
+    "Product_details": "Sugar cane",
+    "Country": "Brazil",
+    "Eco_Impact": 0.8417152676247285
+  },
+  {
+    "Product_details": "Sugar cane",
+    "Country": "India",
+    "Eco_Impact": 1.065518056021104
+  },
+  {
+    "Product_details": "Sugar cane",
+    "Country": "Japan",
+    "Eco_Impact": 0.4511227717990495
+  },
+  {
+    "Product_details": "Sugar beet",
+    "Country": "Cyprus",
+    "Eco_Impact": 2.329619802248065
+  },
+  {
+    "Product_details": "Sugar beet",
+    "Country": "France",
+    "Eco_Impact": 0.3293558220811982
+  },
+  {
+    "Product_details": "Sugar beet",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 3.528849852040285
+  },
+  {
+    "Product_details": "Sugar beet",
+    "Country": "Japan",
+    "Eco_Impact": 0.6705581307636712
+  },
+  {
+    "Product_details": "Sugar beet",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.3455473671712312
+  },
+  {
+    "Product_details": "Sugar beet",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.3511118432143865
+  },
+  {
+    "Product_details": "Chickpeas",
+    "Country": "Australia",
+    "Eco_Impact": 0.4454879515844867
+  },
+  {
+    "Product_details": "Lupins",
+    "Country": "Australia",
+    "Eco_Impact": 0.8411079342543821
+  },
+  {
+    "Product_details": "Lupins",
+    "Country": "Belgium",
+    "Eco_Impact": 0.549945005386975
+  },
+  {
+    "Product_details": "Lentils",
+    "Country": "Canada",
+    "Eco_Impact": 0.4578191186113869
+  },
+  {
+    "Product_details": "Lentils",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 2.194173245181115
+  },
+  {
+    "Product_details": "Faba beans",
+    "Country": "France",
+    "Eco_Impact": 0.3717076146200339
+  },
+  {
+    "Product_details": "Spring faba beans",
+    "Country": "France",
+    "Eco_Impact": 0.3019698117297672
+  },
+  {
+    "Product_details": "Runner beans",
+    "Country": "Greece",
+    "Eco_Impact": 4.735680473385639
+  },
+  {
+    "Product_details": "Runner beans",
+    "Country": "Kenya",
+    "Eco_Impact": 1.807398133718075
+  },
+  {
+    "Product_details": "Runner beans",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.2165504506602001
+  },
+  {
+    "Product_details": "Pigeon peas",
+    "Country": "India",
+    "Eco_Impact": 0.6671298546823201
+  },
+  {
+    "Product_details": "Field beans",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.5011598444817613
+  },
+  {
+    "Product_details": "Field beans",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.3325334104471697
+  },
+  {
+    "Product_details": "Peas",
+    "Country": "Belgium",
+    "Eco_Impact": 0.4734572899270731
+  },
+  {
+    "Product_details": "Peas",
+    "Country": "France",
+    "Eco_Impact": 0.2738361852090127
+  },
+  {
+    "Product_details": "Peas",
+    "Country": "Germany",
+    "Eco_Impact": 0.3161396722503709
+  },
+  {
+    "Product_details": "Peas",
+    "Country": "Portugal",
+    "Eco_Impact": 11.73738438272132
+  },
+  {
+    "Product_details": "Peas",
+    "Country": "Spain",
+    "Eco_Impact": 0.9314719583814942
+  },
+  {
+    "Product_details": "Peas",
+    "Country": "Sweden",
+    "Eco_Impact": 0.3996306164147154
+  },
+  {
+    "Product_details": "Peas",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.4927779971763431
+  },
+  {
+    "Product_details": "Spring peas",
+    "Country": "Canada",
+    "Eco_Impact": 0.2441900949940083
+  },
+  {
+    "Product_details": "Spring peas",
+    "Country": "France",
+    "Eco_Impact": 0.209646959558532
+  },
+  {
+    "Product_details": "Winter peas",
+    "Country": "France",
+    "Eco_Impact": 0.2868228189898606
+  },
+  {
+    "Product_details": "Almonds",
+    "Country": "Australia",
+    "Eco_Impact": 10.20007755208812
+  },
+  {
+    "Product_details": "Almonds",
+    "Country": "China",
+    "Eco_Impact": 2.340540259565261
+  },
+  {
+    "Product_details": "Almonds",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 25.73172891121124
+  },
+  {
+    "Product_details": "Almonds",
+    "Country": "United States of America",
+    "Eco_Impact": 17.07026540104167
+  },
+  {
+    "Product_details": "Cashew nuts",
+    "Country": "Brazil",
+    "Eco_Impact": 3.281602518657603
+  },
+  {
+    "Product_details": "Pistachios",
+    "Country": "Greece",
+    "Eco_Impact": 13.45255558240321
+  },
+  {
+    "Product_details": "Pistachios",
+    "Country": "United States of America",
+    "Eco_Impact": 6.689793524664861
+  },
+  {
+    "Product_details": "Hazelnuts",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 10.14273983326446
+  },
+  {
+    "Product_details": "Hazelnuts",
+    "Country": "Italy",
+    "Eco_Impact": 2.944351763826808
+  },
+  {
+    "Product_details": "Chestnuts",
+    "Country": "Portugal",
+    "Eco_Impact": 1.100099996620156
+  },
+  {
+    "Product_details": "Walnuts",
+    "Country": "United States of America",
+    "Eco_Impact": 2.209771346162857
+  },
+  {
+    "Product_details": "Peanuts",
+    "Country": "Argentina",
+    "Eco_Impact": 1.643713550072703
+  },
+  {
+    "Product_details": "Peanuts",
+    "Country": "Australia",
+    "Eco_Impact": 0.4804726749016262
+  },
+  {
+    "Product_details": "Peanuts",
+    "Country": "China",
+    "Eco_Impact": 3.182320775535454
+  },
+  {
+    "Product_details": "Peanuts",
+    "Country": "India",
+    "Eco_Impact": 8.282771790527748
+  },
+  {
+    "Product_details": "Peanuts",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 0.3676935737844783
+  },
+  {
+    "Product_details": "Peanuts",
+    "Country": "United States of America",
+    "Eco_Impact": 0.5622848765368966
+  },
+  {
+    "Product_details": "Soybeans",
+    "Country": "Argentina",
+    "Eco_Impact": 0.3746572124129763
+  },
+  {
+    "Product_details": "Soybeans",
+    "Country": "Brazil",
+    "Eco_Impact": 0.7106833674635601
+  },
+  {
+    "Product_details": "Soybeans",
+    "Country": "China",
+    "Eco_Impact": 0.4548516380965071
+  },
+  {
+    "Product_details": "Soybeans",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 5.059968944063839
+  },
+  {
+    "Product_details": "Soybeans",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.8240586790894019
+  },
+  {
+    "Product_details": "Soybeans",
+    "Country": "Thailand",
+    "Eco_Impact": 0.5237006268084269
+  },
+  {
+    "Product_details": "Soybeans",
+    "Country": "United States of America",
+    "Eco_Impact": 0.5359112140677171
+  },
+  {
+    "Product_details": "Soybean oil",
+    "Country": "Argentina",
+    "Eco_Impact": 1.253948947829836
+  },
+  {
+    "Product_details": "Soybean oil",
+    "Country": "Brazil",
+    "Eco_Impact": 2.011904813476903
+  },
+  {
+    "Product_details": "Soybean oil",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 12.15410188498689
+  },
+  {
+    "Product_details": "Soybean oil",
+    "Country": "South Africa",
+    "Eco_Impact": 3.968790176648125
+  },
+  {
+    "Product_details": "Soybean oil",
+    "Country": "United States of America",
+    "Eco_Impact": 0.7865934709417032
+  },
+  {
+    "Product_details": "Palm oil",
+    "Country": "Cameroon",
+    "Eco_Impact": 1.113101725554193
+  },
+  {
+    "Product_details": "Palm oil",
+    "Country": "Malaysia",
+    "Eco_Impact": 0.8720078321201834
+  },
+  {
+    "Product_details": "Palm oil",
+    "Country": "Thailand",
+    "Eco_Impact": 0.2817245606747164
+  },
+  {
+    "Product_details": "Palm fruit",
+    "Country": "Brazil",
+    "Eco_Impact": 0.7967482667630784
+  },
+  {
+    "Product_details": "Palm fruit",
+    "Country": "Indonesia",
+    "Eco_Impact": 1.432130716578318
+  },
+  {
+    "Product_details": "Sunflower oil",
+    "Country": "Italy",
+    "Eco_Impact": 1.114628784262495
+  },
+  {
+    "Product_details": "Sunflower oil",
+    "Country": "Portugal",
+    "Eco_Impact": 2.508836057933279
+  },
+  {
+    "Product_details": "Sunflower oil",
+    "Country": "South Africa",
+    "Eco_Impact": 1.928445666211345
+  },
+  {
+    "Product_details": "Sunflower oil",
+    "Country": "Spain",
+    "Eco_Impact": 3.326290356573482
+  },
+  {
+    "Product_details": "Sunflower seeds",
+    "Country": "Brazil",
+    "Eco_Impact": 1.275614193135093
+  },
+  {
+    "Product_details": "Sunflower seeds",
+    "Country": "Chile",
+    "Eco_Impact": 20.45645072090776
+  },
+  {
+    "Product_details": "Sunflower seeds",
+    "Country": "France",
+    "Eco_Impact": 0.9485816023092726
+  },
+  {
+    "Product_details": "Sunflower seeds",
+    "Country": "Germany",
+    "Eco_Impact": 0.7519109442974199
+  },
+  {
+    "Product_details": "Sunflower seeds",
+    "Country": "Italy",
+    "Eco_Impact": 1.077959164088003
+  },
+  {
+    "Product_details": "Sunflower seeds",
+    "Country": "Spain",
+    "Eco_Impact": 2.438072366732467
+  },
+  {
+    "Product_details": "Sunflower seeds",
+    "Country": "Switzerland",
+    "Eco_Impact": 1.363590441956713
+  },
+  {
+    "Product_details": "Canola oil",
+    "Country": "Australia",
+    "Eco_Impact": 1.039757203443195
+  },
+  {
+    "Product_details": "Canola oil",
+    "Country": "South Africa",
+    "Eco_Impact": 1.821129825609745
+  },
+  {
+    "Product_details": "Rapeseed oil",
+    "Country": "Australia",
+    "Eco_Impact": 2.202493487380912
+  },
+  {
+    "Product_details": "Rapeseed oil",
+    "Country": "Denmark",
+    "Eco_Impact": 0.8756090266934222
+  },
+  {
+    "Product_details": "Rapeseed oil",
+    "Country": "France",
+    "Eco_Impact": 0.5788280527104458
+  },
+  {
+    "Product_details": "Rapeseed oil",
+    "Country": "Germany",
+    "Eco_Impact": 1.306707503082877
+  },
+  {
+    "Product_details": "Rapeseed oil",
+    "Country": "Spain",
+    "Eco_Impact": 15.83156650792818
+  },
+  {
+    "Product_details": "Rapeseed oil",
+    "Country": "Sweden",
+    "Eco_Impact": 1.093261516899251
+  },
+  {
+    "Product_details": "Canola",
+    "Country": "Australia",
+    "Eco_Impact": 1.083270702942984
+  },
+  {
+    "Product_details": "Canola",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 2.373854052302649
+  },
+  {
+    "Product_details": "Canola",
+    "Country": "Turkey",
+    "Eco_Impact": 0.9419650342374479
+  },
+  {
+    "Product_details": "Rapeseed",
+    "Country": "Chile",
+    "Eco_Impact": 0.8403724659538586
+  },
+  {
+    "Product_details": "Rapeseed",
+    "Country": "Denmark",
+    "Eco_Impact": 1.255052752919904
+  },
+  {
+    "Product_details": "Rapeseed",
+    "Country": "France",
+    "Eco_Impact": 0.9808164677520769
+  },
+  {
+    "Product_details": "Rapeseed",
+    "Country": "Germany",
+    "Eco_Impact": 0.6934738931594919
+  },
+  {
+    "Product_details": "Rapeseed",
+    "Country": "Italy",
+    "Eco_Impact": 9.357296552670906
+  },
+  {
+    "Product_details": "Rapeseed",
+    "Country": "Poland",
+    "Eco_Impact": 0.7929674416968134
+  },
+  {
+    "Product_details": "Rapeseed",
+    "Country": "United Kingdom",
+    "Eco_Impact": 1.117672743020488
+  },
+  {
+    "Product_details": "Winter rapeseed",
+    "Country": "France",
+    "Eco_Impact": 0.9017284011261987
+  },
+  {
+    "Product_details": "Winter rapeseed",
+    "Country": "Germany",
+    "Eco_Impact": 0.8929647240423607
+  },
+  {
+    "Product_details": "Winter rapeseed",
+    "Country": "Sweden",
+    "Eco_Impact": 0.99104929942854
+  },
+  {
+    "Product_details": "Winter rapeseed",
+    "Country": "Switzerland",
+    "Eco_Impact": 1.499982197257904
+  },
+  {
+    "Product_details": "Spring rapeseed",
+    "Country": "Sweden",
+    "Eco_Impact": 1.325953128088127
+  },
+  {
+    "Product_details": "Extra virgin olive oil",
+    "Country": "Greece",
+    "Eco_Impact": 2.513571849066935
+  },
+  {
+    "Product_details": "Extra virgin olive oil",
+    "Country": "Italy",
+    "Eco_Impact": 1.75368645652993
+  },
+  {
+    "Product_details": "Olive oil",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 4.43203644934791
+  },
+  {
+    "Product_details": "Extra virgin olive oil (\"GranFruttato\")",
+    "Country": "Italy",
+    "Eco_Impact": 18.04623591564954
+  },
+  {
+    "Product_details": "Virgin olive oil",
+    "Country": "Portugal",
+    "Eco_Impact": 2.477109318571507
+  },
+  {
+    "Product_details": "Olives",
+    "Country": "Greece",
+    "Eco_Impact": 20.9610925920165
+  },
+  {
+    "Product_details": "Olives",
+    "Country": "Italy",
+    "Eco_Impact": 5.006420129922981
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Australia",
+    "Eco_Impact": 0.1989282919640383
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Benin",
+    "Eco_Impact": 3.038157414101067
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Canada",
+    "Eco_Impact": 0.6165069928485394
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "China",
+    "Eco_Impact": 0.3033087259359872
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Colombia",
+    "Eco_Impact": 0.09564891515269265
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Denmark",
+    "Eco_Impact": 0.7225077267447636
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "France",
+    "Eco_Impact": 0.2159282964619653
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Hungary",
+    "Eco_Impact": 0.4966550012579247
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 0.7215341697563148
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Italy",
+    "Eco_Impact": 0.1903330392216634
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Morocco",
+    "Eco_Impact": 0.2368556892200846
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Netherlands",
+    "Eco_Impact": 0.3904269842791791
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Spain",
+    "Eco_Impact": 0.2573513323097315
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "Turkey",
+    "Eco_Impact": 0.08027687671346127
+  },
+  {
+    "Product_details": "Tomatoes",
+    "Country": "United States of America",
+    "Eco_Impact": 0.2571704095017426
+  },
+  {
+    "Product_details": "Tomatoes (loose classic)",
+    "Country": "Spain",
+    "Eco_Impact": 0.2686362409895535
+  },
+  {
+    "Product_details": "Tomatoes (loose classic)",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.3382517227263583
+  },
+  {
+    "Product_details": "Tomatoes (vine)",
+    "Country": "Spain",
+    "Eco_Impact": 0.4029859176586208
+  },
+  {
+    "Product_details": "Tomatoes (vine)",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.7695757880359769
+  },
+  {
+    "Product_details": "Tomatoes (baby plum)",
+    "Country": "Spain",
+    "Eco_Impact": 0.8099080868433103
+  },
+  {
+    "Product_details": "Tomatoes (baby plum)",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.8797717687845559
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "Australia",
+    "Eco_Impact": 0.06999078708854017
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "China",
+    "Eco_Impact": 0.07690148700251193
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "Denmark",
+    "Eco_Impact": 0.1299471601567635
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "India",
+    "Eco_Impact": 0.2182628752435816
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "Netherlands",
+    "Eco_Impact": 0.07062068696882647
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "New Zealand",
+    "Eco_Impact": 0.1165901832988784
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "Spain",
+    "Eco_Impact": 0.2771424213596911
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.1363905391890681
+  },
+  {
+    "Product_details": "Onions",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.0614427280316844
+  },
+  {
+    "Product_details": "Leeks",
+    "Country": "Belgium",
+    "Eco_Impact": 0.0698614661148105
+  },
+  {
+    "Product_details": "Carrots",
+    "Country": "Denmark",
+    "Eco_Impact": 0.08562159222808638
+  },
+  {
+    "Product_details": "Carrots",
+    "Country": "France",
+    "Eco_Impact": 0.06432311433146952
+  },
+  {
+    "Product_details": "Carrots",
+    "Country": "Sweden",
+    "Eco_Impact": 0.05150202088470653
+  },
+  {
+    "Product_details": "Carrots",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.08417019695971495
+  },
+  {
+    "Product_details": "Carrots",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.04773508981412334
+  },
+  {
+    "Product_details": "Celeriac",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.2439544354442626
+  },
+  {
+    "Product_details": "Broccoli",
+    "Country": "Australia",
+    "Eco_Impact": 0.1283510822854261
+  },
+  {
+    "Product_details": "Broccoli",
+    "Country": "Spain",
+    "Eco_Impact": 1.087052555861513
+  },
+  {
+    "Product_details": "Broccoli",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.1379266773144167
+  },
+  {
+    "Product_details": "Broccoli",
+    "Country": "United States of America",
+    "Eco_Impact": 2.441917334635714
+  },
+  {
+    "Product_details": "Pakchoi",
+    "Country": "China",
+    "Eco_Impact": 0.4229562381598472
+  },
+  {
+    "Product_details": "Cauliflower",
+    "Country": "Spain",
+    "Eco_Impact": 0.6205401273646312
+  },
+  {
+    "Product_details": "Cauliflower",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.1282279674798012
+  },
+  {
+    "Product_details": "Cabbage",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.07463418532794816
+  },
+  {
+    "Product_details": "Savoy cabbage",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.2018360326275613
+  },
+  {
+    "Product_details": "Cucumber",
+    "Country": "China",
+    "Eco_Impact": 0.1885110802986015
+  },
+  {
+    "Product_details": "Cucumber",
+    "Country": "Denmark",
+    "Eco_Impact": 0.7713569053255132
+  },
+  {
+    "Product_details": "Cucumber",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 0.5203199482952792
+  },
+  {
+    "Product_details": "Hokkaido pumpkins",
+    "Country": "Germany",
+    "Eco_Impact": 0.05775574509297141
+  },
+  {
+    "Product_details": "Pumpkins",
+    "Country": "United States of America",
+    "Eco_Impact": 0.1780788206073036
+  },
+  {
+    "Product_details": "Lettuce",
+    "Country": "Australia",
+    "Eco_Impact": 0.1304964619472497
+  },
+  {
+    "Product_details": "Lettuce",
+    "Country": "Greece",
+    "Eco_Impact": 0.6083637366486141
+  },
+  {
+    "Product_details": "Lettuce",
+    "Country": "Italy",
+    "Eco_Impact": 0.1472701480721867
+  },
+  {
+    "Product_details": "Lettuce",
+    "Country": "Spain",
+    "Eco_Impact": 0.5535575516190987
+  },
+  {
+    "Product_details": "Lettuce",
+    "Country": "Thailand",
+    "Eco_Impact": 0.4891213084317526
+  },
+  {
+    "Product_details": "Lettuce",
+    "Country": "Uganda",
+    "Eco_Impact": 1.904721519318666
+  },
+  {
+    "Product_details": "Lettuce",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.2954621094531212
+  },
+  {
+    "Product_details": "Lettuce",
+    "Country": "United States of America",
+    "Eco_Impact": 0.8055729933249606
+  },
+  {
+    "Product_details": "Lambs lettuce",
+    "Country": "Italy",
+    "Eco_Impact": 0.49851069673941
+  },
+  {
+    "Product_details": "Artichokes",
+    "Country": "Italy",
+    "Eco_Impact": 1.414702210603143
+  },
+  {
+    "Product_details": "Artichokes",
+    "Country": "Spain",
+    "Eco_Impact": 3.083490662398121
+  },
+  {
+    "Product_details": "Chicory",
+    "Country": "Italy",
+    "Eco_Impact": 0.1669280374464581
+  },
+  {
+    "Product_details": "Iceberg lettuce",
+    "Country": "United States of America",
+    "Eco_Impact": 0.636637818733496
+  },
+  {
+    "Product_details": "Green beans",
+    "Country": "Spain",
+    "Eco_Impact": 0.7437198335299643
+  },
+  {
+    "Product_details": "French and Sim beans",
+    "Country": "Uganda",
+    "Eco_Impact": 2.106618260483672
+  },
+  {
+    "Product_details": "Oranges",
+    "Country": "Brazil",
+    "Eco_Impact": 0.07347224578660269
+  },
+  {
+    "Product_details": "Oranges",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 0.2858143563040218
+  },
+  {
+    "Product_details": "Oranges",
+    "Country": "Italy",
+    "Eco_Impact": 0.9249413792542109
+  },
+  {
+    "Product_details": "Oranges",
+    "Country": "Spain",
+    "Eco_Impact": 0.5949048727015782
+  },
+  {
+    "Product_details": "Oranges",
+    "Country": "United States of America",
+    "Eco_Impact": 0.1037498955488871
+  },
+  {
+    "Product_details": "Blood oranges",
+    "Country": "Italy",
+    "Eco_Impact": 0.9209874996034552
+  },
+  {
+    "Product_details": "Lemons",
+    "Country": "Italy",
+    "Eco_Impact": 0.8622973224211931
+  },
+  {
+    "Product_details": "Lemons",
+    "Country": "Spain",
+    "Eco_Impact": 0.574038193045437
+  },
+  {
+    "Product_details": "Clementine",
+    "Country": "Morocco",
+    "Eco_Impact": 1.641635534845721
+  },
+  {
+    "Product_details": "Mandarin",
+    "Country": "Spain",
+    "Eco_Impact": 0.7541766631777392
+  },
+  {
+    "Product_details": "Citrus",
+    "Country": "Spain",
+    "Eco_Impact": 0.5119879950606149
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "Australia",
+    "Eco_Impact": 0.1595052892312789
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "Colombia",
+    "Eco_Impact": 0.5748516647014228
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "Costa Rica",
+    "Eco_Impact": 0.2191001274127641
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "Ecuador",
+    "Eco_Impact": 0.29883272349981
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "Guadeloupe",
+    "Eco_Impact": 0.2349927885626148
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "India",
+    "Eco_Impact": 0.163257602821454
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "Panama",
+    "Eco_Impact": 0.7874319549913215
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "Peru",
+    "Eco_Impact": 0.1021570989540072
+  },
+  {
+    "Product_details": "Bananas",
+    "Country": "Thailand",
+    "Eco_Impact": 0.170500564297552
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "Canada",
+    "Eco_Impact": 0.0944057218055982
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "Chile",
+    "Eco_Impact": 0.06758755808192327
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "China",
+    "Eco_Impact": 0.1251573116981597
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "France",
+    "Eco_Impact": 0.05684839281980927
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "Germany",
+    "Eco_Impact": 0.08722777527958397
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "Italy",
+    "Eco_Impact": 0.08189594901846207
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "New Zealand",
+    "Eco_Impact": 0.09136981111251076
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "Spain",
+    "Eco_Impact": 0.7048155794205886
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.07141527983424314
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.08251971384485862
+  },
+  {
+    "Product_details": "Apples",
+    "Country": "United States of America",
+    "Eco_Impact": 0.4055471603281675
+  },
+  {
+    "Product_details": "Strawberries",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 0.9630488363430121
+  },
+  {
+    "Product_details": "Strawberries",
+    "Country": "Spain",
+    "Eco_Impact": 0.8754843814113461
+  },
+  {
+    "Product_details": "Strawberries",
+    "Country": "United Kingdom",
+    "Eco_Impact": 0.2621222832053369
+  },
+  {
+    "Product_details": "Raspberries",
+    "Country": "Spain",
+    "Eco_Impact": 1.500449318002619
+  },
+  {
+    "Product_details": "Raspberries",
+    "Country": "United Kingdom",
+    "Eco_Impact": 1.182413542401846
+  },
+  {
+    "Product_details": "Wine",
+    "Country": "Canada",
+    "Eco_Impact": 0.6118120415698324
+  },
+  {
+    "Product_details": "Wine",
+    "Country": "Italy",
+    "Eco_Impact": 0.3131743572808101
+  },
+  {
+    "Product_details": "Wine",
+    "Country": "Spain",
+    "Eco_Impact": 0.4016905444628492
+  },
+  {
+    "Product_details": "Wine grapes",
+    "Country": "France",
+    "Eco_Impact": 0.3491429485989466
+  },
+  {
+    "Product_details": "Wine grapes",
+    "Country": "Italy",
+    "Eco_Impact": 0.3692153441727234
+  },
+  {
+    "Product_details": "Wine grapes",
+    "Country": "United States of America",
+    "Eco_Impact": 0.2760414766852605
+  },
+  {
+    "Product_details": "Red wine",
+    "Country": "Italy",
+    "Eco_Impact": 0.2758005182113893
+  },
+  {
+    "Product_details": "Red wine",
+    "Country": "Spain",
+    "Eco_Impact": 0.3577516916455701
+  },
+  {
+    "Product_details": "Red wine",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.3340552638642921
+  },
+  {
+    "Product_details": "White wine",
+    "Country": "Italy",
+    "Eco_Impact": 1.080503819802614
+  },
+  {
+    "Product_details": "White wine",
+    "Country": "Portugal",
+    "Eco_Impact": 0.8188572720821786
+  },
+  {
+    "Product_details": "White wine",
+    "Country": "Switzerland",
+    "Eco_Impact": 0.2894535201447513
+  },
+  {
+    "Product_details": "Chinese pear",
+    "Country": "China",
+    "Eco_Impact": 2.294637220654779
+  },
+  {
+    "Product_details": "Pears",
+    "Country": "Italy",
+    "Eco_Impact": 0.1517257756610434
+  },
+  {
+    "Product_details": "Peach / Nectarine",
+    "Country": "France",
+    "Eco_Impact": 0.1791936416065875
+  },
+  {
+    "Product_details": "Peaches",
+    "Country": "Greece",
+    "Eco_Impact": 0.4954086492927264
+  },
+  {
+    "Product_details": "Peaches",
+    "Country": "Italy",
+    "Eco_Impact": 2.803832437278112
+  },
+  {
+    "Product_details": "Peaches",
+    "Country": "South Africa",
+    "Eco_Impact": 0.7537901518461874
+  },
+  {
+    "Product_details": "Peaches",
+    "Country": "Spain",
+    "Eco_Impact": 1.072322829012412
+  },
+  {
+    "Product_details": "Nectarines",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 0.9521300639698412
+  },
+  {
+    "Product_details": "Avocado",
+    "Country": "Australia",
+    "Eco_Impact": 0.3919099028406076
+  },
+  {
+    "Product_details": "Kiwi",
+    "Country": "Greece",
+    "Eco_Impact": 0.4936977645584589
+  },
+  {
+    "Product_details": "Kiwi",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 1.552191223114962
+  },
+  {
+    "Product_details": "Canary melon",
+    "Country": "Brazil",
+    "Eco_Impact": 0.4334954259698924
+  },
+  {
+    "Product_details": "Watermelon",
+    "Country": "Iran (Islamic Republic of)",
+    "Eco_Impact": 0.2638987223627943
+  },
+  {
+    "Product_details": "Melon",
+    "Country": "Spain",
+    "Eco_Impact": 0.7531269320212811
+  },
+  {
+    "Product_details": "Coffee beans",
+    "Country": "Brazil",
+    "Eco_Impact": 1.621356903916835
+  },
+  {
+    "Product_details": "Coffee beans",
+    "Country": "Costa Rica",
+    "Eco_Impact": 3.552386024504351
+  },
+  {
+    "Product_details": "Coffee beans",
+    "Country": "Indonesia",
+    "Eco_Impact": 15.56682900661608
+  },
+  {
+    "Product_details": "Coffee beans",
+    "Country": "Nicaragua",
+    "Eco_Impact": 5.122503935424029
+  },
+  {
+    "Product_details": "Coffee beans",
+    "Country": "Viet Nam",
+    "Eco_Impact": 1.774812514154054
+  },
+  {
+    "Product_details": "Chocolate",
+    "Country": "Ghana",
+    "Eco_Impact": 2.786447673792099
+  },
+  {
+    "Product_details": "Cocoa",
+    "Country": "Brazil",
+    "Eco_Impact": 4.472344468848548
+  },
+  {
+    "Product_details": "Cocoa",
+    "Country": "C\ufffd\ufffd\ufffdte d'Ivoi",
+    "Eco_Impact": 2.869692565275402
+  },
+  {
+    "Product_details": "Cocoa",
+    "Country": "Ghana",
+    "Eco_Impact": 2.31437271835721
+  },
+  {
+    "Product_details": "Cocoa",
+    "Country": "Indonesia",
+    "Eco_Impact": 29.43825622403283
+  },
+  {
+    "Product_details": "Beef",
+    "Country": "Brazil",
+    "Eco_Impact": 44.70629289969998
+  },
+  {
+    "Product_details": "Beef",
+    "Country": "France",
+    "Eco_Impact": 10.6632883730822
+  },
+  {
+    "Product_details": "Beef",
+    "Country": "Mexico",
+    "Eco_Impact": 42.58824377703154
+  },
+  {
+    "Product_details": "Beef",
+    "Country": "Sweden",
+    "Eco_Impact": 12.05205360128245
+  },
+  {
+    "Product_details": "Beef",
+    "Country": "United States of America",
+    "Eco_Impact": 21.43869266926476
+  },
+  {
+    "Product_details": "Mutton",
+    "Country": "Australia",
+    "Eco_Impact": 5.396147517877081
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Austria",
+    "Eco_Impact": 4.308771771024891
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Brazil",
+    "Eco_Impact": 4.276123110696839
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Cuba",
+    "Eco_Impact": 5.794565172411348
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Denmark",
+    "Eco_Impact": 3.748492410554094
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "France",
+    "Eco_Impact": 8.867863255820712
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Germany",
+    "Eco_Impact": 3.844474873021886
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Mexico",
+    "Eco_Impact": 5.975570514329229
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Netherlands",
+    "Eco_Impact": 12.55737057100626
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Portugal",
+    "Eco_Impact": 12.44400134440548
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Spain",
+    "Eco_Impact": 7.775801078061453
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "Sweden",
+    "Eco_Impact": 4.030554332068987
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "United Kingdom",
+    "Eco_Impact": 6.263941471305843
+  },
+  {
+    "Product_details": "Pork",
+    "Country": "United States of America",
+    "Eco_Impact": 2.69017053316766
+  },
+  {
+    "Product_details": "Chicken",
+    "Country": "Brazil",
+    "Eco_Impact": 2.086070944451365
+  },
+  {
+    "Product_details": "Chicken",
+    "Country": "France",
+    "Eco_Impact": 3.518034770658824
+  },
+  {
+    "Product_details": "Chicken",
+    "Country": "Malaysia",
+    "Eco_Impact": 2.116105430510216
+  },
+  {
+    "Product_details": "Chicken",
+    "Country": "Sweden",
+    "Eco_Impact": 3.258784681040858
+  },
+  {
+    "Product_details": "Chicken",
+    "Country": "United Kingdom",
+    "Eco_Impact": 6.689334323411146
+  },
+  {
+    "Product_details": "Duck",
+    "Country": "France",
+    "Eco_Impact": 4.030096882927372
+  },
+  {
+    "Product_details": "Turkey",
+    "Country": "France",
+    "Eco_Impact": 5.844993443179665
+  },
+  {
+    "Product_details": "Turkey",
+    "Country": "United Kingdom",
+    "Eco_Impact": 10.28541878657627
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Brazil",
+    "Eco_Impact": 4.891500104818012
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Canada",
+    "Eco_Impact": 4.387671035856441
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Denmark",
+    "Eco_Impact": 4.070608994928739
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "France",
+    "Eco_Impact": 3.394584088299148
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Germany",
+    "Eco_Impact": 3.580654765601657
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Ireland",
+    "Eco_Impact": 2.343554011443585
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Italy",
+    "Eco_Impact": 6.75388851722785
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Mexico",
+    "Eco_Impact": 3.377091095103915
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Netherlands",
+    "Eco_Impact": 5.184074144598809
+  },
+  {
+    "Product_details": "Cow's milk",
+    "Country": "Peru",
+    "Eco_Impact": 20.48020195054461
+  },
+  {
+    "Product_details": "Cow's cheese (Gouda)",
+    "Country": "Netherlands",
+    "Eco_Impact": 5.401982706347278
+  },
+  {
+    "Product_details": "Chicken's eggs",
+    "Country": "France",
+    "Eco_Impact": 1.9144994343048
+  },
+  {
+    "Product_details": "Chicken's eggs",
+    "Country": "Sweden",
+    "Eco_Impact": 2.073305679936544
+  },
+  {
+    "Product_details": "Chicken's eggs",
+    "Country": "United Kingdom",
+    "Eco_Impact": 2.989710024828715
+  },
+  {
+    "Product_details": "Chicken's eggs",
+    "Country": "United States of America",
+    "Eco_Impact": 1.709678879351396
+  },
+  {
+    "Product_details": "Grass carp, silver carp, big head carp, common carp, catfish",
+    "Country": "Brazil",
+    "Eco_Impact": 6.018738387890246
+  },
+  {
+    "Product_details": "Tilapia, African catfish",
+    "Country": "Cameroon",
+    "Eco_Impact": 30.59012529504269
+  },
+  {
+    "Product_details": "Tilapia",
+    "Country": "China",
+    "Eco_Impact": 8.395701200617147
+  },
+  {
+    "Product_details": "Tilapia",
+    "Country": "Peru",
+    "Eco_Impact": 13.47523903479951
+  },
+  {
+    "Product_details": "Tilapia",
+    "Country": "Thailand",
+    "Eco_Impact": 7.065488081677856
+  },
+  {
+    "Product_details": "Rainbow trout",
+    "Country": "France",
+    "Eco_Impact": 3.680215748775152
+  },
+  {
+    "Product_details": "Trout",
+    "Country": "France",
+    "Eco_Impact": 2.888197562201952
+  },
+  {
+    "Product_details": "Trout",
+    "Country": "Peru",
+    "Eco_Impact": 6.439714591734425
+  },
+  {
+    "Product_details": "Sea bass, sea bream",
+    "Country": "France",
+    "Eco_Impact": 2.65142710043581
+  },
+  {
+    "Product_details": "Salmon",
+    "Country": "France",
+    "Eco_Impact": 2.18625772294734
+  },
+  {
+    "Product_details": "Salmon",
+    "Country": "United Kingdom",
+    "Eco_Impact": 2.477635056819931
+  },
+  {
+    "Product_details": "Common carp, tench, roach, perch, sander, pike",
+    "Country": "France",
+    "Eco_Impact": 10.23761346742122
+  },
+  {
+    "Product_details": "Common carp, tench, roach, perch, pike",
+    "Country": "France",
+    "Eco_Impact": 18.3270344872756
+  },
+  {
+    "Product_details": "Tambaqui",
+    "Country": "Peru",
+    "Eco_Impact": 11.0749624945915
+  },
+  {
+    "Product_details": "Pangasius",
+    "Country": "Viet Nam",
+    "Eco_Impact": 7.817864571870127
+  },
+  {
+    "Product_details": "Giant river prawn",
+    "Country": "Bangladesh",
+    "Eco_Impact": 51.79214218154313
+  },
+  {
+    "Product_details": "Tiger prawn",
+    "Country": "Bangladesh",
+    "Eco_Impact": 16.81901961444745
+  },
+  {
+    "Product_details": "Tiger prawn",
+    "Country": "Viet Nam",
+    "Eco_Impact": 5.937189897142837
+  },
+  {
+    "Product_details": "Amazon river prawn",
+    "Country": "Brazil",
+    "Eco_Impact": 16.33471135956808
+  },
+  {
+    "Product_details": "Giant giver prawn",
+    "Country": "Brazil",
+    "Eco_Impact": 9.667142384575037
+  },
+  {
+    "Product_details": "Shrimp",
+    "Country": "China",
+    "Eco_Impact": 4.626555274394619
+  },
+  {
+    "Product_details": "Shrimp",
+    "Country": "Thailand",
+    "Eco_Impact": 7.18219388868309
+  },
+  {
+    "Product_details": "Shrimp",
+    "Country": "Viet Nam",
+    "Eco_Impact": 4.56633365304067
+  }
+]
