@@ -23,6 +23,9 @@
       max-width: 800px; /* Set maximum width for the chart */
       margin: 20px auto;
     }
+    .source-data {
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -36,6 +39,10 @@
   
   <div>
     <canvas id="ecoChart"></canvas>
+  </div>
+
+  <div class="source-data">
+    <p>Source of Data: Your Source Here</p>
   </div>
 
   <script>
@@ -113,7 +120,11 @@
           },
           scales: {
             x: {
-              beginAtZero: true // Start the x-axis at zero
+              beginAtZero: true, // Start the x-axis at zero
+              title: {
+                display: true,
+                text: 'Ecological Impact' // X-axis label
+              }
             }
           }
         }
