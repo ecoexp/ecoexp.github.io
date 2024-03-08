@@ -170,7 +170,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
     
 
-var userdata = firebase.database().ref("UserData_Experiment");
+var userdata = firebase.database().ref("UserData_Experiment_Class");
 var uniqueId = localStorage.getItem('pre_study_unique_id');
 
 window.onload = codeAddress();

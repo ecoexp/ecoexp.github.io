@@ -34,7 +34,7 @@ const response_time = [];
         
         // initialize firebase
     firebase.initializeApp(firebaseConfig);
-var userdata = firebase.database().ref("UserData_Survey");
+var userdata = firebase.database().ref("UserData_Survey_Class");
 
 
 function submitAnswersK() {
