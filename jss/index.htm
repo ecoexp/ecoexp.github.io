@@ -42,13 +42,13 @@
   </style>
 </head>
 <body>
-  <h1>Ecological Impact</h1>
+  <h1>Regional Production Impact </h1>
   <p>This tool provides insights into the country-wise production impact of different food items.</p>
   
   <label for="product">Select a product:</label>
   <select id="product"></select>
   
-  <button onclick="displayChart()">Show Ecological Impact</button>
+  <button onclick="displayChart()">Show RPI</button>
   
   <div>
     <canvas id="ecoChart"></canvas>
@@ -73,8 +73,8 @@
         <td>Oxford Research Archives</td>
       </tr>
       <tr>
-        <td>Ecological Impact</td>
-        <td>Ecological_Impact</td>
+        <td>Regional Production Impact</td>
+        <td>Regional Production Impact </td>
         <td>Computed using the proposed method</td>
       </tr>
       <tr>
@@ -163,7 +163,7 @@
               beginAtZero: true, // Start the x-axis at zero
               title: {
                 display: true,
-                text: 'Ecological Impact' // X-axis label
+                text: 'Regional Production Impact (RPI)' // X-axis label
               }
             }
           }
