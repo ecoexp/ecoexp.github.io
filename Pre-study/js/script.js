@@ -34,7 +34,9 @@ let updated_fruits = [];
 var budget_group= "LB";
 var base_group= "_B";
 var sTime = new Date(); 
-var eTime = new Date(); 
+var eTime = new Date();
+const myTimer = timer(); // moved up for early use
+ 
 var durationSec = 0;
 
 
@@ -103,7 +105,7 @@ var attempts=0;
 var c_sln=0;
 var f_number=0;
 let userAns ="nill";
-const myTimer = timer();
+
 var q=0;
 var o=0;
 const restart_quiz = result_box.querySelector(".buttons .restart");
@@ -702,13 +704,35 @@ function queCounter(index){
 }
 
 function timer() {
-    let startTime, endTime, running = false;
-    
-    function start() {
-      if (running) {
- 
-        return;
-      }
+  let startTime = null;
+  let endTime = null;
+  let running = false;
+
+  function start() {
+    running = true;
+    startTime = new Date();
+  }
+
+  function stop() {
+    if (!running || !startTime) {
+      running = false;
+      return 0;
+    }
+    running = false;
+    endTime = new Date();
+    const elapsedTime = (endTime.getTime() - startTime.getTime()) / 1000;
+    return elapsedTime;
+  }
+
+  function reset() {
+    startTime = null;
+    endTime = null;
+    running = false;
+  }
+
+  return { start, stop, reset };
+}
+
       running = true;
       startTime = new Date();
 
