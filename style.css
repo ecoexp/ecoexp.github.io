@@ -1,3 +1,13 @@
+html, body {
+  width: 1280px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+img { max-width: none !important; }
+button { transform: none !important; }
+
+
 /* importing google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
